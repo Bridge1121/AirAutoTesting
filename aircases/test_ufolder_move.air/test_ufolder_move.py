@@ -1,0 +1,318 @@
+# -*- encoding=utf8 -*-
+__author__ = "wenxiu.tian_sx"
+
+from airtest.core.api import *
+import random
+import string
+
+auto_setup(__file__,logdir=True,devices=["Android://127.0.0.1:5037/AINOTEA224042300042"])
+
+from poco.drivers.android.uiautomation import AndroidUiautomationPoco
+poco = AndroidUiautomationPoco(use_airtest_input=True, screenshot_each_action=False)
+
+#生成4位随机字符
+def random_string(length=4):
+    return ''.join(random.choices(string.ascii_uppercase + string.digits, k=length))
+
+
+#判断当前是否登录
+def is_login():
+    #点击应用
+    poco("应用").click()
+    #点击设置
+    poco("设置图标").click()
+    username = poco("com.zlt.zltsettings:id/user_name").get_text()
+    #返回到首页
+    poco(text="系统设置").click()
+    #点击首页
+    poco("首页").click()
+    #判断是否已登录,true未登录，false已登录
+    return username == "未登录"
+    
+
+#新建笔记
+def create_new_notes():
+    #点击笔记
+    poco("笔记").click()
+    #点击新建笔记
+    poco(text="新建笔记").click()
+    #输入笔记内容
+    poco("更多设置").click()
+    poco(text="插入文字").click()
+    sleep(2)
+    touch((581,997))
+    sleep(2)
+    timestamp = time.strftime("%Y%m%d%H%M%S")  # 年月日时分秒
+    text(timestamp, enter=False)
+    poco("返回").click()
+    sleep(1)
+    #4、回到首页
+    poco("首页").click()
+    return timestamp
+
+#退出登录
+def logout():
+    #点击应用
+    poco("应用").click()
+
+    #点击设置
+    poco("设置图标").click()
+    #点击登陆头像
+    poco("android.widget.FrameLayout")\
+    .child("android.widget.LinearLayout").offspring("android:id/content")\
+    .child("android.widget.LinearLayout")\
+    .child("android.widget.LinearLayout")\
+    .offspring("com.zlt.zltsettings:id/account")[0]\
+    .child("android.widget.ImageView").click()
+    #点击账号管理
+    poco("androidx.compose.ui.platform.ComposeView")\
+    .child("android.view.View").offspring("android.widget.ScrollView")\
+    .child("android.view.View")[0].click()
+    #点击退出登录
+    poco(text="退出登录").click()
+    #点击确定
+    poco(text="确定").click()
+    sleep(1)
+    #点击账户
+    poco("返回").click()
+    #点击系统设置
+    poco(text="系统设置").click()
+    #点击首页
+    poco("首页").click()
+
+    
+#登录账号
+def login(phoneNumber="18662682224",code="123456"):
+    #点击应用
+    poco("应用").click()
+
+    #点击设置
+    poco("设置图标").click()
+    #点击登陆头像
+    poco("android.widget.FrameLayout")\
+    .child("android.widget.LinearLayout")\
+    .offspring("android:id/content")\
+    .child("android.widget.LinearLayout")\
+    .child("android.widget.LinearLayout")\
+    .offspring("com.zlt.zltsettings:id/account")[0]\
+    .child("android.widget.ImageView").click()
+    poco("android.widget.CheckBox").click()
+    poco(text="请输入手机号码").click()
+    text(phoneNumber, enter=False)
+    poco(text="请输入短信验证码").click()
+    text(code, enter=False)
+    sleep(1)
+    # 点击登录
+    poco("android.widget.FrameLayout") \
+    .offspring("androidx.compose.ui.platform.ComposeView") \
+    .child("android.view.View").child("android.view.View") \
+    .child("android.view.View")[1].child("android.widget.TextView").click()
+    sleep(2)
+    #点击账户
+    poco("返回").click()
+    sleep(1)
+    #点击系统设置
+    poco(text="系统设置").click()
+    #点击首页
+    poco("首页").click()
+    sleep(1)
+    
+    
+#笔记列表同一分组下，文件夹移动至二级文件夹下验证
+def test_move_folder_into_subfolder_in_same_group(default_group="默认笔记"):
+    if is_login()==True:
+        login()
+    #点击笔记
+    poco("笔记").click()
+    sleep(1)
+    #点击默认笔记
+    poco(text=default_group).click()
+    #新建文件夹a,b
+    for i in range(0,2):
+        touch(Template(r"tpl1748249870254.png", record_pos=(0.048, -0.608), resolution=(1200, 1920)))
+        #输入文件夹名
+        name = f"同级文件夹_{i}"
+        text(name, enter=False)
+        sleep(1)
+        poco(text="确认").click()
+    #点击新建的第一个文件夹，创建三级文件夹
+    poco(text="同级文件夹_0").click()
+    touch(Template(r"tpl1748249870254.png", record_pos=(0.048, -0.608), resolution=(1200, 1920)))
+    #输入文件夹名
+    text("三级文件夹_0", enter=False)
+    sleep(1)
+    poco(text="确认").click()
+    #点击返回到默认分组
+    poco("<").click()
+    #点击新建的第二个文件夹
+    touch(Template(r"tpl1748311835817.png", record_pos=(0.459, -0.481), resolution=(1200, 1920)))
+
+    #移动分组
+    poco(text="移动分组").click()
+    #点击默认分组
+    poco(text=default_group).click()
+    poco(text="同级文件夹_0").click()
+    poco(text="移动至此").click()
+    #点击新建的第一个文件夹
+    poco(text="同级文件夹_0").click()
+    sleep(1)
+    #校验是否存在
+    # assert poco(text="三级文件夹_0").exists()
+    # assert poco(text="同级文件夹_1").exists()
+    sleep(1)
+    #返回
+    poco("<").click()
+    touch(Template(r"tpl1748311483114.png", record_pos=(0.457, -0.486), resolution=(1200, 1920)))
+    poco(text="删除").click()
+    poco(text="确认").click()
+    #右滑
+    swipe((252,112),(947,112))
+    poco(text="全部笔记").click()
+    poco("首页").click()
+
+    
+#笔记列表不同分组文件夹移动至其他分组（根目录）验证
+def test_move_folder_into_subfolder_in_diff_group(default_group="默认笔记",move_group="测试修改分组一"):
+    if is_login()==True:
+        login()
+    #点击笔记
+    poco("笔记").click()
+    sleep(1)
+    #点击默认笔记
+    poco(text=default_group).click()
+    poco("androidx.compose.ui.platform.ComposeView")\
+    .child("android.view.View").child("android.view.View")\
+    .child("android.view.View")[4].child("search").click()
+    text("笔记移动不同分组",enter=False)
+    poco(text="确认").click()
+    sleep(1)
+    poco("更多设置").click()
+    poco(text="移动分组").click()
+    poco(text=move_group).click()
+    poco(text="移动至此").click()
+    #点击移动到的分组
+    poco(text="测试修改分组一").click()
+    # assert poco(text="笔记移动不同分组").exists()
+    sleep(1)
+    #删除新建的文件夹
+    touch(Template(r"tpl1748314038487.png", record_pos=(0.457, -0.483), resolution=(1200, 1920)))
+    poco(text="删除").click()
+    poco(text="确认").click()
+    #右滑
+    swipe((252,112),(947,112))
+    poco(text="全部笔记").click()
+    poco("首页").click()
+
+
+# 笔记列表不同分组文件夹移动至其他分组下二级文件夹目录验证（移动后该文件夹为第三级）
+def test_move_folder_across_groups_into_subfolder_as_third_level(default_group="默认笔记",move_group="测试修改分组一"):
+    if is_login()==True:
+        login()
+    #点击笔记
+    poco("笔记").click()
+    #点击默认笔记
+    poco(text=default_group).click()
+    #新建文件夹
+    poco("androidx.compose.ui.platform.ComposeView")\
+    .child("android.view.View").child("android.view.View")\
+    .child("android.view.View")[4].child("search").click()
+    folder_name = f"文件夹_{random_string()}"
+    text(folder_name,enter=False)
+    poco(text="确认").click()
+    #点击新建的文件夹
+    poco(text=folder_name).click()
+    #新建5篇笔记
+    note_name = None
+    for i in range(0,5):
+        poco(text="新建笔记").click()
+        poco("更多设置").click()
+        poco(text="插入文字").click()
+        sleep(2)
+        touch((581,997))
+        sleep(2)
+        ran_str = random_string()
+        note_name=f"笔记_{ran_str}"
+        text(note_name, enter=False)
+        poco("返回").click()
+    poco("androidx.compose.ui.platform.ComposeView")\
+    .child("android.view.View").child("android.view.View")\
+    .child("android.view.View")[6].click()
+    poco(text="全部选中").click()
+    poco("androidx.compose.ui.platform.ComposeView")\
+    .child("android.view.View").child("android.view.View")\
+    .child("android.view.View")[1].child("android.widget.Button").click()
+    poco(text=move_group).click()
+    poco(text="移动至此").click()
+    sleep(1)
+    poco("<").click()
+    #右滑
+    swipe((279,89),(920,89))
+    #点击到该分组下，校验是否存在
+#     poco(text=move_group).click()
+#     sleep(1)
+#     assert poco(text=note_name).exists()
+#     sleep(1)
+    #右滑
+    swipe((279,89),(920,89))
+    poco(text="全部笔记").click()
+    poco("首页").click()
+    
+
+
+
+
+
+
+
+# 笔记列表文件夹批量移动验证
+def test_folders_move(default_group="默认笔记",move_group="测试修改分组一"):
+    if is_login()==True:
+        login()
+    #点击笔记
+    poco("笔记").click()
+    sleep(1)
+    #点击默认笔记
+    poco(text=default_group).click()
+    file_name=None
+    #新建多个文件夹
+    for i in range(0,3):
+        poco("androidx.compose.ui.platform.ComposeView")\
+        .child("android.view.View").child("android.view.View")\
+        .child("android.view.View")[4].child("search").click()
+        file_name = f"文件夹_{i}{i}"
+        text(file_name,enter=False)
+        poco(text="确认").click()
+    #批量选择
+    poco("编辑").click()
+    for i in range(0,3):
+        poco("androidx.compose.ui.platform.ComposeView")\
+        .child("android.view.View").child("android.view.View")\
+        .child("android.view.View")[4].child("android.view.View")\
+        .child("android.view.View")[i].click()
+    poco(text="移动至").click()
+    poco(text=move_group).click()
+    poco(text="移动至此").click()
+    sleep(1)
+    #点击到该分组下，校验是否存在
+    poco(text=move_group).click()
+    # assert poco(text=file_name).exists()
+    sleep(1)
+    #右滑
+    swipe((279,89),(920,89))
+    poco(text="全部笔记").click()
+    poco("首页").click()
+
+
+
+
+  
+
+
+    
+    
+    
+# if __name__=="__main__":
+#     test_move_folder_into_subfolder_in_same_group()
+#     test_move_folder_into_subfolder_in_diff_group()
+#     test_move_folder_across_groups_into_subfolder_as_third_level()
+#     test_folders_move()

@@ -1,0 +1,1 @@
+{"tag": "function", "depth": 1, "time": 1748954733.3052819, "data": {"name": "connect_device", "call_args": {"uri": "Android://127.0.0.1:5037/AINOTEA224042300042"}, "start_time": 1748954732.847099, "ret": "<Android 'AINOTEA224042300042'>", "end_time": 1748954733.3052819}}
