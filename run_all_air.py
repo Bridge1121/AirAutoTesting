@@ -9,7 +9,7 @@ import schedule
 # 钉钉机器人配置
 #测试群
 DINGTALK_WEBHOOK = "https://oapi.dingtalk.com/robot/send?access_token=93c04271a11ef58697a0af784302016ccbfec2dfc45a0dd08964c022d217efe6"
-#hook
+#办公本hook
 # DINGTALK_WEBHOOK = "https://oapi.dingtalk.com/robot/send?access_token=9f4def1f3b64509d35397661e137ec2b463bedaffeb8840b73447fe3b61af383"
 
 
@@ -17,7 +17,7 @@ TASK_NAME = "办公本自动化测试"
 TEAM_NAME = "测试小组"
 PROJECT_NAME = "办公本测试项目"
 DEVICE_MODEL = "办公本"
-APK_VERSION = "V2.2.4.25060901"
+APK_VERSION = "V2.2.4.25061201"
 
 def send_to_dingtalk(webhook_url, message):
     headers = {'Content-Type': 'application/json'}
@@ -58,19 +58,6 @@ def run_all_scripts():
                     failure += 1
                     print(f"❌ {func}() 运行失败：{e}")
                     print(traceback.format_exc())
-
-    # for item in os.listdir(test_dir):
-    #     if item.endswith(".air"):
-    #         air_path = os.path.join(test_dir, item)
-    #         print(f"运行：{air_path}")
-    #         result = subprocess.run(["airtest", "run", air_path], capture_output=True, text=True,encoding="utf-8")
-    #         if result.returncode == 0:
-    #             success += 1
-    #         else:
-    #             if "Traceback" in result.stdout:
-    #                 error += 1
-    #             else:
-    #                 failure += 1
 
     duration = time.time() - start_time
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
