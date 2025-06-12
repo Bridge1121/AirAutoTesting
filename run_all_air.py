@@ -9,15 +9,15 @@ import schedule
 # 钉钉机器人配置
 #测试群
 DINGTALK_WEBHOOK = "https://oapi.dingtalk.com/robot/send?access_token=93c04271a11ef58697a0af784302016ccbfec2dfc45a0dd08964c022d217efe6"
-#测试小团体
-# DINGTALK_WEBHOOK = "https://oapi.dingtalk.com/robot/send?access_token=d870df2b90aab48139c9de08b92201c7ac36090bab95cb21f635199637cd3ae3"
+#hook
+# DINGTALK_WEBHOOK = "https://oapi.dingtalk.com/robot/send?access_token=9f4def1f3b64509d35397661e137ec2b463bedaffeb8840b73447fe3b61af383"
 
 
 TASK_NAME = "办公本自动化测试"
 TEAM_NAME = "测试小组"
 PROJECT_NAME = "办公本测试项目"
 DEVICE_MODEL = "办公本"
-DEVICE_VERSION = "V2.4.0.25060301"
+APK_VERSION = "V2.2.4.25060901"
 
 def send_to_dingtalk(webhook_url, message):
     headers = {'Content-Type': 'application/json'}
@@ -80,7 +80,7 @@ def run_all_scripts():
     msg += f"所在团队: {TEAM_NAME}\n"
     msg += f"所在项目: {PROJECT_NAME}\n"
     msg += f"设备型号: {DEVICE_MODEL}\n"
-    msg += f"固件版本: {DEVICE_VERSION}\n\n"
+    msg += f"apk版本: {APK_VERSION}\n\n"
     msg += f"执行结果:\n"
     msg += f"总测试数: {success + failure + error}\n"
     msg += f"通过: {success}\n失败: {failure}\n错误: {error}\n"

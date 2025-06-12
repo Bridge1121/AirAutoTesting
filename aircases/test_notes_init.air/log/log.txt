@@ -1,1 +1,1 @@
-{"tag": "function", "depth": 1, "time": 1748953553.610303, "data": {"name": "connect_device", "call_args": {"uri": "Android://127.0.0.1:5037/AINOTEA224042300042"}, "start_time": 1748953553.3131795, "ret": "<Android 'AINOTEA224042300042'>", "end_time": 1748953553.610303}}
+{"tag": "function", "depth": 1, "time": 1749205860.8940206, "data": {"name": "connect_device", "call_args": {"uri": "Android://127.0.0.1:5037/AINOTEA224042300042"}, "start_time": 1749205860.6863816, "ret": "<Android 'AINOTEA224042300042'>", "end_time": 1749205860.8940206}}
