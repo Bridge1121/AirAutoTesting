@@ -1,3 +1,5 @@
+import re
+
 from airtest.core.api import *
 from airtest.core.android.touch_methods.base_touch import *
 import random
@@ -11,6 +13,17 @@ poco = AndroidUiautomationPoco(use_airtest_input=True, screenshot_each_action=Fa
 dev=device()
 
 
+def extract_url_and_password(text):
+    # 定义正则表达式，提取链接和密码
+    url_pattern = r"(https?://[^\s]+)"
+    password_pattern = r"密码：(\S+)"
+
+    # 使用正则表达式查找网址
+    url = re.search(url_pattern, text)
+    password = re.search(password_pattern, text)
+
+    # 如果找到了网址和密码，返回它们；否则返回 None
+    return url.group(0) if url else None, password.group(1) if password else None
 
 #点击并拖动ai图标到文本
 def swipe_press_ai(start_point=(49,1732),end_point=(410,990)):
