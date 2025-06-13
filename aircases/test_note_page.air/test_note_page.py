@@ -1,137 +1,14 @@
 # -*- encoding=utf8 -*-
 __author__ = "wenxiu.tian_sx"
+import sys
 
 from airtest.core.api import *
-from airtest.core.android.touch_methods.base_touch import *
-import random
-import string
-import re
+# 设置导入路径（确保能找到 utils 目录）
+sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..", "utils")))
 
+from utils.commen import *
 
-auto_setup(__file__,logdir=True,devices=["Android://127.0.0.1:5037/AINOTEA224042300042"])
-
-from poco.drivers.android.uiautomation import AndroidUiautomationPoco
-poco = AndroidUiautomationPoco(use_airtest_input=True, screenshot_each_action=False)
-dev=device()
-
-
-def extract_url_and_password(text):
-    # 定义正则表达式，提取链接和密码
-    url_pattern = r"(https?://[^\s]+)"
-    password_pattern = r"密码：(\S+)"
-    
-    # 使用正则表达式查找网址
-    url = re.search(url_pattern, text)
-    password = re.search(password_pattern, text)
-    
-    # 如果找到了网址和密码，返回它们；否则返回 None
-    return url.group(0) if url else None, password.group(1) if password else None
-
-import pyperclip
-def test():
-#     poco(text="复制链接和密码").click()
-#     #关闭对话框
-#     sleep(1)
-#     poco("close dialog").click()
-#     poco("close dialog").click()
-#     touch((600,600),duration=2)
-#     #点击粘贴
-#     poco("com.aispeech.tablet:id/tv_selection_paste").click()
-#     #点击复制
-#     poco("com.aispeech.tablet:id/tv_selection_copy").click()
-    #获取剪贴板的网址和密码
-    
-
-    content = poco("android.widget.LinearLayout")\
-    .offspring("android:id/content")\
-    .child("androidx.compose.ui.platform.ComposeView")\
-    .child("android.view.View").child("android.view.View")\
-    .child("androidx.compose.ui.viewinterop.ViewFactoryHolder")\
-    .offspring("androidx.viewpager.widget.ViewPager")\
-    .offspring("com.aispeech.tablet:id/editor_scroll_view")\
-    .child("android.widget.FrameLayout")\
-    .child("android.widget.FrameLayout")\
-    .child("android.widget.RelativeLayout")[1]\
-    .child("com.aispeech.tablet:id/editTextView").get_text()
-    print(content)
-    uu,pa = extract_url_and_password(content)
-    print("url是：",uu)
-    print("密码是：",pa)
-
-
-
-
-#判断当前是否登录
-def is_login():
-    #点击应用
-    poco("应用").click()
-    #点击设置
-    poco("设置图标").click()
-    username = poco("com.zlt.zltsettings:id/user_name").get_text()
-    #返回到首页
-    poco(text="系统设置").click()
-    #点击首页
-    poco("首页").click()
-    #判断是否已登录,true未登录，false已登录
-    return username == "未登录"
-
-
-#点击并拖动ai图标到文本
-def swipe_press_ai(start_point=(49,1732),end_point=(410,990)):
-    #拖动ai图标
-    steps = 10  # 拖动的分段数
-    multitouch_event = [
-    DownEvent(start_point), SleepEvent(0.1)]
-    dev.touch_proxy.perform(multitouch_event)
-    sleep(1)
-    # 2. swipe
-    swipe_event = [DownEvent(start_point), SleepEvent(0.1)]
-    for i in range(1, steps + 1):
-        # 计算插值坐标，实现平滑拖动
-        x = start_point[0] + (end_point[0] - start_point[0]) * i // steps
-        y = start_point[1] + (end_point[1] - start_point[1]) * i // steps
-        swipe_event.append(MoveEvent((x, y)))
-        swipe_event.append(SleepEvent(0.05))  # 每步间隔，可微调
-    swipe_event.append(UpEvent())
-    dev.touch_proxy.perform(swipe_event)
-
-
-
-#登录账号
-def login(phoneNumber="18662682224",code="123456"):
-    #点击应用
-    poco("应用").click()
-
-    #点击设置
-    poco("设置图标").click()
-    #点击登陆头像
-    poco("android.widget.FrameLayout")\
-    .child("android.widget.LinearLayout")\
-    .offspring("android:id/content")\
-    .child("android.widget.LinearLayout")\
-    .child("android.widget.LinearLayout")\
-    .offspring("com.zlt.zltsettings:id/account")[0]\
-    .child("android.widget.ImageView").click()
-    poco("android.widget.CheckBox").click()
-    poco(text="请输入手机号码").click()
-    text(phoneNumber, enter=False)
-    poco(text="请输入短信验证码").click()
-    text(code, enter=False)                     
-    #点击登录
-    poco("android.widget.FrameLayout")\
-    .offspring("androidx.compose.ui.platform.ComposeView")\
-    .child("android.view.View").child("android.view.View")\
-    .child("android.view.View")[1]\
-    .child("android.widget.TextView").click()
-    sleep(2)
-    #点击账户
-    poco("返回").click()
-    sleep(1)
-    #点击系统设置
-    poco(text="系统设置").click()
-    #点击首页
-    poco("首页").click()
-    sleep(1)
+auto_setup(__file__, logdir=True, project_root=os.path.dirname(__file__))
     
     
 # 点击页面排序，弹出预览缩略视图，显示当前笔记的所有手写页面
