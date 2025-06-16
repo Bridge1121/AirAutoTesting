@@ -87,23 +87,12 @@ def test_ai_history_view_no_internet():
     poco("com.aispeech.ccui.systemui:id/cellGrid")\
     .child("android.widget.LinearLayout")[0]\
     .child("com.aispeech.ccui.systemui:id/iv_cell_icon")\
-    .long_click(duration=2)
-    sleep(3)
-    poco("android.widget.FrameLayout")\
-    .child("android.widget.LinearLayout")\
-    .offspring("android:id/content")\
-    .offspring("com.zlt.zltsettings:id/ll_back")\
-    .child("android.widget.ImageView").click()
+    .click()
+    sleep(5)
+    touch((1000,1600))
     #点击返回
     poco("返回").click()
     poco("首页").click()
-    # 下拉菜单,断开网络
-    swipe((1036, 0), (886, 432))
-    poco("com.aispeech.ccui.systemui:id/cellGrid") \
-        .child("android.widget.LinearLayout")[0] \
-        .child("com.aispeech.ccui.systemui:id/iv_cell_icon").click()
-    sleep(2)
-    touch((1000, 1600))
 
     
     

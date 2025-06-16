@@ -39,7 +39,9 @@ def test_recording_top_bottom_split_screen():
     poco("返回").click()
     sleep(1)
     poco("笔记").click()
-    del_file()
+    touch(Template(r"tpl1748339487185.png", record_pos=(0.458, -0.484), resolution=(1200, 1920)))
+    poco(text="删除").click()
+    poco(text="确认").click()
     #4、回到首页
     poco("首页").click()
 
@@ -68,7 +70,9 @@ def test_ai_top_bottom_split_screen():
     sleep(1)
     poco("笔记").click()
     #删除笔记
-    del_file()
+    touch(Template(r"tpl1748339487185.png", record_pos=(0.458, -0.484), resolution=(1200, 1920)))
+    poco(text="删除").click()
+    poco(text="确认").click()
     #4、回到首页
     poco("首页").click()
     
@@ -104,7 +108,9 @@ def test_post_meeting_summary_top_bottom_split_screen():
     sleep(1)
     poco("笔记").click()
     #删除笔记
-    del_file()
+    touch(Template(r"tpl1748339487185.png", record_pos=(0.458, -0.484), resolution=(1200, 1920)))
+    poco(text="删除").click()
+    poco(text="确认").click()
     #4、回到首页
     poco("首页").click()
 
@@ -143,7 +149,9 @@ def test_insert_pic_top_bottom_split_screen():
     sleep(1)
     poco("笔记").click()
     #删除笔记
-    del_file()
+    touch(Template(r"tpl1748339487185.png", record_pos=(0.458, -0.484), resolution=(1200, 1920)))
+    poco(text="删除").click()
+    poco(text="确认").click()
     #4、回到首页
     poco("首页").click()
     
@@ -194,7 +202,9 @@ def test_create_notes_and_search_top_bottom_split_screen():
     poco("Back").click()
     #点击笔记
     poco(text="笔记").click()
-    del_file()
+    touch(Template(r"tpl1748339487185.png", record_pos=(0.458, -0.484), resolution=(1200, 1920)))
+    poco(text="删除").click()
+    poco(text="确认").click()
    #点击首页
     poco("首页").click()
     
@@ -249,7 +259,9 @@ def test_ai_helper_top_bottom_split_screen():
     poco("返回").click()
     poco("笔记").click()
     #删除笔记
-    del_file()
+    touch(Template(r"tpl1748339487185.png", record_pos=(0.458, -0.484), resolution=(1200, 1920)))
+    poco(text="删除").click()
+    poco(text="确认").click()
     #点击首页
     poco("首页").click()
 
