@@ -1,4 +1,5 @@
 import re
+from datetime import datetime, timedelta
 
 from airtest.core.api import *
 from airtest.core.android.touch_methods.base_touch import *
@@ -11,6 +12,131 @@ from poco.drivers.android.uiautomation import AndroidUiautomationPoco
 
 poco = AndroidUiautomationPoco(use_airtest_input=True, screenshot_each_action=False)
 dev=device()
+
+
+# 提取日期中的日
+def extract_day(date_str):
+    match = re.search(r'(\d+)日', date_str)
+    if match:
+        return int(match.group(1))
+    return None
+
+
+def choose_n_days_date(n):
+    # 1. 当前日期
+    today = datetime.today()
+
+    # 2. 加 n 天后目标日期
+    target_date = today + timedelta(days=n)
+    target_year = target_date.year
+    target_month = target_date.month
+    target_day = target_date.day
+
+    print(f"目标日期是：{target_year}-{target_month:02d}-{target_day:02d}")
+
+    # 3. 点击日期控件进入日历
+    poco("date").click()
+    poco(text="时间段").click()
+    sleep(2)
+    # 点击日期，打开日历
+    poco("android.widget.FrameLayout") \
+        .offspring("android.view.ViewGroup") \
+        .child("android.view.View") \
+        .offspring("android.widget.ScrollView") \
+        .child("android.widget.TextView")[0].click()
+    sleep(2)
+    # 4. 获取当前选中的日期
+    date_list = poco("android.widget.FrameLayout") \
+        .offspring("android.view.ViewGroup") \
+        .child("android.view.View") \
+        .child("android.view.View") \
+        .child("android.view.View")[0] \
+        .child("android.view.View") \
+        .child("android.view.View")[3] \
+        .child("android.widget.TextView")
+
+    current_selected_day = None
+    for i in range(len(date_list)):
+        if date_list[i].attr("checked"):
+            print(date_list[i].get_text())
+            dd = date_list[i].get_text()
+            current_selected_day = int(extract_day(dd))
+            print("当前选中日期：", current_selected_day)
+            break
+
+    current_month = today.month
+    current_year = today.year
+
+    # 5. 判断是否同一个月
+    if target_year == current_year and target_month == current_month:
+        # 在本月，可以直接点击目标日期
+        for d in date_list:
+            d_day = int(extract_day(d.get_text()))
+            if int(d_day) == target_day:
+                d.click()
+                break
+    else:
+        # 不在本月
+        print(f"目标日期不在本月，请翻页至 {target_year} 年 {target_month} 月，然后点击 {target_day} 日")
+        # 跳转到下个月
+        poco("android.widget.FrameLayout") \
+            .offspring("android.view.ViewGroup") \
+            .child("android.view.View") \
+            .child("android.view.View") \
+            .child("android.view.View")[0] \
+            .child("android.view.View") \
+            .child("android.view.View")[2] \
+            .child("android.widget.Button").click()
+        # 选择对应日期
+        poco("android.widget.FrameLayout") \
+            .offspring("android.view.ViewGroup") \
+            .child("android.view.View") \
+            .child("android.view.View") \
+            .child("android.view.View")[0] \
+            .child("android.view.View") \
+            .child("android.view.View")[3] \
+            .child("android.widget.TextView")[target_day].click()
+
+    # 6. 确认选择
+    poco(text="确定").click()
+    poco(text="确认").click()
+
+
+# 删除创建的代办
+def find_del_agent(agent_name):
+    agents = poco("androidx.compose.ui.platform.ComposeView") \
+        .child("android.view.View") \
+        .child("android.view.View") \
+        .child("android.view.View")[7] \
+        .children()
+    for i in range(len(agents)):
+        if agents[i].get_text() == agent_name:
+            agents[i + 2].click()
+
+            #             touch(Template(r"tpl1749637230158.png", record_pos=(0.448, 0.182), resolution=(1200, 1920)))
+            # 删除新增的代办
+            poco(text="删除").click()
+            poco(text="确认").click()
+
+
+# 点击并拖动ai图标到文本
+def swipe_press_ai(start_point=(49, 1732), end_point=(410, 990)):
+    # 拖动ai图标
+    steps = 10  # 拖动的分段数
+    multitouch_event = [
+        DownEvent(start_point), SleepEvent(0.1)]
+    dev.touch_proxy.perform(multitouch_event)
+    sleep(1)
+    # 2. swipe
+    swipe_event = [DownEvent(start_point), SleepEvent(0.1)]
+    for i in range(1, steps + 1):
+        # 计算插值坐标，实现平滑拖动
+        x = start_point[0] + (end_point[0] - start_point[0]) * i // steps
+        y = start_point[1] + (end_point[1] - start_point[1]) * i // steps
+        swipe_event.append(MoveEvent((x, y)))
+        swipe_event.append(SleepEvent(0.05))  # 每步间隔，可微调
+    swipe_event.append(UpEvent())
+    dev.touch_proxy.perform(swipe_event)
 
 
 def extract_url_and_password(text):
