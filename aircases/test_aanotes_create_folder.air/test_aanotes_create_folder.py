@@ -263,6 +263,7 @@ def test_folder_move_group(group_name="默认笔记"):
     del_file()
     #右滑
     swipe((252,112),(947,112))
+    sleep(1)
     poco(text="全部笔记").click()
     #删除新建的分组
     poco(text="全部笔记").click()

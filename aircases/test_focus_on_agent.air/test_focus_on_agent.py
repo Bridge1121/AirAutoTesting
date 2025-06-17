@@ -171,6 +171,7 @@ def test_focus_on_finish_agent():
             #2s内再次点击
             agents[i+1].click()
             break
+    sleep(2)
     #删除日期，点击完成
     poco(text=agent_name).click()
     poco("clean").click()

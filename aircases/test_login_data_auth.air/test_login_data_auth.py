@@ -69,6 +69,7 @@ def test_export_file_logout():
     poco("笔记").click()
     #新建笔记
     poco(text="新建笔记").click()
+    sleep(1)
     #输入笔记内容
     poco("更多设置").click()
     poco(text="插入文字").click()
@@ -79,6 +80,7 @@ def test_export_file_logout():
     ss = "测试导出文件"
     text(ss, enter=False)
     touch((581,1197))
+    sleep(1)
     #导出文件
     poco("更多设置").click()
     poco(text="分享笔记").click()

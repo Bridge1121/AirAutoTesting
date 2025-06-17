@@ -11,7 +11,13 @@ from utils.commen import *
 
 
 auto_setup(__file__, logdir=True, project_root=os.path.dirname(__file__))
-    
+
+
+def del_file():
+    poco("更多设置").click()
+    poco(text="删除").click()
+    poco(text="确认").click()
+
     
 # 点击搜索后跳转到新页面覆盖列表页，模糊搜索，下滑翻页    
 def test_note_search_and_open():

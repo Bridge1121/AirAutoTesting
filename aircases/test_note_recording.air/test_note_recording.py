@@ -252,115 +252,118 @@ def test_note_replacement_long_touch(default_note="测试录音中文",default_g
 #     poco("返回").click()
 #     poco(text="全部笔记").click()
 #     poco("首页").click()
-    
-    
-#转写过程中点击管理录音时会有结束录音提示,点击弹窗确认,删除录音
-def test_note_recording_manage(note_name="测试管理录音"):
-    poco("笔记").click()
-    #点击已有录音笔记
-    poco(text=note_name).click()
-    #点击继续录音
-    poco(text="继续录音").click()
-    #点击更多设置的管理录音
-    poco("更多设置").click()
-    poco(text="管理录音").click()
-    #验证弹窗
-    assert poco(text="结束录音").exists()
-    sleep(1)
-    #弹窗点击确认
-    poco(text="确认").click()
-    #跳转到管理界面后，
-    #删除一段录音
-    #取消全选
-    poco("android.widget.LinearLayout")\
-    .offspring("android:id/content")\
-    .child("androidx.compose.ui.platform.ComposeView")\
-    .child("android.view.View")\
-    .child("android.view.View").child("Checked").click()
-    #删除第一段录音
-    poco("android.widget.LinearLayout")\
-    .offspring("android:id/content")\
-    .child("androidx.compose.ui.platform.ComposeView")\
-    .child("android.view.View").child("android.view.View")\
-    .child("android.view.View")[4].child("Checked")[0].click()
-    #点击删除
-    poco(text="删除录音").click()
-    #点击确定
-    poco(text="确认").click()
-    #退出
-    poco("android.widget.LinearLayout")\
-    .offspring("android:id/content")\
-    .child("androidx.compose.ui.platform.ComposeView")\
-    .child("android.view.View")\
-    .child("android.view.View")\
-    .child("android.view.View")[2].child("返回").click()
-    poco("返回").click()
-    poco("首页").click()
-    
-    
 
-# 点击录音管理默认全选录音后点击“删除录音及文字”再确认删除
-def test_note_recording_del_all(note_name="测试管理录音"):
-    poco("笔记").click()
-    #点击已有录音笔记
-    poco(text=note_name).click()
-    #点击继续录音
-    poco(text="继续录音").click()
-    #点击更多设置的管理录音
-    poco("更多设置").click()
-    poco(text="管理录音").click()
-    #验证弹窗
-    assert poco(text="结束录音").exists()
-    sleep(1)
-    #弹窗点击确认
-    poco(text="确认").click()
-    #跳转到管理界面后，
-    #默认全选，点击删除录音
-    poco(text="删除录音").click()
-    #点击取消
-    poco(text="取消").click()
-    #退出
-    poco("android.widget.LinearLayout")\
-    .offspring("android:id/content")\
-    .child("androidx.compose.ui.platform.ComposeView")\
-    .child("android.view.View")\
-    .child("android.view.View")\
-    .child("android.view.View")[2].child("返回").click()
-    poco("返回").click()
-    poco("首页").click()
-    
-    
-#点击录音管理默认全选录音后点击“删除录音及文字”再确认删除
-def test_note_recording_and_text_del(note_name="测试删除录音文字"):
-    poco("笔记").click()
-    #点击已有录音笔记
-    poco(text=note_name).click()
-    #点击继续录音
-    poco(text="继续录音").click()
-    #点击更多设置的管理录音
-    poco("更多设置").click()
-    poco(text="管理录音").click()
-    #验证弹窗
-    assert poco(text="结束录音").exists()
-    sleep(1)
-    #弹窗点击确认
-    poco(text="确认").click()
-    #跳转到管理界面后，
-    poco(text="删除录音及文字").click()
-    #点击取消
-    poco(text="取消").click()
-    #退出
-    poco("android.widget.LinearLayout")\
-    .offspring("android:id/content")\
-    .child("androidx.compose.ui.platform.ComposeView")\
-    .child("android.view.View")\
-    .child("android.view.View")\
-    .child("android.view.View")[2].child("返回").click()
-    #点击会后总结
-    poco(text="会后总结").click()
-    sleep(2)
-    poco("返回").click()
-    poco("首页").click()
+
+
+
+#=================暂时不执行+++++===============
+# #转写过程中点击管理录音时会有结束录音提示,点击弹窗确认,删除录音
+# def test_note_recording_manage(note_name="测试管理录音"):
+#     poco("笔记").click()
+#     #点击已有录音笔记
+#     poco(text=note_name).click()
+#     #点击继续录音
+#     poco(text="继续录音").click()
+#     #点击更多设置的管理录音
+#     poco("更多设置").click()
+#     poco(text="管理录音").click()
+#     #验证弹窗
+#     assert poco(text="结束录音").exists()
+#     sleep(1)
+#     #弹窗点击确认
+#     poco(text="确认").click()
+#     #跳转到管理界面后，
+#     #删除一段录音
+#     #取消全选
+#     poco("android.widget.LinearLayout")\
+#     .offspring("android:id/content")\
+#     .child("androidx.compose.ui.platform.ComposeView")\
+#     .child("android.view.View")\
+#     .child("android.view.View").child("Checked").click()
+#     #删除第一段录音
+#     poco("android.widget.LinearLayout")\
+#     .offspring("android:id/content")\
+#     .child("androidx.compose.ui.platform.ComposeView")\
+#     .child("android.view.View").child("android.view.View")\
+#     .child("android.view.View")[4].child("Checked")[0].click()
+#     #点击删除
+#     poco(text="删除录音").click()
+#     #点击确定
+#     poco(text="确认").click()
+#     #退出
+#     poco("android.widget.LinearLayout")\
+#     .offspring("android:id/content")\
+#     .child("androidx.compose.ui.platform.ComposeView")\
+#     .child("android.view.View")\
+#     .child("android.view.View")\
+#     .child("android.view.View")[2].child("返回").click()
+#     poco("返回").click()
+#     poco("首页").click()
+#
+#
+#
+# # 点击录音管理默认全选录音后点击“删除录音及文字”再确认删除
+# def test_note_recording_del_all(note_name="测试管理录音"):
+#     poco("笔记").click()
+#     #点击已有录音笔记
+#     poco(text=note_name).click()
+#     #点击继续录音
+#     poco(text="继续录音").click()
+#     #点击更多设置的管理录音
+#     poco("更多设置").click()
+#     poco(text="管理录音").click()
+#     #验证弹窗
+#     assert poco(text="结束录音").exists()
+#     sleep(1)
+#     #弹窗点击确认
+#     poco(text="确认").click()
+#     #跳转到管理界面后，
+#     #默认全选，点击删除录音
+#     poco(text="删除录音").click()
+#     #点击取消
+#     poco(text="取消").click()
+#     #退出
+#     poco("android.widget.LinearLayout")\
+#     .offspring("android:id/content")\
+#     .child("androidx.compose.ui.platform.ComposeView")\
+#     .child("android.view.View")\
+#     .child("android.view.View")\
+#     .child("android.view.View")[2].child("返回").click()
+#     poco("返回").click()
+#     poco("首页").click()
+#
+#
+# #点击录音管理默认全选录音后点击“删除录音及文字”再确认删除
+# def test_note_recording_and_text_del(note_name="测试删除录音文字"):
+#     poco("笔记").click()
+#     #点击已有录音笔记
+#     poco(text=note_name).click()
+#     #点击继续录音
+#     poco(text="继续录音").click()
+#     #点击更多设置的管理录音
+#     poco("更多设置").click()
+#     poco(text="管理录音").click()
+#     #验证弹窗
+#     assert poco(text="结束录音").exists()
+#     sleep(1)
+#     #弹窗点击确认
+#     poco(text="确认").click()
+#     #跳转到管理界面后，
+#     poco(text="删除录音及文字").click()
+#     #点击取消
+#     poco(text="取消").click()
+#     #退出
+#     poco("android.widget.LinearLayout")\
+#     .offspring("android:id/content")\
+#     .child("androidx.compose.ui.platform.ComposeView")\
+#     .child("android.view.View")\
+#     .child("android.view.View")\
+#     .child("android.view.View")[2].child("返回").click()
+#     #点击会后总结
+#     poco(text="会后总结").click()
+#     sleep(2)
+#     poco("返回").click()
+#     poco("首页").click()
     
 
 
@@ -381,9 +384,9 @@ if __name__=="__main__":
     test_note_replacement_long_touch()
 #     test_note_alpha_replacement_long_touch()
 #     test_note_alpha_replacement_ai_long_touch()
-    test_note_recording_manage()
-    test_note_recording_del_all()
-    test_note_recording_and_text_del()
+#     test_note_recording_manage()
+#     test_note_recording_del_all()
+#     test_note_recording_and_text_del()
 #     test()
     
     

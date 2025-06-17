@@ -8,14 +8,14 @@ import schedule
 
 # 钉钉机器人配置
 #测试群
-DINGTALK_WEBHOOK = "https://oapi.dingtalk.com/robot/send?access_token=93c04271a11ef58697a0af784302016ccbfec2dfc45a0dd08964c022d217efe6"
+# DINGTALK_WEBHOOK = "https://oapi.dingtalk.com/robot/send?access_token=93c04271a11ef58697a0af784302016ccbfec2dfc45a0dd08964c022d217efe6"
 #办公本hook
-# DINGTALK_WEBHOOK = "https://oapi.dingtalk.com/robot/send?access_token=9f4def1f3b64509d35397661e137ec2b463bedaffeb8840b73447fe3b61af383"
+DINGTALK_WEBHOOK = "https://oapi.dingtalk.com/robot/send?access_token=9f4def1f3b64509d35397661e137ec2b463bedaffeb8840b73447fe3b61af383"
 
 
-TASK_NAME = "办公本自动化测试"
+TASK_NAME = "办公本UI自动化测试"
 TEAM_NAME = "测试小组"
-PROJECT_NAME = "办公本测试项目"
+PROJECT_NAME = "办公本自动化测试项目"
 DEVICE_MODEL = "办公本"
 APK_VERSION = "V2.4.0.25061701"
 

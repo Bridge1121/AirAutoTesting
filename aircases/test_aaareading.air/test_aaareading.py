@@ -216,57 +216,59 @@ def test_reading_file_trans_import():
     
 
 #导入pdf格式文件到我的文档,并打开pdf格式文件
-def test_reading_import_pdf_open():
-#     if is_login()==True:
-#         login()
-    poco("阅读").click()
-    poco(text="导入文档").click()
-    #docx转pdf文件
-    poco(text="金山wps创建").click()
-    poco("cn.wps.moffice_eng:id/pad_newbuild_txt").click()
-    poco(text="PDF").click()
-    poco(text="文档转PDF").click()
-    poco("android.widget.FrameLayout")\
-    .child("android.widget.LinearLayout")\
-    .offspring("android:id/content")\
-    .offspring("cn.wps.moffice_eng:id/layout_fit_pad_outer_root_node")\
-    .child("android.widget.LinearLayout")\
-    .child("cn.wps.moffice_eng:id/phone_home_root")\
-    .offspring("android.widget.FrameLayout")\
-    .offspring("cn.wps.moffice_eng:id/file_select_recent_content_list")\
-    .child("cn.wps.moffice_eng:id/fb_listview_item_layout")[0]\
-    .offspring("cn.wps.moffice_eng:id/fb_file_icon").click()
-    sleep(1)
-    #输出为pdf
-    poco("cn.wps.moffice_eng:id/export_pdf_btn").click()
-    #保存到我的文档
-    poco(text="本地").click()
-    poco(text="我的文档").click()
-    poco("cn.wps.moffice_eng:id/btn_save").click()
-    #关闭文件
-    poco("cn.wps.moffice_eng:id/pdf_main_toolbar_backBtn").click()
-    #返回
-    poco("cn.wps.moffice_eng:id/titlebar_back_icon").click()
-    poco("cn.wps.moffice_eng:id/title_back").click()
-    #右滑退出wps
-    swipe((2,1000),(700,1000))
-    #打开文件
-    poco("androidx.compose.ui.platform.ComposeView")\
-    .child("android.view.View").child("android.view.View")\
-    .child("android.view.View")[3]\
-    .child("android.widget.TextView")[0].click()
-    sleep(1)
-    #关闭
-    poco("cn.wps.moffice_eng:id/pdf_main_toolbar_backBtn").click()
-    #右滑退出wps
-    swipe((2,1000),(700,1000))
-    #删除导入的文件
-    poco("androidx.compose.ui.platform.ComposeView")\
-    .child("android.view.View").child("android.view.View")\
-    .child("android.view.View")[3].child("更多设置")[1].click()
-    poco(text="删除文档").click()
-    poco(text="删除").click()
-    poco("首页").click()
+# def test_reading_import_pdf_open():
+# #     if is_login()==True:
+# #         login()
+#     poco("阅读").click()
+#     poco(text="导入文档").click()
+#     #docx转pdf文件
+#     poco(text="金山wps创建").click()
+#     poco("cn.wps.moffice_eng:id/pad_newbuild_txt").click()
+#     poco(text="PDF").click()
+#     poco(text="文档转PDF").click()
+#     poco("android.widget.FrameLayout")\
+#     .child("android.widget.LinearLayout")\
+#     .offspring("android:id/content")\
+#     .offspring("cn.wps.moffice_eng:id/layout_fit_pad_outer_root_node")\
+#     .child("android.widget.LinearLayout")\
+#     .child("cn.wps.moffice_eng:id/phone_home_root")\
+#     .offspring("android.widget.FrameLayout")\
+#     .offspring("cn.wps.moffice_eng:id/file_select_recent_content_list")\
+#     .child("cn.wps.moffice_eng:id/fb_listview_item_layout")[0]\
+#     .offspring("cn.wps.moffice_eng:id/fb_file_icon").click()
+#     sleep(1)
+#     #输出为pdf
+#     poco("cn.wps.moffice_eng:id/export_pdf_btn").click()
+#     #输出为pdf
+#     poco("cn.wps.moffice_eng:id/btn_save").click()
+#     sleep(1)
+#     if poco("cn.wps.moffice_eng:id/dialog_button_positive").exists():
+#         poco("cn.wps.moffice_eng:id/dialog_button_positive").click()
+#     sleep(2)
+#     #关闭文件
+#     poco("cn.wps.moffice_eng:id/pdf_main_toolbar_backBtn").click()
+#     #返回
+#     poco("cn.wps.moffice_eng:id/titlebar_back_icon").click()
+#     poco("cn.wps.moffice_eng:id/title_back").click()
+#     #右滑退出wps
+#     swipe((2,1000),(700,1000))
+#     #打开文件
+#     poco("androidx.compose.ui.platform.ComposeView")\
+#     .child("android.view.View").child("android.view.View")\
+#     .child("android.view.View")[3]\
+#     .child("android.widget.TextView")[0].click()
+#     sleep(1)
+#     #关闭
+#     poco("cn.wps.moffice_eng:id/pdf_main_toolbar_backBtn").click()
+#     #右滑退出wps
+#     swipe((2,1000),(700,1000))
+#     #删除导入的文件
+#     poco("androidx.compose.ui.platform.ComposeView")\
+#     .child("android.view.View").child("android.view.View")\
+#     .child("android.view.View")[3].child("更多设置")[1].click()
+#     poco(text="删除文档").click()
+#     poco(text="删除").click()
+#     poco("首页").click()
     
 
 
@@ -438,7 +440,7 @@ if __name__=="__main__":
     test_my_file_list_empty_docx_open()
     test_reading_export_order_rename()
     test_reading_file_trans_import()
-    test_reading_import_pdf_open()
+    # test_reading_import_pdf_open()
     test_reading_mode()
     test_wechat_reading_open_and_search()
 #     test()

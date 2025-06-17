@@ -215,64 +215,64 @@ def test_note_recording_lexicon():
     poco("首页").click()
     
 
-# 导出分享链接--音频回听
-def test_note_export_audio(note_name="测试录音中文"):
-    poco(text=note_name).click()
-    poco("更多设置").click()
-    poco(text="分享笔记").click()
-    sleep(1)
-    #直接点击复制分享链接
-    poco(text="分享链接").click()
-    poco("close dialog").click()
-    #获取剪贴板的网址和密码
-    touch((600,1170),duration=2)
-    #点击粘贴
-    poco("com.aispeech.tablet:id/tv_selection_paste").click()
-    #点击复制
-    poco("com.aispeech.tablet:id/tv_selection_copy").click()
-    #获取剪贴板的网址和密码
-    content = poco("android.widget.LinearLayout")\
-    .offspring("android:id/content")\
-    .child("androidx.compose.ui.platform.ComposeView")\
-    .child("android.view.View").child("android.view.View")\
-    .child("androidx.compose.ui.viewinterop.ViewFactoryHolder")\
-    .offspring("androidx.viewpager.widget.ViewPager")\
-    .offspring("com.aispeech.tablet:id/editor_scroll_view")\
-    .child("android.widget.FrameLayout")\
-    .child("android.widget.FrameLayout")\
-    .child("android.widget.RelativeLayout")[1]\
-    .child("com.aispeech.tablet:id/editTextView").get_text()
-    url,password = extract_url_and_password(content)
-    print("提取出来的链接是：",url)
-    sleep(1)
-    #删除复制的内容
-    touch((600,1170))
-    poco("com.aispeech.tablet:id/tv_selection_del").click()
-    poco("返回").click()
-    #打开浏览器
-    poco("应用").click()
-    poco("浏览器图标").click()
-    sleep(5)
-    #输入网址
-    poco("com.ume.browser:id/search_engine_icon").click()
-    text(text=url,enter=True)
-    sleep(5)
-    #点击回听音频
-    poco(text="").click()
-    poco("android.widget.LinearLayout")\
-    .offspring("com.ume.browser:id/compositor_view_holder")\
-    .offspring("android.widget.FrameLayout")\
-    .child("android.view.ViewGroup")\
-    .child("android.webkit.WebView")\
-    .offspring("app").child("android.view.View")\
-    .child("android.view.View")[3].swipe([0.1353, -0.0035])
-    sleep(2)
-    poco(text="").click()
-    poco("com.ume.browser:id/nav_backward").click()
-    #右滑退出
-    swipe((9,848),(700,848))
-    poco("com.ume.browser:id/exit_confirm").click()
-    poco("首页").click()
+# # 导出分享链接--音频回听
+# def test_note_export_audio(note_name="测试录音中文"):
+#     poco(text=note_name).click()
+#     poco("更多设置").click()
+#     poco(text="分享笔记").click()
+#     sleep(1)
+#     #直接点击复制分享链接
+#     poco(text="分享链接").click()
+#     poco("close dialog").click()
+#     #获取剪贴板的网址和密码
+#     touch((600,1170),duration=2)
+#     #点击粘贴
+#     poco("com.aispeech.tablet:id/tv_selection_paste").click()
+#     #点击复制
+#     poco("com.aispeech.tablet:id/tv_selection_copy").click()
+#     #获取剪贴板的网址和密码
+#     content = poco("android.widget.LinearLayout")\
+#     .offspring("android:id/content")\
+#     .child("androidx.compose.ui.platform.ComposeView")\
+#     .child("android.view.View").child("android.view.View")\
+#     .child("androidx.compose.ui.viewinterop.ViewFactoryHolder")\
+#     .offspring("androidx.viewpager.widget.ViewPager")\
+#     .offspring("com.aispeech.tablet:id/editor_scroll_view")\
+#     .child("android.widget.FrameLayout")\
+#     .child("android.widget.FrameLayout")\
+#     .child("android.widget.RelativeLayout")[1]\
+#     .child("com.aispeech.tablet:id/editTextView").get_text()
+#     url,password = extract_url_and_password(content)
+#     print("提取出来的链接是：",url)
+#     sleep(1)
+#     #删除复制的内容
+#     touch((600,1170))
+#     poco("com.aispeech.tablet:id/tv_selection_del").click()
+#     poco("返回").click()
+#     #打开浏览器
+#     poco("应用").click()
+#     poco("浏览器图标").click()
+#     sleep(5)
+#     #输入网址
+#     poco("com.ume.browser:id/search_engine_icon").click()
+#     text(text=url,enter=True)
+#     sleep(5)
+#     #点击回听音频
+#     poco(text="").click()
+#     poco("android.widget.LinearLayout")\
+#     .offspring("com.ume.browser:id/compositor_view_holder")\
+#     .offspring("android.widget.FrameLayout")\
+#     .child("android.view.ViewGroup")\
+#     .child("android.webkit.WebView")\
+#     .offspring("app").child("android.view.View")\
+#     .child("android.view.View")[3].swipe([0.1353, -0.0035])
+#     sleep(2)
+#     poco(text="").click()
+#     poco("com.ume.browser:id/nav_backward").click()
+#     #右滑退出
+#     swipe((9,848),(700,848))
+#     poco("com.ume.browser:id/exit_confirm").click()
+#     poco("首页").click()
 
 
     

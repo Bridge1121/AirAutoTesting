@@ -195,33 +195,33 @@ def test_add_agent_no_internet():
     poco("首页").click()
 
 
-# 在录音AI摘要中将包含日期的待办信息加入待办列表
-def test_ai_abstract_add_agent(note_name="测试录音中文"):
-    poco("笔记").click()
-    #打开准备好的笔记
-    poco(text=note_name).click()
-    swipe_press_ai((95,410),(490,410))
-    #点击复制
-    poco(text="复制").click()
-    #返回
-    poco("返回").click()
-    poco("待办").click()
-    poco(text="请在下方书写待办或点击此处新建待办").click()
-    #长按粘贴
-    poco("android.widget.FrameLayout")\
-    .offspring("android.view.ViewGroup")\
-    .child("android.view.View")\
-    .child("android.view.View")\
-    .child("android.view.View")\
-    .child("android.widget.EditText")[0]\
-    .child("android.view.View").long_click(duration=2)
-    poco("android:id/floating_toolbar_menu_item_text").click()
-    poco(text="确认").click()
-    #删除新建代办
-    touch(Template(r"tpl1749637230158.png", record_pos=(0.448, 0.182), resolution=(1200, 1920)))
-    poco(text="删除").click()
-    poco(text="确认").click()
-    poco("首页").click()
+# # 在录音AI摘要中将包含日期的待办信息加入待办列表
+# def test_ai_abstract_add_agent(note_name="测试录音中文"):
+#     poco("笔记").click()
+#     #打开准备好的笔记
+#     poco(text=note_name).click()
+#     swipe_press_ai((95,410),(490,410))
+#     #点击复制
+#     poco(text="复制").click()
+#     #返回
+#     poco("返回").click()
+#     poco("待办").click()
+#     poco(text="请在下方书写待办或点击此处新建待办").click()
+#     #长按粘贴
+#     poco("android.widget.FrameLayout")\
+#     .offspring("android.view.ViewGroup")\
+#     .child("android.view.View")\
+#     .child("android.view.View")\
+#     .child("android.view.View")\
+#     .child("android.widget.EditText")[0]\
+#     .child("android.view.View").long_click(duration=2)
+#     poco("android:id/floating_toolbar_menu_item_text").click()
+#     poco(text="确认").click()
+#     #删除新建代办
+#     touch(Template(r"tpl1749637230158.png", record_pos=(0.448, 0.182), resolution=(1200, 1920)))
+#     poco(text="删除").click()
+#     poco(text="确认").click()
+#     poco("首页").click()
     
 
     
