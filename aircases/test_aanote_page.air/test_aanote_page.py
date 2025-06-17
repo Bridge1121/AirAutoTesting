@@ -321,6 +321,7 @@ def test_ai_helper():
     .child("android.view.View").child("android.view.View")\
     .child("android.view.View")[2].offspring("返回")[0].click()
     poco("返回").click()
+    wait(Template(r"tpl1748339487185.png"), timeout=5)
     touch(Template(r"tpl1748339487185.png", record_pos=(0.458, -0.484), resolution=(1200, 1920)))
     poco(text="删除").click()
     poco(text="确认").click()

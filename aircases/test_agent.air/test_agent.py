@@ -159,6 +159,7 @@ def test_add_agent_and_notice():
     poco(text="确认").click()
     #切换视图，删除代办
     poco(text="列表视图").click()
+    sleep(1)
     find_del_agent(agent_name)
     poco(text="日历视图").click()
     poco("首页").click()

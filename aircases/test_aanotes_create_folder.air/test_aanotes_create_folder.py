@@ -10,6 +10,13 @@ sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..", "utils")))
 from utils.commen import *
 
 auto_setup(__file__, logdir=True, project_root=os.path.dirname(__file__))
+
+
+#删除文件
+def del_file():
+    poco("更多设置").click()
+    poco(text="删除").click()
+    poco(text="确认").click()
     
 
     
