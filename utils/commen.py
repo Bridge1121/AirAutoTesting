@@ -112,7 +112,6 @@ def find_del_agent(agent_name):
     for i in range(len(agents)):
         if agents[i].get_text() == agent_name:
             agents[i + 2].click()
-
             #             touch(Template(r"tpl1749637230158.png", record_pos=(0.448, 0.182), resolution=(1200, 1920)))
             # 删除新增的代办
             poco(text="删除").click()

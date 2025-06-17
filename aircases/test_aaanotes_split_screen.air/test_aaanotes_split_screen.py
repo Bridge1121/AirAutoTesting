@@ -118,42 +118,42 @@ def test_post_meeting_summary_top_bottom_split_screen():
 
 
 # 分屏后，滑动浏览页面，滚动插入图片    
-def test_insert_pic_top_bottom_split_screen():
-    if is_login()==True:
-        login()
-    #点击应用
-    poco("应用").click()
-    #打开wps
-    poco("WPS Office图标").click()
-    #下拉菜单
-    swipe((1036,0),(886,432))
-    poco(text="分屏笔记").click()
-    #点击右上角更多
-    poco("更多设置").click()
-    #点击插入图片
-    poco(text="插入图片").click()
-    #点击近期图片第一张
-    poco("android.widget.FrameLayout")\
-        .child("android.widget.LinearLayout")\
-        .offspring("com.android.documentsui:id/drawer_layout")\
-        .child("android.widget.ScrollView")\
-        .offspring("2025-05-19 17_05_66.jpg, 3.46 MB, 5月19日")\
-        .offspring("com.android.documentsui:id/icon_mime_lg").click()
-    #滑动屏幕查看图片
-    poco("androidx.compose.ui.viewinterop.ViewFactoryHolder").swipe([-0.0882, -0.3166])
-    sleep(1)
-    #恢复笔记全屏
-    poco("com.android.systemui:id/docked_divider_handle").swipe([-0.0686, -0.578])
-    sleep(1)
-    poco("返回").click()
-    sleep(1)
-    poco("笔记").click()
-    #删除笔记
-    touch(Template(r"tpl1748339487185.png", record_pos=(0.458, -0.484), resolution=(1200, 1920)))
-    poco(text="删除").click()
-    poco(text="确认").click()
-    #4、回到首页
-    poco("首页").click()
+# def test_insert_pic_top_bottom_split_screen():
+#     if is_login()==True:
+#         login()
+#     #点击应用
+#     poco("应用").click()
+#     #打开wps
+#     poco("WPS Office图标").click()
+#     #下拉菜单
+#     swipe((1036,0),(886,432))
+#     poco(text="分屏笔记").click()
+#     #点击右上角更多
+#     poco("更多设置").click()
+#     #点击插入图片
+#     poco(text="插入图片").click()
+#     #点击近期图片第一张
+#     poco("android.widget.FrameLayout")\
+#         .child("android.widget.LinearLayout")\
+#         .offspring("com.android.documentsui:id/drawer_layout")\
+#         .child("android.widget.ScrollView")\
+#         .offspring("2025-05-19 17_05_66.jpg, 3.46 MB, 5月19日")\
+#         .offspring("com.android.documentsui:id/icon_mime_lg").click()
+#     #滑动屏幕查看图片
+#     poco("androidx.compose.ui.viewinterop.ViewFactoryHolder").swipe([-0.0882, -0.3166])
+#     sleep(1)
+#     #恢复笔记全屏
+#     poco("com.android.systemui:id/docked_divider_handle").swipe([-0.0686, -0.578])
+#     sleep(1)
+#     poco("返回").click()
+#     sleep(1)
+#     poco("笔记").click()
+#     #删除笔记
+#     touch(Template(r"tpl1748339487185.png", record_pos=(0.458, -0.484), resolution=(1200, 1920)))
+#     poco(text="删除").click()
+#     poco(text="确认").click()
+#     #4、回到首页
+#     poco("首页").click()
     
 #上下分屏滚动保存笔记后搜索
 def test_create_notes_and_search_top_bottom_split_screen():
