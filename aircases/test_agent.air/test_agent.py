@@ -76,6 +76,7 @@ def test_edit_agent_date():
     touch(Template(r"tpl1749638112487.png", record_pos=(0.008, 0.033), resolution=(1200, 1920)))
     #点击确定
     poco(text="确认").click()
+    poco(text="确认").click()
     poco("首页").click()
 
 
