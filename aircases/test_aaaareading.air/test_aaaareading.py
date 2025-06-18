@@ -34,6 +34,11 @@ def test_logout_reading_init_and_export():
     #点击保存
     poco("cn.wps.moffice_eng:id/image_save").click()
     poco("cn.wps.moffice_eng:id/btn_save").click()
+    sleep(1)
+    #如果存在同名文件就进行替换
+    if poco("cn.wps.moffice_eng:id/dialog_button_positive").exists():
+        poco("cn.wps.moffice_eng:id/dialog_button_positive").click()
+    sleep(1)
     #关闭文件
     poco("cn.wps.moffice_eng:id/writer_maintoolbar_backBtn").click()
     #返回到最近文件页面
