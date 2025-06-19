@@ -80,16 +80,22 @@ def test_ai_history_view_no_internet():
         .child("android.widget.LinearLayout")[0] \
         .child("com.aispeech.ccui.systemui:id/iv_cell_icon").click()
     touch((1000, 1600))
+    # 点击返回
+    poco("返回").click()
     # 恢复网络
     swipe((1036, 0), (886, 432))
     poco("com.aispeech.ccui.systemui:id/cellGrid") \
         .child("android.widget.LinearLayout")[0] \
         .child("com.aispeech.ccui.systemui:id/iv_cell_icon") \
-        .click()
-    sleep(5)
-    touch((1000, 1600))
-    # 点击返回
-    poco("返回").click()
+        .long_click(duration=2)
+    poco("com.zlt.zltsettings:id/sw_airplane").click()
+    poco(text="已连接").wait_for_appearance(timeout=10)
+    poco("android.widget.FrameLayout") \
+        .child("android.widget.LinearLayout") \
+        .offspring("android:id/content") \
+        .offspring("com.zlt.zltsettings:id/ll_back") \
+        .child("android.widget.ImageView").click()
+
     poco("首页").click()
 
 
@@ -173,7 +179,7 @@ def test_index_ai_history():
             .child("android.view.View")[6].click()
     ques = "我在首页跟你聊天"
     text(ques, enter=False)
-    #todo------为什么找不到分享？？？
+    poco("分享").wait_for_appearance(timeout=10)
     poco("分享").click()
     sleep(2)
     poco("返回").click()
