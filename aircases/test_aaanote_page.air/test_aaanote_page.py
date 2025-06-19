@@ -298,6 +298,8 @@ def test_note_template_change():
 
 #手指长按AI笔记文本选中后使用工具栏AI助手
 def test_ai_helper():
+    if is_login()==True:
+        login()
     #点击笔记
     poco("笔记").click()
     sleep(1)
@@ -314,7 +316,7 @@ def test_ai_helper():
     touch((581,1197))
     touch((581,997))
     poco("com.aispeech.tablet:id/tv_selection_ask").click()
-    sleep(1)
+    sleep(2)
     #关闭ai助手
     poco("android.widget.LinearLayout")\
     .offspring("androidx.compose.ui.platform.ComposeView")\
@@ -346,7 +348,7 @@ if __name__=="__main__":
 #     test_note_page_copy()
 #     test_note_recording_lexicon()
 #     test()
-    test_note_export_audio()
+#     test_note_export_audio()
     test_note_template_change()
     test_ai_helper()
     

@@ -109,16 +109,7 @@ def test_focus_on_agent_edit_date():
     .child("android.widget.TextView")[0].click()
     poco("切换为选择年份").click()
     #切换年份
-    poco("android.widget.FrameLayout")\
-    .offspring("android.view.ViewGroup")\
-    .child("android.view.View")\
-    .child("android.view.View")\
-    .child("android.view.View")[0]\
-    .child("android.view.View")\
-    .child("android.view.View")[1]\
-    .child("android.view.View")\
-    .child("android.widget.TextView")[8]\
-    .child("android.view.View").click()
+    touch(Template(r"tpl1750229209384.png", record_pos=(-0.187, -0.248), resolution=(1200, 1920)))
     #切换月份
     poco("转到下个月").click()
     #切换日期

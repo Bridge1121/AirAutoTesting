@@ -8,15 +8,15 @@ import schedule
 
 # 钉钉机器人配置
 #测试群
-DINGTALK_WEBHOOK = "https://oapi.dingtalk.com/robot/send?access_token=93c04271a11ef58697a0af784302016ccbfec2dfc45a0dd08964c022d217efe6"
+# DINGTALK_WEBHOOK = "https://oapi.dingtalk.com/robot/send?access_token=93c04271a11ef58697a0af784302016ccbfec2dfc45a0dd08964c022d217efe6"
 #办公本hook
-# DINGTALK_WEBHOOK = "https://oapi.dingtalk.com/robot/send?access_token=9f4def1f3b64509d35397661e137ec2b463bedaffeb8840b73447fe3b61af383"
+DINGTALK_WEBHOOK = "https://oapi.dingtalk.com/robot/send?access_token=9f4def1f3b64509d35397661e137ec2b463bedaffeb8840b73447fe3b61af383"
 
 
 TASK_NAME = "办公本UI自动化测试"
 TEAM_NAME = "测试小组"
 PROJECT_NAME = "办公本自动化测试项目"
-DEVICE_MODEL = "办公本"
+DEVICE_MODEL = "办公本Pro"
 APK_VERSION = "V2.4.0.25061801"
 
 def send_to_dingtalk(webhook_url, message):
@@ -62,7 +62,7 @@ def run_all_scripts():
     duration = time.time() - start_time
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-    msg = f"办公本自动化测试定时任务完成提醒 ({DEVICE_MODEL})\n\n"
+    msg = f"办公本UI自动化测试任务完成提醒 ({DEVICE_MODEL})\n\n"
     msg += f"测试任务: {TASK_NAME}\n"
     msg += f"所在团队: {TEAM_NAME}\n"
     msg += f"所在项目: {PROJECT_NAME}\n"

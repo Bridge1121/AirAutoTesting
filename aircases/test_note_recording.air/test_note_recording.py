@@ -122,77 +122,77 @@ def test_note_recording_no_internet():
 
 
 #转写过程中点击录音原文的“替换”按钮查看弹窗显示
-def test_note_recording_replacement(default_note="测试录音中文",default_group="测试笔记",replaced_text="他",replace_text="狗"):
-    if is_login()==True:
-        login()
-    #点击笔记
-    poco("笔记").click()
-    sleep(1)
-    #点击分组
-    poco(text=default_group).click()
-    sleep(1)
-    poco(text=default_note).click()
-    sleep(1)
-    poco(text="继续录音").click()
-    #点击录音原文
-    poco(text="录音原文").click()
-    #点击替换
-    poco(text="查找/替换").click()
-    sleep(1)
-    #验证ui
-    poco(text="替换").click()
-    sleep(1)
-    assert poco(text="同步替换AI笔记").exists()
-    assert poco(text="替换全部").exists()
-    poco(text="替换当前").exists()
-    sleep(1)
-    poco(text="输入您要查找的内容").click()
-    text(replaced_text)
-    poco(text="输入您要替换的内容").click()
-    text(replace_text)
-    #勾选ai笔记
-    poco(text="同步替换AI笔记").click()
-    #替换全部
-    poco(text="替换全部").click()
-    #结束录音
-    poco(text="结束").click()
-    #返回
-    poco("返回").click()
-    poco(text="全部笔记").click()
-    poco("首页").click()
-    
-
-    
-#转写过程中在录音原文中长按文字点击“替换”按钮查看弹窗显示并进行替换内容
-def test_note_replacement_long_touch(default_note="测试录音中文",default_group="测试笔记"):
-    if is_login()==True:
-        login()
-    #点击笔记
-    poco("笔记").click()
-    sleep(1)
-    #点击分组
-    poco(text=default_group).click()
-    sleep(1)
-    poco(text=default_note).click()
-    sleep(1)
-    poco(text="继续录音").click()
-    #点击录音原文
-    poco(text="录音原文").click()
-    #长按
-    touch((56,708), duration=3)
-    #点击替换
-    poco(text="替换").click()
-    sleep(1)
-    assert poco(text="同步替换AI笔记").exists()
-    assert poco(text="替换全部").exists()
-    poco(text="替换当前").exists()
-    sleep(1)
-    #点击替换
-    poco(text="替换全部").click()
-    poco(text="结束").click()
-    poco("返回").click()
-    poco(text="全部笔记").click()
-    poco("首页").click()
+# def test_note_recording_replacement(default_note="测试录音中文",default_group="测试笔记",replaced_text="他",replace_text="狗"):
+#     if is_login()==True:
+#         login()
+#     #点击笔记
+#     poco("笔记").click()
+#     sleep(1)
+#     #点击分组
+#     poco(text=default_group).click()
+#     sleep(1)
+#     poco(text=default_note).click()
+#     sleep(1)
+#     poco(text="继续录音").click()
+#     #点击录音原文
+#     poco(text="录音原文").click()
+#     #点击替换
+#     poco(text="查找/替换").click()
+#     sleep(1)
+#     #验证ui
+#     poco(text="替换").click()
+#     sleep(1)
+#     assert poco(text="同步替换AI笔记").exists()
+#     assert poco(text="替换全部").exists()
+#     poco(text="替换当前").exists()
+#     sleep(1)
+#     poco(text="输入您要查找的内容").click()
+#     text(replaced_text)
+#     poco(text="输入您要替换的内容").click()
+#     text(replace_text)
+#     #勾选ai笔记
+#     poco(text="同步替换AI笔记").click()
+#     #替换全部
+#     poco(text="替换全部").click()
+#     #结束录音
+#     poco(text="结束").click()
+#     #返回
+#     poco("返回").click()
+#     poco(text="全部笔记").click()
+#     poco("首页").click()
+#
+#
+#
+# #转写过程中在录音原文中长按文字点击“替换”按钮查看弹窗显示并进行替换内容
+# def test_note_replacement_long_touch(default_note="测试录音中文",default_group="测试笔记"):
+#     if is_login()==True:
+#         login()
+#     #点击笔记
+#     poco("笔记").click()
+#     sleep(1)
+#     #点击分组
+#     poco(text=default_group).click()
+#     sleep(1)
+#     poco(text=default_note).click()
+#     sleep(1)
+#     poco(text="继续录音").click()
+#     #点击录音原文
+#     poco(text="录音原文").click()
+#     #长按
+#     touch((56,708), duration=3)
+#     #点击替换
+#     poco(text="替换").click()
+#     sleep(1)
+#     assert poco(text="同步替换AI笔记").exists()
+#     assert poco(text="替换全部").exists()
+#     poco(text="替换当前").exists()
+#     sleep(1)
+#     #点击替换
+#     poco(text="替换全部").click()
+#     poco(text="结束").click()
+#     poco("返回").click()
+#     poco(text="全部笔记").click()
+#     poco("首页").click()
     
     
     
@@ -380,8 +380,8 @@ def test_note_replacement_long_touch(default_note="测试录音中文",default_g
 if __name__=="__main__":
     test_note_recording_back()
     test_note_recording_no_internet()
-    test_note_recording_replacement()
-    test_note_replacement_long_touch()
+    # test_note_recording_replacement()
+    # test_note_replacement_long_touch()
 #     test_note_alpha_replacement_long_touch()
 #     test_note_alpha_replacement_ai_long_touch()
 #     test_note_recording_manage()

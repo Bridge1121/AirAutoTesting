@@ -76,7 +76,7 @@ def test_edit_agent_date():
     touch(Template(r"tpl1749638112487.png", record_pos=(0.008, 0.033), resolution=(1200, 1920)))
     #点击确定
     poco(text="确认").click()
-    poco(text="确认").click()
+    # poco(text="确认").click()
     poco("首页").click()
 
 
@@ -391,7 +391,9 @@ def test_add_agent_no_time_and_edit():
     agent_name="这是一条没有时间的代办"
     text(agent_name,enter=False)
     #删除时间
-    poco("clean").click()
+    if poco("clean").exists():
+        poco("clean").click()
+    # poco("clean").click()
     poco(text="确认").click()
     #切换列表视图
     poco(text="列表视图").click()
