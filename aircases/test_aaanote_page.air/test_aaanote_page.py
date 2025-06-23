@@ -9,7 +9,8 @@ sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..", "utils")))
 from utils.commen import *
 
 auto_setup(__file__, logdir=True, project_root=os.path.dirname(__file__))
-    
+
+TIME_OUT=100
     
 # 点击页面排序，弹出预览缩略视图，显示当前笔记的所有手写页面
 def test_note_page_order():
@@ -91,6 +92,7 @@ def test_note_page_del():
     poco(text="新建笔记").click()
     sleep(1)
     for i in range(2):
+        poco("更多设置").wait_for_appearance(timeout=TIME_OUT)
         poco("更多设置").click()
         poco(text="插入文字").click()
         sleep(2)

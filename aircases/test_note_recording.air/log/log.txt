@@ -1,0 +1,20 @@
+{"tag": "function", "depth": 1, "time": 1750671998.6531374, "data": {"name": "keyevent", "call_args": {"keyname": "BACK", "kwargs": {}}, "start_time": 1750671998.407296, "ret": null, "end_time": 1750671998.6531374}}
+{"tag": "function", "depth": 1, "time": 1750671999.6536372, "data": {"name": "sleep", "call_args": {"secs": 1}, "start_time": 1750671998.6531374, "ret": null, "end_time": 1750671999.6536372}}
+{"tag": "function", "depth": 1, "time": 1750671999.916968, "data": {"name": "keyevent", "call_args": {"keyname": "BACK", "kwargs": {}}, "start_time": 1750671999.692801, "ret": null, "end_time": 1750671999.916968}}
+{"tag": "function", "depth": 1, "time": 1750672000.9178946, "data": {"name": "sleep", "call_args": {"secs": 1}, "start_time": 1750671999.916968, "ret": null, "end_time": 1750672000.9178946}}
+{"tag": "function", "depth": 1, "time": 1750672001.2242887, "data": {"name": "keyevent", "call_args": {"keyname": "BACK", "kwargs": {}}, "start_time": 1750672000.9793184, "ret": null, "end_time": 1750672001.2242887}}
+{"tag": "function", "depth": 1, "time": 1750672002.2247515, "data": {"name": "sleep", "call_args": {"secs": 1}, "start_time": 1750672001.2242887, "ret": null, "end_time": 1750672002.2247515}}
+{"tag": "function", "depth": 1, "time": 1750672002.5204747, "data": {"name": "keyevent", "call_args": {"keyname": "BACK", "kwargs": {}}, "start_time": 1750672002.2750592, "ret": null, "end_time": 1750672002.5204747}}
+{"tag": "function", "depth": 1, "time": 1750672003.521137, "data": {"name": "sleep", "call_args": {"secs": 1}, "start_time": 1750672002.5204747, "ret": null, "end_time": 1750672003.521137}}
+{"tag": "function", "depth": 1, "time": 1750672003.816024, "data": {"name": "keyevent", "call_args": {"keyname": "BACK", "kwargs": {}}, "start_time": 1750672003.5688484, "ret": null, "end_time": 1750672003.816024}}
+{"tag": "function", "depth": 1, "time": 1750672004.8169158, "data": {"name": "sleep", "call_args": {"secs": 1}, "start_time": 1750672003.816024, "ret": null, "end_time": 1750672004.8169158}}
+{"tag": "function", "depth": 1, "time": 1750672005.1688726, "data": {"name": "keyevent", "call_args": {"keyname": "BACK", "kwargs": {}}, "start_time": 1750672004.9269438, "ret": null, "end_time": 1750672005.1688726}}
+{"tag": "function", "depth": 1, "time": 1750672006.1698174, "data": {"name": "sleep", "call_args": {"secs": 1}, "start_time": 1750672005.1688726, "ret": null, "end_time": 1750672006.1698174}}
+{"tag": "function", "depth": 1, "time": 1750672006.4610884, "data": {"name": "keyevent", "call_args": {"keyname": "BACK", "kwargs": {}}, "start_time": 1750672006.2195485, "ret": null, "end_time": 1750672006.4610884}}
+{"tag": "function", "depth": 1, "time": 1750672007.4620233, "data": {"name": "sleep", "call_args": {"secs": 1}, "start_time": 1750672006.4610884, "ret": null, "end_time": 1750672007.4620233}}
+{"tag": "function", "depth": 1, "time": 1750672007.7452865, "data": {"name": "keyevent", "call_args": {"keyname": "BACK", "kwargs": {}}, "start_time": 1750672007.5172188, "ret": null, "end_time": 1750672007.7452865}}
+{"tag": "function", "depth": 1, "time": 1750672008.745868, "data": {"name": "sleep", "call_args": {"secs": 1}, "start_time": 1750672007.7452865, "ret": null, "end_time": 1750672008.745868}}
+{"tag": "function", "depth": 1, "time": 1750672009.0198739, "data": {"name": "keyevent", "call_args": {"keyname": "BACK", "kwargs": {}}, "start_time": 1750672008.7926645, "ret": null, "end_time": 1750672009.0198739}}
+{"tag": "function", "depth": 1, "time": 1750672010.0207295, "data": {"name": "sleep", "call_args": {"secs": 1}, "start_time": 1750672009.0198739, "ret": null, "end_time": 1750672010.0207295}}
+{"tag": "function", "depth": 1, "time": 1750672010.3136482, "data": {"name": "keyevent", "call_args": {"keyname": "BACK", "kwargs": {}}, "start_time": 1750672010.0721853, "ret": null, "end_time": 1750672010.3136482}}
+{"tag": "function", "depth": 1, "time": 1750672011.3145063, "data": {"name": "sleep", "call_args": {"secs": 1}, "start_time": 1750672010.3136482, "ret": null, "end_time": 1750672011.3145063}}

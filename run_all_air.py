@@ -6,18 +6,20 @@ import datetime
 import requests
 import schedule
 
+from utils.commen import try_back_to_home
+
 # 钉钉机器人配置
 #测试群
-# DINGTALK_WEBHOOK = "https://oapi.dingtalk.com/robot/send?access_token=93c04271a11ef58697a0af784302016ccbfec2dfc45a0dd08964c022d217efe6"
+DINGTALK_WEBHOOK = "https://oapi.dingtalk.com/robot/send?access_token=93c04271a11ef58697a0af784302016ccbfec2dfc45a0dd08964c022d217efe6"
 #办公本hook
-DINGTALK_WEBHOOK = "https://oapi.dingtalk.com/robot/send?access_token=9f4def1f3b64509d35397661e137ec2b463bedaffeb8840b73447fe3b61af383"
+# DINGTALK_WEBHOOK = "https://oapi.dingtalk.com/robot/send?access_token=9f4def1f3b64509d35397661e137ec2b463bedaffeb8840b73447fe3b61af383"
 
 
 TASK_NAME = "办公本UI自动化测试"
 TEAM_NAME = "测试小组"
 PROJECT_NAME = "办公本自动化测试项目"
 DEVICE_MODEL = "办公本Pro"
-APK_VERSION = "V2.4.0.25061801"
+APK_VERSION = "V2.4.0.25062301"
 
 def send_to_dingtalk(webhook_url, message):
     headers = {'Content-Type': 'application/json'}
@@ -50,10 +52,16 @@ def run_all_scripts():
             test_funcs = [f for f in dir(module) if callable(getattr(module, f)) and f.startswith("test_")]
             for func in test_funcs:
                 try:
+                    # 确保执行用例前回到首页
+                    if not try_back_to_home():
+                        print("❌ 回到首页失败，跳过当前用例")
+                        continue  # 跳过当前用例，进入下一个用例
+
                     print(f"正在运行 {py_file} 里的 {func}() ...")
                     getattr(module, func)()
                     success += 1
                     print(f"✅ {func}() 运行成功")
+
                 except Exception as e:
                     failure += 1
                     print(f"❌ {func}() 运行失败：{e}")

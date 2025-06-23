@@ -61,6 +61,7 @@ def test_note_share_method():
     poco(text="网页转PDF").click()
     sleep(8)
     poco("cn.wps.moffice_eng:id/btn_export").click()
+    sleep(2)
     poco("cn.wps.moffice_eng:id/titlebar_back_icon").click()
     poco("返回").click()
     touch(Template(r"tpl1748339487185.png", record_pos=(0.458, -0.484), resolution=(1200, 1920)))

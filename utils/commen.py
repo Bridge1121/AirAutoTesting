@@ -12,6 +12,25 @@ from poco.drivers.android.uiautomation import AndroidUiautomationPoco
 
 poco = AndroidUiautomationPoco(use_airtest_input=True, screenshot_each_action=False)
 dev=device()
+TIME_OUT=100
+
+
+def try_back_to_home(max_try=5, interval=1):
+    """
+    尝试多次返回首页，如果返回成功则返回 True，失败则返回 False
+    """
+    for i in range(max_try):
+        if poco("首页").exists():  # 判断首页元素是否存在
+            print("✅ 已回到首页")
+            return True
+        print(f"⚠️ 第 {i + 1} 次尝试返回")
+        keyevent("BACK")  # 返回上一层
+        sleep(interval)
+    #否则直接返回主页
+    keyevent("HOME")
+
+    print("❌ 未能返回到首页")
+    return False
 
 
 # 提取日期中的日
