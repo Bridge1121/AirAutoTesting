@@ -2,6 +2,8 @@
 __author__ = "wenxiu.tian_sx"
 import sys
 
+import allure
+import pytest
 from airtest.core.api import *
 # 设置导入路径（确保能找到 utils 目录）
 sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..", "utils")))
@@ -12,6 +14,9 @@ auto_setup(__file__, logdir=True, project_root=os.path.dirname(__file__))
 
 
 # AI助手对话详情页上传文件过程中返回后点击确认
+@pytest.mark.testcase
+@allure.description("AI助手对话详情页上传文件过程中返回后点击确认")
+@allure.title("AI助手对话详情页上传文件过程中返回后点击确认")
 def test_ai_upload_file():
     if is_login() == True:
         login()
@@ -38,6 +43,9 @@ def test_ai_upload_file():
 
 
 # 查看AI助手历史会话为时间倒序显示且仅展示问题首句
+@pytest.mark.testcase
+@allure.description("查看AI助手历史会话为时间倒序显示且仅展示问题首句")
+@allure.title("查看AI助手历史会话为时间倒序显示且仅展示问题首句")
 def test_ai_history_view():
     if is_login() == True:
         login()
@@ -69,6 +77,9 @@ def test_ai_history_view():
 
 
 # 办公本有历史会话时点击AI助手历史会话后加载失败弹出test
+@pytest.mark.testcase
+@allure.description("办公本有历史会话时点击AI助手历史会话后加载失败弹出test")
+@allure.title("办公本有历史会话时点击AI助手历史会话后加载失败弹出test")
 def test_ai_history_view_no_internet():
     if is_login() == True:
         login()
@@ -100,6 +111,9 @@ def test_ai_history_view_no_internet():
 
 
 # 点击历史会话的文件在云端时下载后点击直接打开，文件上传后预览
+@pytest.mark.testcase
+@allure.description("点击历史会话的文件在云端时下载后点击直接打开，文件上传后预览")
+@allure.title("点击历史会话的文件在云端时下载后点击直接打开，文件上传后预览")
 def test_ai_history_file_open():
     poco("AI助手").click()
     poco("文件输入").click()
@@ -168,6 +182,9 @@ def test_ai_history_file_open():
 
 
 # 在首页AI进行的对话能够在AI助手页历史会话页面查看
+@pytest.mark.testcase
+@allure.description("在首页AI进行的对话能够在AI助手页历史会话页面查看")
+@allure.title("在首页AI进行的对话能够在AI助手页历史会话页面查看")
 def test_index_ai_history():
     if poco(text="在此输入您的想法~").exists():
         poco(text="在此输入您的想法~").click()
@@ -193,6 +210,9 @@ def test_index_ai_history():
 
 
 # 语音输入模式下点击上传文件时会跳转到AI助手页
+@pytest.mark.testcase
+@allure.description("语音输入模式下点击上传文件时会跳转到AI助手页")
+@allure.title("语音输入模式下点击上传文件时会跳转到AI助手页")
 def test_index_ai_upload_file():
     if poco(text="在此输入您的想法~").exists():
         # 点击语音模式
@@ -206,6 +226,9 @@ def test_index_ai_upload_file():
 
 
 # 在笔记页AI进行的对话不能在AI助手页历史会话页面查看
+@pytest.mark.testcase
+@allure.description("在笔记页AI进行的对话不能在AI助手页历史会话页面查看")
+@allure.title("在笔记页AI进行的对话不能在AI助手页历史会话页面查看")
 def test_note_ai_history():
     # 点击笔记
     poco("笔记").click()

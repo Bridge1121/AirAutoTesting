@@ -3,6 +3,8 @@ import os
 import subprocess
 import time
 import datetime
+
+import pytest
 import requests
 import schedule
 
@@ -19,7 +21,7 @@ TASK_NAME = "办公本UI自动化测试"
 TEAM_NAME = "测试小组"
 PROJECT_NAME = "办公本自动化测试项目"
 DEVICE_MODEL = "办公本Pro"
-APK_VERSION = "V2.4.0.25062301"
+APK_VERSION = "V2.4.0.25062501"
 
 def send_to_dingtalk(webhook_url, message):
     headers = {'Content-Type': 'application/json'}
@@ -41,6 +43,8 @@ def run_all_scripts():
 
     test_dir = "./aircases"
     import traceback
+
+
 
     for item in os.listdir(test_dir):
         if item.endswith(".air"):

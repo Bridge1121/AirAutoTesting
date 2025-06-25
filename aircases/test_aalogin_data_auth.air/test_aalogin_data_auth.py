@@ -4,6 +4,8 @@ __author__ = "wenxiu.tian_sx"
 
 import sys
 
+import allure
+import pytest
 from airtest.core.api import *
 # 设置导入路径（确保能找到 utils 目录）
 sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..", "utils")))
@@ -14,6 +16,9 @@ auto_setup(__file__, logdir=True, project_root=os.path.dirname(__file__))
     
 
 #已登录账号创建的笔记，退出登录后，创建的笔记不会显示在笔记列表中
+@pytest.mark.testcase
+@allure.description("已登录账号创建的笔记，退出登录后，创建的笔记不会显示在笔记列表中")
+@allure.title("已登录账号创建的笔记，退出登录后，创建的笔记不会显示在笔记列表中")
 def test_note_not_exist_after_logout():
     if is_login()==True:#未登录
         login()
@@ -47,6 +52,9 @@ def test_note_not_exist_after_logout():
 
 
 #未登录账号创建的笔记，登录账号时，会自动合并到账号中
+@pytest.mark.testcase
+@allure.description("未登录账号创建的笔记，登录账号时，会自动合并到账号中")
+@allure.title("未登录账号创建的笔记，登录账号时，会自动合并到账号中")
 def test_guest_notes_merge_into_account_after_login():
     #判断是否登录账号
     if is_login()==True:
@@ -62,6 +70,9 @@ def test_guest_notes_merge_into_account_after_login():
 
 
 #已登录账号，导入到我的文档中的文件，退出登录后，仍然显示在我的文档中
+@pytest.mark.testcase
+@allure.description("已登录账号，导入到我的文档中的文件，退出登录后，仍然显示在我的文档中")
+@allure.title("已登录账号，导入到我的文档中的文件，退出登录后，仍然显示在我的文档中")
 def test_export_file_logout():
     if is_login==True:
         login()

@@ -3,6 +3,8 @@ __author__ = "wenxiu.tian_sx"
 
 import sys
 
+import allure
+import pytest
 from airtest.core.api import *
 from airtest.core.android.touch_methods.base_touch import *
 # 设置导入路径（确保能找到 utils 目录）
@@ -39,6 +41,9 @@ auto_setup(__file__, logdir=True, project_root=os.path.dirname(__file__))
     
     
 # 用手点击AI按钮,AI会话窗页面显示
+@pytest.mark.testcase
+@allure.description("用手点击AI按钮,AI会话窗页面显示")
+@allure.title("用手点击AI按钮,AI会话窗页面显示")
 def test_ai_open():
     if is_login()==True:
         login()
@@ -65,6 +70,9 @@ def test_ai_open():
 
     
 # 用笔按住AI图标拖至手写处，然后松手,点击复制按钮复制答案
+@pytest.mark.testcase
+@allure.title("用笔按住AI图标拖至手写处，然后松手,点击复制按钮复制答案")
+@allure.description("用笔按住AI图标拖至手写处，然后松手,点击复制按钮复制答案")
 def test_ai_answer_copy():
     if is_login()==True:
         login()
@@ -111,6 +119,9 @@ def test_ai_answer_copy():
 
     
 #ai回答点击摘录到手写区，并进行编辑
+@pytest.mark.testcase
+@allure.description("ai回答点击摘录到手写区，并进行编辑")
+@allure.title("ai回答点击摘录到手写区，并进行编辑")
 def test_ai_answer_excerpt_to_handwriting_area_edit():
     #点击笔记
     poco("笔记").click()
@@ -151,6 +162,9 @@ def test_ai_answer_excerpt_to_handwriting_area_edit():
     
     
 #点击赞图标按钮，弹出反馈信息弹窗,在反馈弹窗中勾选选项、文本框输入内容
+@pytest.mark.testcase
+@allure.description("点击赞图标按钮，弹出反馈信息弹窗,在反馈弹窗中勾选选项、文本框输入内容")
+@allure.title("点击赞图标按钮，弹出反馈信息弹窗,在反馈弹窗中勾选选项、文本框输入内容")
 def test_ai_answer_support():
     #点击笔记
     poco("笔记").click()
@@ -193,6 +207,9 @@ def test_ai_answer_support():
 
 
 #点击踩图标按钮，弹出反馈信息弹窗,在反馈弹窗中勾选选项、文本框输入内容
+@pytest.mark.testcase
+@allure.description("点击踩图标按钮，弹出反馈信息弹窗,在反馈弹窗中勾选选项、文本框输入内容")
+@allure.title("点击踩图标按钮，弹出反馈信息弹窗,在反馈弹窗中勾选选项、文本框输入内容")
 def test_ai_answer_oppose():
     #点击笔记
     poco("笔记").click()
@@ -232,6 +249,9 @@ def test_ai_answer_oppose():
 
 
 #点击重新提取按钮,点击举报按钮，弹出举报弹窗,在举报弹窗中勾选选项、文本框输入内容
+@pytest.mark.testcase
+@allure.description("点击重新提取按钮,点击举报按钮，弹出举报弹窗,在举报弹窗中勾选选项、文本框输入内容")
+@allure.title("点击重新提取按钮,点击举报按钮，弹出举报弹窗,在举报弹窗中勾选选项、文本框输入内容")
 def test_ai_answer_rextract_and_report():
     #点击笔记
     poco("笔记").click()
@@ -274,6 +294,7 @@ def test_ai_answer_rextract_and_report():
     poco("首页").click()
     
 #ai回答输入框包括键盘输入，语音输入,点击输入框中语音图标热区，切换到语音输入
+
 def test_ai_answer_input_ui():
     #点击笔记
     poco("笔记").click()
