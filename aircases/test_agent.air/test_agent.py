@@ -12,7 +12,7 @@ from utils.commen import *
 
 auto_setup(__file__, logdir=True, project_root=os.path.dirname(__file__))
 
-    
+pytestmark = [allure.feature("代办模块用例"), allure.epic("办公本v2.4.0")]
     
 #书写待办
 @pytest.mark.testcase

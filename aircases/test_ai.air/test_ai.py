@@ -14,6 +14,8 @@ from utils.commen import *
 
 auto_setup(__file__, logdir=True, project_root=os.path.dirname(__file__))
 
+pytestmark = [allure.feature("ai对话模块用例"), allure.epic("办公本v2.4.0")]
+
 #点击并拖动ai图标到文本
 # def swipe_press_ai():
 #     #拖动ai图标
@@ -294,7 +296,9 @@ def test_ai_answer_rextract_and_report():
     poco("首页").click()
     
 #ai回答输入框包括键盘输入，语音输入,点击输入框中语音图标热区，切换到语音输入
-
+@pytest.mark.testcase
+@allure.title("ai回答输入框包括键盘输入，语音输入,点击输入框中语音图标热区，切换到语音输入")
+@allure.description("ai回答输入框包括键盘输入，语音输入,点击输入框中语音图标热区，切换到语音输入")
 def test_ai_answer_input_ui():
     #点击笔记
     poco("笔记").click()

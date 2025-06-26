@@ -3,6 +3,8 @@ __author__ = "wenxiu.tian_sx"
 
 import sys
 
+import allure
+import pytest
 from airtest.core.api import *
 # 设置导入路径（确保能找到 utils 目录）
 sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..", "utils")))
@@ -11,9 +13,14 @@ from utils.commen import *
 
 auto_setup(__file__, logdir=True, project_root=os.path.dirname(__file__))
     
-    
+
+pytestmark = [allure.feature("笔记列表样式模块用例"), allure.epic("办公本v2.4.0")]
+
 
 # 我的笔记，默认是列表模式的样式,点击右侧的更多按钮，显示分享笔记、移动分组、重命名、编辑标签、加密笔记、删除按钮
+@pytest.mark.testcase
+@allure.description("我的笔记，默认是列表模式的样式,点击右侧的更多按钮，显示分享笔记、移动分组、重命名、编辑标签、加密笔记、删除按钮")
+@allure.title("我的笔记，默认是列表模式的样式,点击右侧的更多按钮，显示分享笔记、移动分组、重命名、编辑标签、加密笔记、删除按钮")
 def test_default_list_style():
     if is_login()==True:
         login()
@@ -22,7 +29,7 @@ def test_default_list_style():
     sleep(2)
     #新建笔记
     poco(text="新建笔记").click()
-    sleep(1)
+    sleep(4)
     poco("更多设置").click()
     poco(text="插入文字").click()
     sleep(2)
@@ -41,6 +48,9 @@ def test_default_list_style():
     
 
 # 点击移动文件夹弹出移动小弹窗，在弹窗中点击新建文件夹，移动笔记
+@pytest.mark.testcase
+@allure.description("点击移动文件夹弹出移动小弹窗，在弹窗中点击新建文件夹，移动笔记")
+@allure.title("点击移动文件夹弹出移动小弹窗，在弹窗中点击新建文件夹，移动笔记")
 def test_note_move_to_new_folder_in_dialog():
     if is_login()==True:
         login()
@@ -96,6 +106,9 @@ def test_note_move_to_new_folder_in_dialog():
     
     
 # 将默认文件夹中的笔记移动到新建的文件夹下(新建分组，新建一个文件夹创建笔记，在移动笔记到另一个新建的文件夹下）
+@pytest.mark.testcase
+@allure.description("将默认文件夹中的笔记移动到新建的文件夹下(新建分组，新建一个文件夹创建笔记，在移动笔记到另一个新建的文件夹下）")
+@allure.title("将默认文件夹中的笔记移动到新建的文件夹下(新建分组，新建一个文件夹创建笔记，在移动笔记到另一个新建的文件夹下）")
 def test_note_move_to_new_folder(default_group="默认笔记"):
     if is_login()==True:
         login()
@@ -181,6 +194,9 @@ def test_note_move_to_new_folder(default_group="默认笔记"):
 
 
 # 删除二次确认
+@pytest.mark.testcase
+@allure.description("文件删除二次确认")
+@allure.title("文件删除二次确认")
 def test_del_file_confirm():
     if is_login()==True:
         login()

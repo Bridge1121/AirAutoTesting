@@ -13,6 +13,8 @@ sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..", "utils")))
 from utils.commen import *
 
 auto_setup(__file__, logdir=True, project_root=os.path.dirname(__file__))
+
+pytestmark = [allure.feature("用户数据权限模块用例"), allure.epic("办公本v2.4.0")]
     
 
 #已登录账号创建的笔记，退出登录后，创建的笔记不会显示在笔记列表中

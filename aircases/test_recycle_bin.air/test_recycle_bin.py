@@ -3,6 +3,8 @@ __author__ = "wenxiu.tian_sx"
 
 import sys
 
+import allure
+import pytest
 from airtest.core.api import *
 # 设置导入路径（确保能找到 utils 目录）
 sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..", "utils")))
@@ -11,8 +13,13 @@ from utils.commen import *
 
 
 auto_setup(__file__, logdir=True, project_root=os.path.dirname(__file__))
+
+pytestmark = [allure.feature("回收站模块用例"), allure.epic("办公本v2.4.0")]
     
 # 回收站列表ui默认展示    
+@pytest.mark.testcase
+@allure.description("回收站列表ui默认展示 ")
+@allure.title("回收站列表ui默认展示 ")
 def test_recycle_bin_list():
     # if is_login()==True:
     #     login()
@@ -25,6 +32,9 @@ def test_recycle_bin_list():
     poco("首页").click()
 
 # 非文件夹内新建笔记删除功能验证（全部笔记tab下）
+@pytest.mark.testcase
+@allure.description("非文件夹内新建笔记删除功能验证（全部笔记tab下）")
+@allure.title("非文件夹内新建笔记删除功能验证（全部笔记tab下）")
 def test_del_note_not_in_folder():
     # if is_login()==True:
     #     login()
@@ -47,6 +57,9 @@ def test_del_note_not_in_folder():
     poco("首页").click()
     
 # 文件夹内笔记删除功能验证
+@pytest.mark.testcase
+@allure.description("文件夹内笔记删除功能验证")
+@allure.title("文件夹内笔记删除功能验证")
 def test_del_note_in_folder(default_group="默认笔记"):
     if is_login()==True:
         login()
@@ -99,6 +112,9 @@ def test_del_note_in_folder(default_group="默认笔记"):
 
     
 # 笔记列表，笔记批量删除，回收站可查看验证
+@pytest.mark.testcase
+@allure.description("笔记列表，笔记批量删除，回收站可查看验证")
+@allure.title("笔记列表，笔记批量删除，回收站可查看验证")
 def test_del_notes_in_folder(default_group="默认笔记"):
     # if is_login()==True:
     #     login()
@@ -146,6 +162,9 @@ def test_del_notes_in_folder(default_group="默认笔记"):
     
     
 # 查看删除文件夹
+@pytest.mark.testcase
+@allure.description("查看删除文件夹")
+@allure.title("查看删除文件夹")
 def test_del_folder(default_group="默认笔记"):
     if is_login()==True:
         login()
@@ -182,6 +201,9 @@ def test_del_folder(default_group="默认笔记"):
     
    
 # 笔记列表，文件夹批量删除，回收站可查看验证
+@pytest.mark.testcase
+@allure.description("笔记列表，文件夹批量删除，回收站可查看验证")
+@allure.title("笔记列表，文件夹批量删除，回收站可查看验证")
 def test_del_folders(default_group="默认笔记"):
     if is_login()==True:
         login()

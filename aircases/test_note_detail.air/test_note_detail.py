@@ -3,6 +3,8 @@ __author__ = "wenxiu.tian_sx"
 
 import sys
 
+import allure
+import pytest
 from airtest.core.api import *
 # 设置导入路径（确保能找到 utils 目录）
 sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..", "utils")))
@@ -10,8 +12,14 @@ sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..", "utils")))
 from utils.commen import *
 
 auto_setup(__file__, logdir=True, project_root=os.path.dirname(__file__))
+
+pytestmark = [allure.feature("笔记详情模块用例"), allure.epic("办公本v2.4.0")]
+
             
 # 编辑标题后，点击返回，保存笔记
+@pytest.mark.testcase
+@allure.description("编辑标题后，点击返回，保存笔记")
+@allure.title("编辑标题后，点击返回，保存笔记")
 def test_note_title_edit():
     if is_login()==True:
         login()

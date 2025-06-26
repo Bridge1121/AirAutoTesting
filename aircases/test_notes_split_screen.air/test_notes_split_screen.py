@@ -2,6 +2,8 @@
 __author__ = "wenxiu.tian_sx"
 import sys
 
+import allure
+import pytest
 from airtest.core.api import *
 # 设置导入路径（确保能找到 utils 目录）
 sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..", "utils")))
@@ -10,8 +12,13 @@ from utils.commen import *
 
 auto_setup(__file__, logdir=True, project_root=os.path.dirname(__file__))
 
+pytestmark = [allure.feature("分屏笔记模块用例"), allure.epic("办公本v2.4.0")]
+
     
 # 分屏后，滑动浏览页面，完整显示录音原文    
+@pytest.mark.testcase
+@allure.description("分屏后，滑动浏览页面，完整显示录音原文")
+@allure.title("分屏后，滑动浏览页面，完整显示录音原文")
 def test_recording_top_bottom_split_screen():
     if is_login()==True:
         login()
@@ -47,6 +54,9 @@ def test_recording_top_bottom_split_screen():
 
     
 # 分屏后，滑动浏览页面，完整显示AI笔记    
+@pytest.mark.testcase
+@allure.description("分屏后，滑动浏览页面，完整显示AI笔记 ")
+@allure.title("分屏后，滑动浏览页面，完整显示AI笔记 ")
 def test_ai_top_bottom_split_screen():
     if is_login()==True:
         login()
@@ -79,6 +89,9 @@ def test_ai_top_bottom_split_screen():
     
     
 # 分屏后，滑动浏览页面，完整显示会后总结    
+@pytest.mark.testcase
+@allure.description("分屏后，滑动浏览页面，完整显示会后总结")
+@allure.title("分屏后，滑动浏览页面，完整显示会后总结")
 def test_post_meeting_summary_top_bottom_split_screen():
     if is_login()==True:
         login()
@@ -156,6 +169,9 @@ def test_post_meeting_summary_top_bottom_split_screen():
 #     poco("首页").click()
     
 #上下分屏滚动保存笔记后搜索
+@pytest.mark.testcase
+@allure.description("上下分屏滚动保存笔记后搜索")
+@allure.title("上下分屏滚动保存笔记后搜索")
 def test_create_notes_and_search_top_bottom_split_screen():
     if is_login()==True:
         login()
@@ -210,6 +226,9 @@ def test_create_notes_and_search_top_bottom_split_screen():
     
     
 # 上下分屏时使用AI助手
+@pytest.mark.testcase
+@allure.description("上下分屏时使用AI助手")
+@allure.title("上下分屏时使用AI助手")
 def test_ai_helper_top_bottom_split_screen():
     if is_login()==True:
         login()

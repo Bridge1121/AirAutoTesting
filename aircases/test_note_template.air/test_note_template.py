@@ -11,10 +11,13 @@ sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..", "utils")))
 from utils.commen import *
 
 auto_setup(__file__, logdir=True, project_root=os.path.dirname(__file__))
+
+pytestmark = [allure.feature("笔记模板模块用例"), allure.epic("办公本v2.4.0")]
     
 #默认模版二次确认弹窗点击确认，默认模版设置生效校验
 @pytest.mark.testcase
 @allure.description("默认模版二次确认弹窗点击确认，默认模版设置生效校验")
+@allure.title("默认模版二次确认弹窗点击确认，默认模版设置生效校验")
 def test_note_default_tempalte_confirm_take_effect():
     if is_login()==True:
         login()
@@ -60,6 +63,7 @@ def test_note_default_tempalte_confirm_take_effect():
 #默认模版二次确认弹窗点击取消，默认模版设置不生效校验
 @pytest.mark.testcase
 @allure.description("默认模版二次确认弹窗点击取消，默认模版设置不生效校验")
+@allure.title("默认模版二次确认弹窗点击取消，默认模版设置不生效校验")
 def test_note_default_template_cancel():
     if is_login()==True:
         login()
@@ -101,6 +105,7 @@ def test_note_default_template_cancel():
 #设置默认模版后不影响 现有笔记已设置的模版校验
 @pytest.mark.testcase
 @allure.description("设置默认模版后不影响 现有笔记已设置的模版校验")
+@allure.title("设置默认模版后不影响 现有笔记已设置的模版校验")
 def test_note_template_config():
     if is_login()==True:
         login()
@@ -186,6 +191,7 @@ def test_note_template_config():
 #新建笔记首次进入笔记系统模版默认模版为“行距纸”校验
 @pytest.mark.testcase
 @allure.description("新建笔记首次进入笔记系统模版默认模版为“行距纸”校验")
+@allure.title("新建笔记首次进入笔记系统模版默认模版为“行距纸”校验")
 def test_note_default_template():
     if is_login()==True:
         login()
@@ -193,8 +199,9 @@ def test_note_default_template():
     sleep(1)
     #新建笔记
     poco(text="新建笔记").click()
-    sleep(1)
+    sleep(2)
     #将默认笔记设置为行距纸
+    poco("更多设置").wait_for_appearance(timeout=TIME_OUT)
     poco("更多设置").click()
     poco(text="更改模板").click()
     sleep(1)
@@ -219,6 +226,7 @@ def test_note_default_template():
 #自定义模版tab首位为模版导入入口校验，自定义模版首位显示支持导入模版的格式（jpg、png、bmp）校验
 @pytest.mark.testcase
 @allure.description("自定义模版tab首位为模版导入入口校验，自定义模版首位显示支持导入模版的格式（jpg、png、bmp）校验")
+@allure.title("自定义模版tab首位为模版导入入口校验，自定义模版首位显示支持导入模版的格式（jpg、png、bmp）校验")
 def test_note_template_customize_portal_and_export_jpg_and_png():
 #     if is_login()==True:
 #         login()
@@ -349,6 +357,7 @@ def test_note_template_customize_portal_and_export_jpg_and_png():
 #图片编辑页裁剪比例可调整校验，
 @pytest.mark.testcase
 @allure.description("图片编辑页裁剪比例可调整校验")
+@allure.title("图片编辑页裁剪比例可调整校验")
 def test_note_template_cropping():
     if is_login()==True:
         login()
@@ -415,6 +424,7 @@ def test_note_template_cropping():
 #图片编辑页点击右上角取消按钮，图片导入失败校验
 @pytest.mark.testcase
 @allure.description("图片编辑页点击右上角取消按钮，图片导入失败校验")
+@allure.title("图片编辑页点击右上角取消按钮，图片导入失败校验")
 def test_note_template_cropping_cancel():
     if is_login()==True:
         login()
@@ -483,6 +493,7 @@ def test_note_template_cropping_cancel():
 #自定义模版列表模版倒序排列显示校验，点击更多，查看操作
 @pytest.mark.testcase
 @allure.description("自定义模版列表模版倒序排列显示校验，点击更多，查看操作")
+@allure.title("自定义模版列表模版倒序排列显示校验，点击更多，查看操作")
 def test_note_customize_template_desc_and_del():
     if is_login()==True:
         login()
@@ -576,6 +587,7 @@ def test_note_customize_template_desc_and_del():
 #选中自定义模版删除后焦点回到当前笔记应用的模版,默认选中并设置系统默认模版
 @pytest.mark.testcase
 @allure.description("选中自定义模版删除后焦点回到当前笔记应用的模版,默认选中并设置系统默认模版")
+@allure.title("选中自定义模版删除后焦点回到当前笔记应用的模版,默认选中并设置系统默认模版")
 def test_note_customize_template_apply_del_and_create():
     if is_login()==True:
         login()
@@ -673,6 +685,7 @@ def test_note_customize_template_apply_del_and_create():
 #自定义模版删除后，其它已设置的笔记正常显示该模版
 @pytest.mark.testcase
 @allure.description("自定义模版删除后，其它已设置的笔记正常显示该模版")
+@allure.title("自定义模版删除后，其它已设置的笔记正常显示该模版")
 def test_note_customize_template_multi_apply_del():
     if is_login()==True:
         login()
@@ -685,7 +698,7 @@ def test_note_customize_template_multi_apply_del():
     poco(text="更改模板").click()
     #点击自定义模板
     poco(text="自定义模板").click()
-    sleep(1)
+    sleep(3)
     #导入新的图片
     if poco("模板-空白").exists():
         poco("模板-空白").click()
@@ -771,6 +784,7 @@ def test_note_customize_template_multi_apply_del():
 #自定义模版重命名 名称上限40为字符，不限类型
 @pytest.mark.testcase
 @allure.description("自定义模版重命名 名称上限40为字符，不限类型")
+@allure.title("自定义模版重命名 名称上限40为字符，不限类型")
 def test_note_customize_template_rename():
     if is_login()==True:
         login()

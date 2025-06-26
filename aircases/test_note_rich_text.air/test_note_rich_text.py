@@ -2,6 +2,8 @@
 __author__ = "wenxiu.tian_sx"
 import sys
 
+import allure
+import pytest
 from airtest.core.api import *
 # 设置导入路径（确保能找到 utils 目录）
 sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..", "utils")))
@@ -9,10 +11,14 @@ sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..", "utils")))
 from utils.commen import *
 
 auto_setup(__file__, logdir=True, project_root=os.path.dirname(__file__))
-    
+
+pytestmark = [allure.feature("笔记富文本模块用例"), allure.epic("办公本v2.4.0")]
     
 
 #已转写富文本点击回撤，文案整体支持回撤验证,笔记删除再恢复，富文本文案编辑后支持回撤验证
+@pytest.mark.testcase
+@allure.description("已转写富文本点击回撤，文案整体支持回撤验证,笔记删除再恢复，富文本文案编辑后支持回撤验证")
+@allure.title("已转写富文本点击回撤，文案整体支持回撤验证,笔记删除再恢复，富文本文案编辑后支持回撤验证")
 def test_note_rich_text_drawdown():
     if is_login()==True:
         login()

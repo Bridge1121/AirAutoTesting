@@ -3,6 +3,8 @@ __author__ = "wenxiu.tian_sx"
 
 import sys
 
+import allure
+import pytest
 from airtest.core.api import *
 # 设置导入路径（确保能找到 utils 目录）
 sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..", "utils")))
@@ -11,6 +13,8 @@ from utils.commen import *
 
 
 auto_setup(__file__, logdir=True, project_root=os.path.dirname(__file__))
+
+pytestmark = [allure.feature("分享模块用例"), allure.epic("办公本v2.4.0")]
  
 
 def test():
@@ -23,6 +27,9 @@ def test():
 
 
 # 二维码自动生成验证
+@pytest.mark.testcase
+@allure.description("二维码自动生成验证")
+@allure.title("二维码自动生成验证")
 def test_qr_code_gengerate():
     # if is_login()==True:
     #     login()
@@ -54,6 +61,9 @@ def test_qr_code_gengerate():
     poco("首页").click()
 
 # 分享设置入口验证
+@pytest.mark.testcase
+@allure.description("分享设置入口验证")
+@allure.title("分享设置入口验证")
 def test_share_portals():
     # if is_login()==True:
     #     login()

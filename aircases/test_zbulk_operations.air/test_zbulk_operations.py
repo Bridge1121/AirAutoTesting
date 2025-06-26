@@ -3,6 +3,8 @@ __author__ = "wenxiu.tian_sx"
 
 import sys
 
+import allure
+import pytest
 from airtest.core.api import *
 # 设置导入路径（确保能找到 utils 目录）
 sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..", "utils")))
@@ -10,9 +12,14 @@ sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..", "utils")))
 from utils.commen import *
 
 auto_setup(__file__, logdir=True, project_root=os.path.dirname(__file__))
+
+pytestmark = [allure.feature("文件批量处理模块用例"), allure.epic("办公本v2.4.0")]
     
     
 # 批量处理入口，第一行显示全选/取消全选、移动、删除、退出按钮，全选框未勾选时，移动、删除按钮不可点击，点击退出批量处理按钮，退出批量处理模式，最后执行
+@pytest.mark.testcase
+@allure.description("批量处理入口，第一行显示全选/取消全选、移动、删除、退出按钮，全选框未勾选时，移动、删除按钮不可点击，点击退出批量处理按钮，退出批量处理模式，最后执行")
+@allure.title("批量处理入口，第一行显示全选/取消全选、移动、删除、退出按钮，全选框未勾选时，移动、删除按钮不可点击，点击退出批量处理按钮，退出批量处理模式，最后执行")
 def test_batch_processing_portals():
     if is_login()==True:
         login()
@@ -33,6 +40,9 @@ def test_batch_processing_portals():
 
     
 # 批量移动，全选移动，最后执行
+@pytest.mark.testcase
+@allure.description("批量移动，全选移动，最后执行")
+@allure.title("批量移动，全选移动，最后执行")
 def test_batch_move():
     if is_login()==True:
         login()
@@ -95,6 +105,9 @@ def test_batch_move():
     
     
 # 全选删除，取消未删除，确认后全部删除，最后执行
+@pytest.mark.testcase
+@allure.description("全选删除，取消未删除，确认后全部删除，最后执行")
+@allure.title("全选删除，取消未删除，确认后全部删除，最后执行")
 def test_batch_del():
     if is_login()==True:
         login()
@@ -140,6 +153,9 @@ def test_batch_del():
     
     
 # 点击批量处理,勾选列表中单条笔记的选择框后，可删除
+@pytest.mark.testcase
+@allure.description("点击批量处理,勾选列表中单条笔记的选择框后，可删除")
+@allure.title("点击批量处理,勾选列表中单条笔记的选择框后，可删除")
 def test_batch_single_note_del():
     if is_login()==True:
         login()
@@ -174,6 +190,9 @@ def test_batch_single_note_del():
 
 
 # 依次勾选列表中的每条笔记的勾选框，最后执行
+@pytest.mark.testcase
+@allure.description("依次勾选列表中的每条笔记的勾选框，最后执行")
+@allure.title("依次勾选列表中的每条笔记的勾选框，最后执行")
 def test_batch_check_note_del():
     if is_login()==True:
         login()

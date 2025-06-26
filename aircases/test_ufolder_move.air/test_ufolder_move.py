@@ -2,6 +2,8 @@
 __author__ = "wenxiu.tian_sx"
 import sys
 
+import allure
+import pytest
 from airtest.core.api import *
 # 设置导入路径（确保能找到 utils 目录）
 sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..", "utils")))
@@ -9,9 +11,14 @@ sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..", "utils")))
 from utils.commen import *
 
 auto_setup(__file__, logdir=True, project_root=os.path.dirname(__file__))
+
+pytestmark = [allure.feature("移动文件模块用例"), allure.epic("办公本v2.4.0")]
     
     
 #笔记列表同一分组下，文件夹移动至二级文件夹下验证
+@pytest.mark.testcase
+@allure.description("笔记列表同一分组下，文件夹移动至二级文件夹下验证")
+@allure.title("笔记列表同一分组下，文件夹移动至二级文件夹下验证")
 def test_move_folder_into_subfolder_in_same_group(default_group="默认笔记"):
     if is_login()==True:
         login()
@@ -65,6 +72,9 @@ def test_move_folder_into_subfolder_in_same_group(default_group="默认笔记"):
 
     
 #笔记列表不同分组文件夹移动至其他分组（根目录）验证
+@pytest.mark.testcase
+@allure.description("笔记列表不同分组文件夹移动至其他分组（根目录）验证")
+@allure.title("笔记列表不同分组文件夹移动至其他分组（根目录）验证")
 def test_move_folder_into_subfolder_in_diff_group(default_group="默认笔记",move_group="测试修改分组一"):
     if is_login()==True:
         login()
@@ -98,6 +108,9 @@ def test_move_folder_into_subfolder_in_diff_group(default_group="默认笔记",m
 
 
 # 笔记列表不同分组文件夹移动至其他分组下二级文件夹目录验证（移动后该文件夹为第三级）
+@pytest.mark.testcase
+@allure.description("笔记列表不同分组文件夹移动至其他分组下二级文件夹目录验证（移动后该文件夹为第三级）")
+@allure.title("笔记列表不同分组文件夹移动至其他分组下二级文件夹目录验证（移动后该文件夹为第三级）")
 def test_move_folder_across_groups_into_subfolder_as_third_level(default_group="默认笔记",move_group="测试修改分组一"):
     if is_login()==True:
         login()
@@ -158,6 +171,9 @@ def test_move_folder_across_groups_into_subfolder_as_third_level(default_group="
 
 
 # 笔记列表文件夹批量移动验证
+@pytest.mark.testcase
+@allure.description("笔记列表文件夹批量移动验证")
+@allure.title("笔记列表文件夹批量移动验证")
 def test_folders_move(default_group="默认笔记",move_group="测试修改分组一"):
     if is_login()==True:
         login()

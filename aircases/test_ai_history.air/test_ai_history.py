@@ -12,6 +12,8 @@ from utils.commen import *
 
 auto_setup(__file__, logdir=True, project_root=os.path.dirname(__file__))
 
+pytestmark = [allure.feature("ai历史对话模块用例"), allure.epic("办公本v2.4.0")]
+
 
 # AI助手对话详情页上传文件过程中返回后点击确认
 @pytest.mark.testcase

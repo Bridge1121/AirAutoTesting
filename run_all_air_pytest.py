@@ -1,6 +1,7 @@
 import importlib
 import json
 import os
+import shutil
 import subprocess
 import time
 import datetime
@@ -18,11 +19,16 @@ DINGTALK_WEBHOOK = "https://oapi.dingtalk.com/robot/send?access_token=93c04271a1
 # DINGTALK_WEBHOOK = "https://oapi.dingtalk.com/robot/send?access_token=9f4def1f3b64509d35397661e137ec2b463bedaffeb8840b73447fe3b61af383"
 
 
+#执行生成测试报告的命令
+# allure generate allure-results -o allure-report --clean
+# allure open allure-report
+
+
 TASK_NAME = "办公本UI自动化测试"
 TEAM_NAME = "测试小组"
 PROJECT_NAME = "办公本自动化测试项目"
 DEVICE_MODEL = "办公本Pro"
-APK_VERSION = "V2.4.0.25062501"
+APK_VERSION = "V2.4.0.25062601"
 
 def send_to_dingtalk(webhook_url, message):
     headers = {'Content-Type': 'application/json'}
@@ -52,18 +58,43 @@ def count_allure_results(allure_result_dir="allure-results"):
                     broken += 1
     return passed, failed, broken
 
-
+#测试环境和参数信息
+def write_environment_properties(info: dict, results_dir="allure-results"):
+    lines = [f"{k}={v}" for k, v in info.items()]
+    os.makedirs(results_dir, exist_ok=True)
+    with open(os.path.join(results_dir, "environment.properties"), "w", encoding="iso-8859-1") as f:
+        f.write('\n'.join(lines))
 
 
 
 def run_all_scripts():
-    start_time = time.time()
+    #每次运行之前都先清空一下上一次运行保存的json文件
+    results_dir = "allure-results"
+    if os.path.exists(results_dir):
+        shutil.rmtree(results_dir)
+    os.makedirs(results_dir, exist_ok=True)
 
+
+
+    #测试环境信息和参数信息
+    write_environment_properties({
+        "project": "Bangongben Auto Test",
+        "apk_version": "V2.4.0.25062601",
+        "device_model": "Bangongben Pro",
+        "tester": "twx",
+    })
+    # write_environment_properties({
+    #     "项目名称": "办公本自动化测试项目",
+    #     "设备型号": "办公本Pro",
+    #     "APK版本": "V2.4.0.25062601",
+    #     "测试环境": "测试环境",
+    #     "负责人": "twx"
+    # })
+    start_time = time.time()
     # 确保先返回首页
     if not try_back_to_home():
         print("❌ 启动前回到首页失败，终止任务")
         return
-
     print("✅ 正在执行测试用例...")
     # 执行 pytest，生成 Allure 中间结果
 
@@ -71,9 +102,11 @@ def run_all_scripts():
 
     # 生成 HTML 报告
     # subprocess.run(["allure", "generate", "./allure-results", "-o", "./allure-report", "--clean"])
-    #
-    # # 打开 HTML 报告
+    # subprocess.run(["pytest", "--allure-results", "--allure-report", "--clean-allure-results"])
+
+    # 打开 HTML 报告
     # subprocess.run(["allure", "open", "./allure-report"])
+    # subprocess.run(["allure", "serve", "./allure-report"])
 
     success, failure, error = count_allure_results()
     duration = time.time() - start_time

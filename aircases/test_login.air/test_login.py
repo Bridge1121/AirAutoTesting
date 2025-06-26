@@ -2,6 +2,8 @@
 __author__ = "wenxiu.tian_sx"
 import sys
 
+import allure
+import pytest
 from airtest.core.api import *
 # 设置导入路径（确保能找到 utils 目录）
 sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..", "utils")))
@@ -9,11 +11,16 @@ sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..", "utils")))
 from utils.commen import *
 
 auto_setup(__file__, logdir=True, project_root=os.path.dirname(__file__))
-    
+
+
+pytestmark = [allure.feature("登录模块用例"), allure.epic("办公本v2.4.0")]
         
         
     
 #登录未勾选隐私政策和用户协议
+@pytest.mark.testcase
+@allure.description("登录未勾选隐私政策和用户协议")
+@allure.title("登录未勾选隐私政策和用户协议")
 def test_login_without_privacy(phoneNumber="18662682224",code="123456"):
     if is_login()==False:
         logout()
@@ -62,6 +69,9 @@ def test_login_without_privacy(phoneNumber="18662682224",code="123456"):
 
 
 #登录-手机号校验,手机号为空,输入非数字,输入高于11位数字,输入低于11位数字,输入11位格式不对的数字
+@pytest.mark.testcase
+@allure.description("登录-手机号校验,手机号为空,输入非数字,输入高于11位数字,输入低于11位数字,输入11位格式不对的数字")
+@allure.title("登录-手机号校验,手机号为空,输入非数字,输入高于11位数字,输入低于11位数字,输入11位格式不对的数字")
 def test_login_phone_num(code="123456"):
     if is_login()==False:
         logout()
@@ -157,6 +167,9 @@ def test_login_phone_num(code="123456"):
     
     
 #登录-验证码校验
+@pytest.mark.testcase
+@allure.description("登录-验证码校验")
+@allure.title("登录-验证码校验")
 def test_login_code(phoneNumber="15996805223"):
     if is_login()==False:
         logout()
@@ -235,6 +248,9 @@ def test_login_code(phoneNumber="15996805223"):
     
     
 #无网络时，点击发送验证码
+@pytest.mark.testcase
+@allure.description("无网络时，点击发送验证码")
+@allure.title("无网络时，点击发送验证码")
 def test_login_send_code_no_internet(phoneNumber="15996805223"):
     if is_login()==False:
         logout()

@@ -1,6 +1,8 @@
 __author__ = "wenxiu.tian_sx"
 import sys
 
+import allure
+import pytest
 from airtest.core.api import *
 # 设置导入路径（确保能找到 utils 目录）
 sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..", "utils")))
@@ -8,6 +10,9 @@ sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..", "utils")))
 from utils.commen import *
 
 auto_setup(__file__, logdir=True, project_root=os.path.dirname(__file__))
+
+pytestmark = [allure.feature("笔记标签模块用例"), allure.epic("办公本v2.4.0")]
+
 
 def find_tag(tag_name):
     tag_pos = poco(text=tag_name).get_position()
@@ -37,6 +42,9 @@ def del_all_tags_before_del_note():
     
     
 #点击更多>编辑标签，跳转到编辑标签页,输入内容后点√后标签添加成功
+@pytest.mark.testcase
+@allure.description("点击更多>编辑标签，跳转到编辑标签页,输入内容后点√后标签添加成功")
+@allure.title("点击更多>编辑标签，跳转到编辑标签页,输入内容后点√后标签添加成功")
 def test_add_tag_and_rename():
     if is_login()==True:
         login()
@@ -97,6 +105,9 @@ def test_add_tag_and_rename():
     
     
 #长按标签点击标签菜单栏中删除后选择确认
+@pytest.mark.testcase
+@allure.description("长按标签点击标签菜单栏中删除后选择确认")
+@allure.title("长按标签点击标签菜单栏中删除后选择确认")
 def test_note_tag_del():
 #     if is_login()==True:
 #         login()
@@ -151,6 +162,9 @@ def test_note_tag_del():
 
     
 #无标签笔记详情页点标题后下方显示笔记分组和添加标签,点击标题后点击添加标签
+@pytest.mark.testcase
+@allure.description("无标签笔记详情页点标题后下方显示笔记分组和添加标签,点击标题后点击添加标签")
+@allure.title("无标签笔记详情页点标题后下方显示笔记分组和添加标签,点击标题后点击添加标签")
 def test_note_title_add_tag():
     #点击笔记
     poco("笔记").click()
@@ -180,6 +194,9 @@ def test_note_title_add_tag():
     
     
 #有标签笔记进入详情页点击标题后点击默认分组后进入分组编辑页,修改分组后在添加标签
+@pytest.mark.testcase
+@allure.description("有标签笔记进入详情页点击标题后点击默认分组后进入分组编辑页,修改分组后在添加标签")
+@allure.title("有标签笔记进入详情页点击标题后点击默认分组后进入分组编辑页,修改分组后在添加标签")
 def test_note_with_tag_edit_group_add_tag(group_name="测试修改分组一"):
     #点击笔记
     poco("笔记").click()
@@ -225,6 +242,9 @@ def test_note_with_tag_edit_group_add_tag(group_name="测试修改分组一"):
     
 
 #笔记列表页笔记标签显示为蓝色字体验证，标签列表取消标签后，笔记列表不再显示已取消的标签验证
+@pytest.mark.testcase
+@allure.description("笔记列表页笔记标签显示为蓝色字体验证，标签列表取消标签后，笔记列表不再显示已取消的标签验证")
+@allure.title("笔记列表页笔记标签显示为蓝色字体验证，标签列表取消标签后，笔记列表不再显示已取消的标签验证")
 def test_note_tag_ui_cancel():
     #点击笔记
     poco("笔记").click()
@@ -283,6 +303,9 @@ def test_note_tag_ui_cancel():
 
     
 #笔记标签数量为10个限制超出后toast提示验证
+@pytest.mark.testcase
+@allure.description("笔记标签数量为10个限制超出后toast提示验证")
+@allure.title("笔记标签数量为10个限制超出后toast提示验证")
 def test_note_tag_num():
     #点击笔记
     poco("笔记").click()
@@ -323,6 +346,9 @@ def test_note_tag_num():
 
 
 # 二次确认弹窗点击确认后，关联的笔记不再显示该标签验证
+@pytest.mark.testcase
+@allure.description("二次确认弹窗点击确认后，关联的笔记不再显示该标签验证")
+@allure.title("二次确认弹窗点击确认后，关联的笔记不再显示该标签验证")
 def test_note_ass_tag_del():
     #点击笔记
     poco("笔记").click()
@@ -372,6 +398,9 @@ def test_note_ass_tag_del():
 
     
 # 标签页增加筛选结果可筛选出标签对应的笔记验证,所有标签（标签列表）支持长按显示悬浮菜单“重命名”“删除”按钮验证
+@pytest.mark.testcase
+@allure.description("标签页增加筛选结果可筛选出标签对应的笔记验证,所有标签（标签列表）支持长按显示悬浮菜单“重命名”“删除”按钮验证")
+@allure.title("标签页增加筛选结果可筛选出标签对应的笔记验证,所有标签（标签列表）支持长按显示悬浮菜单“重命名”“删除”按钮验证")
 def test_note_tag_sift():
     #点击笔记
     poco("笔记").click()

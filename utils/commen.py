@@ -6,6 +6,7 @@ from airtest.core.android.touch_methods.base_touch import *
 import random
 import string
 
+
 auto_setup(__file__, logdir=True, devices=["Android://127.0.0.1:5037/AINOTEA224042300042"])
 
 from poco.drivers.android.uiautomation import AndroidUiautomationPoco

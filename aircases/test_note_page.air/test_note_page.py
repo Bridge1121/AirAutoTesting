@@ -2,6 +2,8 @@
 __author__ = "wenxiu.tian_sx"
 import sys
 
+import allure
+import pytest
 from airtest.core.api import *
 # 设置导入路径（确保能找到 utils 目录）
 sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..", "utils")))
@@ -10,9 +12,14 @@ from utils.commen import *
 
 auto_setup(__file__, logdir=True, project_root=os.path.dirname(__file__))
 
-TIME_OUT=100
+pytestmark = [allure.feature("笔记页数模块用例"), allure.epic("办公本v2.4.0")]
+
+
     
 # 点击页面排序，弹出预览缩略视图，显示当前笔记的所有手写页面
+@pytest.mark.testcase
+@allure.description("点击页面排序，弹出预览缩略视图，显示当前笔记的所有手写页面")
+@allure.title("点击页面排序，弹出预览缩略视图，显示当前笔记的所有手写页面")
 def test_note_page_order():
     if is_login()==True:
         login()
@@ -44,6 +51,9 @@ def test_note_page_order():
     
     
 # 清空页面 - 确定,内容清除后，返回列表再进入，不显示已清除的内容
+@pytest.mark.testcase
+@allure.description("清空页面 - 确定,内容清除后，返回列表再进入，不显示已清除的内容")
+@allure.title("清空页面 - 确定,内容清除后，返回列表再进入，不显示已清除的内容")
 def test_note_clear():
     #点击笔记
     poco("笔记").click()
@@ -84,6 +94,9 @@ def test_note_clear():
 
 
 # 删除本页- 确定,点击删除本页后，只删除当前页面，其他页面不会被删除
+@pytest.mark.testcase
+@allure.description("TODO: 填写描述")
+@allure.title("TODO: 填写标题")
 def test_note_page_del():
     #点击笔记
     poco("笔记").click()
@@ -117,6 +130,9 @@ def test_note_page_del():
 
 
 # 更多功能中复制本页,页面排序中，更多功能里的复制当前页
+@pytest.mark.testcase
+@allure.description("TODO: 填写描述")
+@allure.title("TODO: 填写标题")
 def test_note_page_copy():
     #点击笔记
     poco("笔记").click()
@@ -151,6 +167,9 @@ def test_note_page_copy():
 
 
 # 默认字号是标准,切换字号为“大”,切换字号为“超大”
+@pytest.mark.testcase
+@allure.description("TODO: 填写描述")
+@allure.title("TODO: 填写标题")
 def test_font_size_change():
     poco("应用").click()
     poco("设置图标").click()
@@ -179,6 +198,9 @@ def test_font_size_change():
     poco("首页").click()
 
 # 开启录音转写，语种为普通话，查看词库
+@pytest.mark.testcase
+@allure.description("TODO: 填写描述")
+@allure.title("TODO: 填写标题")
 def test_note_recording_lexicon():
     #点击笔记
     poco("笔记").click()
@@ -279,6 +301,9 @@ def test_note_recording_lexicon():
 
     
 # 笔记首页更换笔记模板
+@pytest.mark.testcase
+@allure.description("TODO: 填写描述")
+@allure.title("TODO: 填写标题")
 def test_note_template_change():
     #点击笔记
     poco("笔记").click()
@@ -299,6 +324,9 @@ def test_note_template_change():
 
 
 #手指长按AI笔记文本选中后使用工具栏AI助手
+@pytest.mark.testcase
+@allure.description("TODO: 填写描述")
+@allure.title("TODO: 填写标题")
 def test_ai_helper():
     if is_login()==True:
         login()

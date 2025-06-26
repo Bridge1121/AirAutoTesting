@@ -12,10 +12,13 @@ from utils.commen import *
 
 auto_setup(__file__, logdir=True, project_root=os.path.dirname(__file__))
 
+pytestmark = [allure.feature("壁纸模块用例"), allure.epic("办公本v2.4.0")]
+
 
 
 #验证能否成功访问壁纸设置，验证能否选择图片，验证无图片可选择时的处理，添加新墙纸导入.txt文件
 @allure.description("验证能否成功访问壁纸设置，验证能否选择图片，验证无图片可选择时的处理，添加新墙纸导入.txt文件")
+@allure.title("验证能否成功访问壁纸设置，验证能否选择图片，验证无图片可选择时的处理，添加新墙纸导入.txt文件")
 @pytest.mark.testcase
 def test_wallpaper_choose_pic():
     if is_login()==True:

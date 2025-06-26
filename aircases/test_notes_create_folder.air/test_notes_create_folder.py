@@ -3,6 +3,8 @@ __author__ = "wenxiu.tian_sx"
 
 import sys
 
+import allure
+import pytest
 from airtest.core.api import *
 # 设置导入路径（确保能找到 utils 目录）
 sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..", "utils")))
@@ -10,6 +12,8 @@ sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..", "utils")))
 from utils.commen import *
 
 auto_setup(__file__, logdir=True, project_root=os.path.dirname(__file__))
+
+pytestmark = [allure.feature("笔记新建文件夹模块用例"), allure.epic("办公本v2.4.0")]
 
 
 #删除文件
@@ -21,6 +25,9 @@ def del_file():
 
     
 # 当前分组下创建文件夹，文件夹所在分组校验
+@pytest.mark.testcase
+@allure.description("当前分组下创建文件夹，文件夹所在分组校验")
+@allure.title("当前分组下创建文件夹，文件夹所在分组校验")
 def test_create_folder_and_verify_group_assignment(group_name="默认笔记"):
     if is_login()==True:
         login()
@@ -45,6 +52,9 @@ def test_create_folder_and_verify_group_assignment(group_name="默认笔记"):
 
   
 # 笔记列表【更多】移动分组入口创建文件夹验证
+@pytest.mark.testcase
+@allure.description("笔记列表【更多】移动分组入口创建文件夹验证")
+@allure.title("笔记列表【更多】移动分组入口创建文件夹验证")
 def test_move_group_create_folder(group_name="默认笔记",floder_name="移动分组入口创建文件夹"):
     if is_login()==True:
         login()
@@ -92,6 +102,9 @@ def test_move_group_create_folder(group_name="默认笔记",floder_name="移动�
     poco("首页").click()
     
 #笔记详情页（重命名）移动分组入口创建文件夹验证   
+@pytest.mark.testcase
+@allure.description("笔记详情页（重命名）移动分组入口创建文件夹验证 ")
+@allure.title("笔记详情页（重命名）移动分组入口创建文件夹验证 ")
 def test_note_info_create_folder(group_name="默认笔记", folder_name="笔记详情页创建文件夹"):
     if is_login()==True:
         login()
@@ -145,6 +158,9 @@ def test_note_info_create_folder(group_name="默认笔记", folder_name="笔记�
     
     
 # 当前文件夹可创建多级树形子文件夹验证，十级
+@pytest.mark.testcase
+@allure.description("当前文件夹可创建多级树形子文件夹验证，十级")
+@allure.title("当前文件夹可创建多级树形子文件夹验证，十级")
 def test_create_tree_folder(group_name="默认笔记"):
     if is_login()==True:
         login()
@@ -175,6 +191,9 @@ def test_create_tree_folder(group_name="默认笔记"):
     
 
 #笔记列表右侧菜单功能校验-文件夹重命名，然后删除
+@pytest.mark.testcase
+@allure.description("笔记列表右侧菜单功能校验-文件夹重命名，然后删除")
+@allure.title("笔记列表右侧菜单功能校验-文件夹重命名，然后删除")
 def test_rename_folder_and_delete(group_name="默认笔记"):
     if is_login()==True:
         login()
@@ -217,6 +236,9 @@ def test_rename_folder_and_delete(group_name="默认笔记"):
 
 
 # 笔记列表右侧菜单功能校验-文件夹移动分组
+@pytest.mark.testcase
+@allure.description("笔记列表右侧菜单功能校验-文件夹移动分组")
+@allure.title("笔记列表右侧菜单功能校验-文件夹移动分组")
 def test_folder_move_group(group_name="默认笔记"):
     if is_login()==True:
         login()
@@ -278,6 +300,9 @@ def test_folder_move_group(group_name="默认笔记"):
     
 
 #文件夹中的笔记可移动至其他笔记验证
+@pytest.mark.testcase
+@allure.description("TODO: 填写描述")
+@allure.title("TODO: 填写标题")
 def test_note_move(default_group="默认笔记"):
     if is_login()==True:
         login()
@@ -339,7 +364,7 @@ def test_note_move(default_group="默认笔记"):
 if __name__=="__main__":
     test_rename_folder_and_delete()
     test_note_info_create_folder()
-    test_create_new_folder()
+    # test_create_new_folder()
     test_create_folder_and_verify_group_assignment()
     test_move_group_create_folder()
     test_folder_move_group()

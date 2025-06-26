@@ -2,6 +2,8 @@
 __author__ = "wenxiu.tian_sx"
 import sys
 
+import allure
+import pytest
 from airtest.core.api import *
 # 设置导入路径（确保能找到 utils 目录）
 sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..", "utils")))
@@ -10,7 +12,13 @@ from utils.commen import *
 
 auto_setup(__file__, logdir=True, project_root=os.path.dirname(__file__))
 
+pytestmark = [allure.feature("代办重点关注模块用例"), allure.epic("办公本v2.4.0")]
+
+
 #新建一条代办，重点关注，清空待办所有内容确定，提示无法保存，不能为空
+@pytest.mark.testcase
+@allure.description("新建一条代办，重点关注，清空待办所有内容确定，提示无法保存，不能为空")
+@allure.title("新建一条代办，重点关注，清空待办所有内容确定，提示无法保存，不能为空")
 def test_clear_focus_on_agent():
     if is_login()==True:
         login()
@@ -53,6 +61,9 @@ def test():
 
 
 #在重点标记列表中修改待办内容，会同步到全部待办列表中
+@pytest.mark.testcase
+@allure.description("在重点标记列表中修改待办内容，会同步到全部待办列表中")
+@allure.title("在重点标记列表中修改待办内容，会同步到全部待办列表中")
 def test_focus_on_agent_edit_sync():
     poco("待办").click()
     #新建一条重点关注的代办
@@ -88,6 +99,9 @@ def test_focus_on_agent_edit_sync():
 
 
 #修改重点关注的待办日期，月份，年份，
+@pytest.mark.testcase
+@allure.description("修改重点关注的待办日期，月份，年份，")
+@allure.title("修改重点关注的待办日期，月份，年份，")
 def test_focus_on_agent_edit_date():
     poco("待办").click()
     #新建一条重点关注的代办
@@ -138,6 +152,9 @@ def test_focus_on_agent_edit_date():
     
 
 #重点关注列表,完成的未设日期的待办显示,完成的已设日期的待办显示,已完成的待办再点击左侧勾选
+@pytest.mark.testcase
+@allure.description("重点关注列表,完成的未设日期的待办显示,完成的已设日期的待办显示,已完成的待办再点击左侧勾选")
+@allure.title("重点关注列表,完成的未设日期的待办显示,完成的已设日期的待办显示,已完成的待办再点击左侧勾选")
 def test_focus_on_finish_agent():
     #新建有日期的代办，点击完成，2s内再次点击
     poco("待办").click()

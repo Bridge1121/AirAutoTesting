@@ -1,6 +1,8 @@
 # -*- encoding=utf8 -*-
 import sys
 
+import allure
+import pytest
 from airtest.core.api import *
 # 设置导入路径（确保能找到 utils 目录）
 sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..", "utils")))
@@ -8,7 +10,9 @@ sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..", "utils")))
 from utils.commen import *
 
 auto_setup(__file__, logdir=True, project_root=os.path.dirname(__file__))
-    
+
+
+pytestmark = [allure.feature("文件传输模块用例"), allure.epic("办公本v2.4.0")]
     
     
 #遍历列表，找到一个指定后缀名的大文件
@@ -28,6 +32,9 @@ def find_index_of_big_docx(dir_list,suffix="docx"):
     
     
 #连接wifi时，微信已绑定文件传输，从微信端选择多种格式的文件发送到办公本
+@pytest.mark.testcase
+@allure.description("连接wifi时，微信已绑定文件传输，从微信端选择多种格式的文件发送到办公本")
+@allure.title("连接wifi时，微信已绑定文件传输，从微信端选择多种格式的文件发送到办公本")
 def test_wifi_wechat_file_transfer():
     if is_login()==True:
         login()
@@ -106,6 +113,9 @@ def test_wifi_wechat_file_transfer():
     
     
 #确认删除未下载文件未勾选同时删除本地文件，长按删除已下载的文件
+@pytest.mark.testcase
+@allure.description("确认删除未下载文件未勾选同时删除本地文件，长按删除已下载的文件")
+@allure.title("确认删除未下载文件未勾选同时删除本地文件，长按删除已下载的文件")
 def test_wifi_wechat_long_click_del():
 #     if is_login()==True:
 #         login()
@@ -250,6 +260,9 @@ def test():
 
 
 #微信传输确认删除已下载成功文件
+@pytest.mark.testcase
+@allure.description("微信传输确认删除已下载成功文件")
+@allure.title("微信传输确认删除已下载成功文件")
 def test_wechat_transfer_del():
     if is_login()==True:
         login()
@@ -277,6 +290,9 @@ def test_wechat_transfer_del():
     
     
 #微信传输已下载文件移至书架
+@pytest.mark.testcase
+@allure.description("微信传输已下载文件移至书架")
+@allure.title("微信传输已下载文件移至书架")
 def test_wechat_download_move_to_bookshelf():
     if is_login()==True:
         login()
@@ -303,6 +319,9 @@ def test_wechat_download_move_to_bookshelf():
         poco("首页").click()
 
 #导出笔记至文件传输-打开目录
+@pytest.mark.testcase
+@allure.description("导出笔记至文件传输-打开目录")
+@allure.title("导出笔记至文件传输-打开目录")
 def test_note_export():
     if is_login()==True:
         login()

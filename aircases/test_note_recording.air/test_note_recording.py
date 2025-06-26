@@ -2,6 +2,8 @@
 __author__ = "wenxiu.tian_sx"
 import sys
 
+import allure
+import pytest
 from airtest.core.api import *
 # 设置导入路径（确保能找到 utils 目录）
 sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..", "utils")))
@@ -10,7 +12,7 @@ from utils.commen import *
 
 auto_setup(__file__, logdir=True, project_root=os.path.dirname(__file__))
     
-    
+pytestmark = [allure.feature("笔记录音模块用例"), allure.epic("办公本v2.4.0")]
     
     
 def test():
@@ -22,6 +24,9 @@ def test():
     
     
 # 录音时返回后，再进入该笔记
+@pytest.mark.testcase
+@allure.description("录音时返回后，再进入该笔记")
+@allure.title("录音时返回后，再进入该笔记")
 def test_note_recording_back():
     if is_login()==True:
         login()
@@ -79,6 +84,9 @@ def test_note_recording_back():
 
 
 # 无网络时开启录音
+@pytest.mark.testcase
+@allure.description("无网络时开启录音")
+@allure.title("无网络时开启录音")
 def test_note_recording_no_internet():
     if is_login()==True:
         login()

@@ -2,6 +2,8 @@
 __author__ = "wenxiu.tian_sx"
 import sys
 
+import allure
+import pytest
 from airtest.core.api import *
 # 设置导入路径（确保能找到 utils 目录）
 sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..", "utils")))
@@ -9,9 +11,14 @@ sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..", "utils")))
 from utils.commen import *
 
 auto_setup(__file__, logdir=True, project_root=os.path.dirname(__file__))
+
+pytestmark = [allure.feature("deepseek对话模块用例"), allure.epic("办公本v2.4.0")]
     
     
 #AI助手deep seek页打断对话,输入对话后立马点击暂停键打断对话，对话过程中点击暂停键打断对话，AI对话过程中连续多次打断对话
+@pytest.mark.testcase
+@allure.description("AI助手deep seek页打断对话,输入对话后立马点击暂停键打断对话，对话过程中点击暂停键打断对话，AI对话过程中连续多次打断对话")
+@allure.title("AI助手deep seek页打断对话,输入对话后立马点击暂停键打断对话，对话过程中点击暂停键打断对话，AI对话过程中连续多次打断对话")
 def test_deepseek_interrupt_conversation():
     if is_login()==True:
         login()
@@ -32,6 +39,9 @@ def test_deepseek_interrupt_conversation():
     
     
 #在deep seek进行的对话能够在AI助手页历史会话页面查看
+@pytest.mark.testcase
+@allure.description("在deep seek进行的对话能够在AI助手页历史会话页面查看")
+@allure.title("在deep seek进行的对话能够在AI助手页历史会话页面查看")
 def test_deepseek_history():
     if is_login()==True:
         login()
@@ -68,6 +78,9 @@ def test_deepseek_history():
 
 
 #语音输入模式下点击上传文件时会跳转到AI助手页
+@pytest.mark.testcase
+@allure.title("语音输入模式下点击上传文件时会跳转到AI助手页")
+@allure.description("语音输入模式下点击上传文件时会跳转到AI助手页")
 def test_deepseek_voice_input_upload():
     if is_login()==True:
         login()

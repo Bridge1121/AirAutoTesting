@@ -3,6 +3,8 @@ __author__ = "wenxiu.tian_sx"
 
 import sys
 
+import allure
+import pytest
 from airtest.core.api import *
 # 设置导入路径（确保能找到 utils 目录）
 sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..", "utils")))
@@ -12,6 +14,8 @@ from utils.commen import *
 
 auto_setup(__file__, logdir=True, project_root=os.path.dirname(__file__))
 
+pytestmark = [allure.feature("搜索模块用例"), allure.epic("办公本v2.4.0")]
+
 
 def del_file():
     poco("更多设置").click()
@@ -20,6 +24,9 @@ def del_file():
 
     
 # 点击搜索后跳转到新页面覆盖列表页，模糊搜索，下滑翻页    
+@pytest.mark.testcase
+@allure.description("点击搜索后跳转到新页面覆盖列表页，模糊搜索，下滑翻页")
+@allure.title("点击搜索后跳转到新页面覆盖列表页，模糊搜索，下滑翻页")
 def test_note_search_and_open():
     if is_login()==True:
         login()
@@ -46,6 +53,9 @@ def test_note_search_and_open():
     poco("首页").click()
     
 #输入文件名称搜索    
+@pytest.mark.testcase
+@allure.description("输入文件名称搜索")
+@allure.title("输入文件名称搜索")
 def test_file_search():
     if is_login()==True:
         login()
@@ -88,6 +98,9 @@ def test_file_search():
     poco("首页").click()
 
 # 输入对应笔记标题搜索后进入详情页
+@pytest.mark.testcase
+@allure.description("输入对应笔记标题搜索后进入详情页")
+@allure.title("输入对应笔记标题搜索后进入详情页")
 def test_note_search_and_open(title="测试"):
     # if is_login()==True:
     #     login()

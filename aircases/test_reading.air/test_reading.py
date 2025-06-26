@@ -2,6 +2,8 @@
 __author__ = "wenxiu.tian_sx"
 import sys
 
+import allure
+import pytest
 from airtest.core.api import *
 from airtest.core.android.touch_methods.base_touch import *
 # 设置导入路径（确保能找到 utils 目录）
@@ -10,9 +12,14 @@ sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..", "utils")))
 from utils.commen import *
 
 auto_setup(__file__, logdir=True, project_root=os.path.dirname(__file__))
+
+pytestmark = [allure.feature("阅读模块用例"), allure.epic("办公本v2.4.0")]
     
     
 # 未登录账号-阅读应用初始化页面,三个tab页签可来回切换，导入文档
+@pytest.mark.testcase
+@allure.description("未登录账号-阅读应用初始化页面,三个tab页签可来回切换，导入文档")
+@allure.title("未登录账号-阅读应用初始化页面,三个tab页签可来回切换，导入文档")
 def test_logout_reading_init_and_export():
     if is_login == False:
         logout()
@@ -58,6 +65,9 @@ def test_logout_reading_init_and_export():
     
 
 #已登录账号,阅读页面初始化，切换tab
+@pytest.mark.testcase
+@allure.description("已登录账号,阅读页面初始化，切换tab")
+@allure.title("已登录账号,阅读页面初始化，切换tab")
 def test_login_reading_init():
     if is_login==True:
         login()
@@ -71,6 +81,9 @@ def test_login_reading_init():
 
 
 #我的文档列表，列表有数据且超过一屏，上滑显示
+@pytest.mark.testcase
+@allure.description("我的文档列表，列表有数据且超过一屏，上滑显示")
+@allure.title("我的文档列表，列表有数据且超过一屏，上滑显示")
 def test_my_file_list_swipe():
     if is_login==True:
         login()
@@ -80,6 +93,9 @@ def test_my_file_list_swipe():
     poco("首页").click()
 
 #我的文档列表,docx格式文档内容为空可正常打开
+@pytest.mark.testcase
+@allure.description("我的文档列表,docx格式文档内容为空可正常打开")
+@allure.title("我的文档列表,docx格式文档内容为空可正常打开")
 def test_my_file_list_empty_docx_open():
     if is_login==True:
         login()
@@ -128,6 +144,9 @@ def test_my_file_list_empty_docx_open():
     poco("首页").click()
     
 #通过导入文件方式导入一个后再导入一个，查看排列顺序
+@pytest.mark.testcase
+@allure.description("通过导入文件方式导入一个后再导入一个，查看排列顺序")
+@allure.title("通过导入文件方式导入一个后再导入一个，查看排列顺序")
 def test_reading_export_order_rename():
     if is_login==True:
         login()
@@ -191,6 +210,9 @@ def test_reading_export_order_rename():
     
 
 #点击通过文件传输导入
+@pytest.mark.testcase
+@allure.description("点击通过文件传输导入")
+@allure.title("点击通过文件传输导入")
 def test_reading_file_trans_import():
     if is_login==True:
         login()
@@ -278,6 +300,9 @@ def test_reading_file_trans_import():
 
 
 #开启阅读模式,打开文档开启阅读模式和护眼模式文档阅读，开启阅读模式但关闭护眼模式文档阅读，
+@pytest.mark.testcase
+@allure.description("开启阅读模式,打开文档开启阅读模式和护眼模式文档阅读，开启阅读模式但关闭护眼模式文档阅读")
+@allure.title("开启阅读模式,打开文档开启阅读模式和护眼模式文档阅读，开启阅读模式但关闭护眼模式文档阅读")
 def test_reading_mode():
     if is_login()==True:
         login()
@@ -334,6 +359,9 @@ def test_reading_mode():
     
     
 #打开微信读书，搜索书籍
+@pytest.mark.testcase
+@allure.description("打开微信读书，搜索书籍")
+@allure.title("打开微信读书，搜索书籍")
 def test_wechat_reading_open_and_search():
     if is_login()==True:
         login()
@@ -367,6 +395,9 @@ def test_wechat_reading_open_and_search():
 
 
 #批注截图列表，导出批注截图图片
+@pytest.mark.testcase
+@allure.description("批注截图列表，导出批注截图图片")
+@allure.title("批注截图列表，导出批注截图图片")
 def test_comments_screenshot_export():
     if is_login()==True:
         login()

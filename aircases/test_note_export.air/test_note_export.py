@@ -2,6 +2,8 @@
 __author__ = "wenxiu.tian_sx"
 import sys
 
+import allure
+import pytest
 from airtest.core.api import *
 # 设置导入路径（确保能找到 utils 目录）
 sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..", "utils")))
@@ -10,8 +12,13 @@ from utils.commen import *
 
 auto_setup(__file__, logdir=True, project_root=os.path.dirname(__file__))
 
+pytestmark = [allure.feature("笔记导入文件模块用例"), allure.epic("办公本v2.4.0")]
+
 
 # 保存到本地，导出完成弹窗选项立即打开验证
+@pytest.mark.testcase
+@allure.description("保存到本地，导出完成弹窗选项立即打开验证")
+@allure.title("保存到本地，导出完成弹窗选项立即打开验证")
 def test_note_export():
     #点击笔记
     poco("笔记").click()
@@ -37,6 +44,9 @@ def test_note_export():
     
     
 #更多分享方式获取可根据当前办公本已下载app进行选择验证
+@pytest.mark.testcase
+@allure.description("更多分享方式获取可根据当前办公本已下载app进行选择验证")
+@allure.title("更多分享方式获取可根据当前办公本已下载app进行选择验证")
 def test_note_share_method():
     #点击笔记
     poco("笔记").click()
