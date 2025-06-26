@@ -113,13 +113,20 @@ def test_note_recording_no_internet():
     #返回
     poco("返回").click()
     #联网
-    #下拉菜单
-    swipe((1036,0),(886,432))
-    sleep(1)
-    poco("com.aispeech.ccui.systemui:id/cellGrid")\
-    .child("android.widget.LinearLayout")[0]\
-    .child("com.aispeech.ccui.systemui:id/iv_cell_icon").click()
-    touch((867,1450))
+    # 恢复网络
+    swipe((1036, 0), (886, 432))
+    poco("com.aispeech.ccui.systemui:id/cellGrid") \
+        .child("android.widget.LinearLayout")[0] \
+        .child("com.aispeech.ccui.systemui:id/iv_cell_icon") \
+        .long_click(duration=2)
+    sleep(4)
+    poco("com.zlt.zltsettings:id/sw_airplane").click()
+    poco(text="已连接").wait_for_appearance(timeout=TIME_OUT)
+    poco("android.widget.FrameLayout") \
+        .child("android.widget.LinearLayout") \
+        .offspring("android:id/content") \
+        .offspring("com.zlt.zltsettings:id/ll_back") \
+        .child("android.widget.ImageView").click()
     sleep(1)
     #删除新建的笔记
     poco("更多设置").click()

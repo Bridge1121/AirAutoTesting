@@ -101,8 +101,9 @@ def test_ai_history_view_no_internet():
         .child("android.widget.LinearLayout")[0] \
         .child("com.aispeech.ccui.systemui:id/iv_cell_icon") \
         .long_click(duration=2)
+    sleep(4)
     poco("com.zlt.zltsettings:id/sw_airplane").click()
-    poco(text="已连接").wait_for_appearance(timeout=10)
+    poco(text="已连接").wait_for_appearance(timeout=TIME_OUT)
     poco("android.widget.FrameLayout") \
         .child("android.widget.LinearLayout") \
         .offspring("android:id/content") \

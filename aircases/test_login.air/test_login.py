@@ -304,24 +304,21 @@ def test_login_send_code_no_internet(phoneNumber="15996805223"):
     poco("首页").click()
     #恢复网络
     #下拉菜单
-    swipe((1036,0),(886,432))
-    poco("com.aispeech.ccui.systemui:id/cellGrid")\
-    .child("android.widget.LinearLayout")[0]\
-    .child("com.aispeech.ccui.systemui:id/iv_cell_icon")\
-    .long_click(duration=2)
-    sleep(3)
-    poco("android.widget.FrameLayout")\
-    .child("android.widget.LinearLayout")\
-    .offspring("android:id/content")\
-    .offspring("com.zlt.zltsettings:id/ll_back")\
-    .child("android.widget.ImageView").click()
-    #下拉菜单，再次恢复网络
-    swipe((1036,0),(886,432))
-    poco("com.aispeech.ccui.systemui:id/cellGrid")\
-    .child("android.widget.LinearLayout")[0]\
-    .child("com.aispeech.ccui.systemui:id/iv_cell_icon").click()
-    sleep(3)
-    touch((1000,1600))
+    # 恢复网络
+    swipe((1036, 0), (886, 432))
+    poco("com.aispeech.ccui.systemui:id/cellGrid") \
+        .child("android.widget.LinearLayout")[0] \
+        .child("com.aispeech.ccui.systemui:id/iv_cell_icon") \
+        .long_click(duration=2)
+    sleep(4)
+    poco("com.zlt.zltsettings:id/sw_airplane").click()
+    poco(text="已连接").wait_for_appearance(timeout=TIME_OUT)
+    poco("android.widget.FrameLayout") \
+        .child("android.widget.LinearLayout") \
+        .offspring("android:id/content") \
+        .offspring("com.zlt.zltsettings:id/ll_back") \
+        .child("android.widget.ImageView").click()
+
 
     
     

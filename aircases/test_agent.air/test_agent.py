@@ -207,14 +207,20 @@ def test_add_agent_no_internet():
     text(agent_name,enter=False)
     poco(text="确认").click()
     sleep(1)
-    #恢复网络
-    swipe((1036,0),(886,432))
-    poco("com.aispeech.ccui.systemui:id/cellGrid")\
-    .child("android.widget.LinearLayout")[0]\
-    .child("com.aispeech.ccui.systemui:id/iv_cell_icon")\
-    .click()
-    sleep(5)
-    touch((1000,1600))
+    # 恢复网络
+    swipe((1036, 0), (886, 432))
+    poco("com.aispeech.ccui.systemui:id/cellGrid") \
+        .child("android.widget.LinearLayout")[0] \
+        .child("com.aispeech.ccui.systemui:id/iv_cell_icon") \
+        .long_click(duration=2)
+    sleep(4)
+    poco("com.zlt.zltsettings:id/sw_airplane").click()
+    poco(text="已连接").wait_for_appearance(timeout=TIME_OUT)
+    poco("android.widget.FrameLayout") \
+        .child("android.widget.LinearLayout") \
+        .offspring("android:id/content") \
+        .offspring("com.zlt.zltsettings:id/ll_back") \
+        .child("android.widget.ImageView").click()
     #删除创建的代办
     touch(Template(r"tpl1749637230158.png", record_pos=(0.448, 0.182), resolution=(1200, 1920)))
     poco(text="删除").click()

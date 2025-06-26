@@ -389,6 +389,7 @@ def test_wechat_reading_open_and_search():
     .child("android.view.ViewGroup").click()
     #右滑退出微信读书
     swipe((2,1000),(700,1000))
+    sleep(2)
     poco("首页").click()
 
 
@@ -424,6 +425,7 @@ def test_comments_screenshot_export():
     poco("更多设置").click()
     poco(text="删除").click()
     poco(text="删除").click()
+    sleep(2)
     poco(text="我的文档").click()
     poco("首页").click()
     

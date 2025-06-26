@@ -217,7 +217,9 @@ def del_all_files():
 def del_file():
     touch(Template(r"tpl1748938545309.png", record_pos=(0.287, -0.606), resolution=(1200, 1920)))
     poco(text="全部选中").click()
+    poco(text="删除").wait_for_appearance(timeout=TIME_OUT)
     poco(text="删除").click()
+    poco(text="确认").wait_for_appearance(timeout=TIME_OUT)
     poco(text="确认").click()
     sleep(1)
 
