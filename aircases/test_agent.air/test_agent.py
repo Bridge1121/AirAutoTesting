@@ -184,7 +184,7 @@ def test_add_agent_and_notice():
     #切换视图，删除代办
     poco(text="列表视图").click()
     sleep(1)
-    find_del_agent(agent_name)
+    # find_del_agent(agent_name)
     poco(text="日历视图").click()
     poco("首页").click()
 
@@ -324,7 +324,7 @@ def test_add_agent_less_than_10_days():
     poco("排序").click()
     poco(text="按紧迫程度").click()
     #删除新增的代办
-    find_del_agent(agent_name)
+    # find_del_agent(agent_name)
     #回到日历视图
     poco(text="日历视图").click()
     poco("首页").click()
@@ -359,7 +359,7 @@ def test_add_agent_more_than_10_days():
     poco("排序").click()
     poco(text="按紧迫程度").click()
     #删除新增的代办
-    find_del_agent(agent_name)
+    # find_del_agent(agent_name)
     #回到日历视图
     poco(text="日历视图").click()
     poco("首页").click()
@@ -394,7 +394,7 @@ def test_note_add_agent():
     #删除新建的代办
     poco("待办").click()
     poco(text="列表视图").click()
-    find_del_agent(note_name)
+    # find_del_agent(note_name)
     poco(text="日历视图").click()
     #删除新增的笔记
     poco("笔记").click()
@@ -486,7 +486,7 @@ def test_add_agent_no_time_and_edit():
     poco(text="确认").click()
     #删除新增的代办
     sleep(2)
-    find_del_agent(agent_name)
+    # find_del_agent(agent_name)
     #切换回来
     poco(text="日历视图").click()
     poco("首页").click()
@@ -515,7 +515,7 @@ def test_agent_focus_on():
             poco(text="重点关注").click()
             break
     #删除新增的代办
-    find_del_agent(agent_name)
+    # find_del_agent(agent_name)
     poco(text="重点").click()
     poco(text="待处理").click()
     poco(text="日历视图").click()

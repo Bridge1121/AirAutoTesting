@@ -141,16 +141,13 @@ def find_del_agent(agent_name):
     sleep(2)
     if agents and len(agents) > 0:
         for i in range(len(agents)):
-            if poco("androidx.compose.ui.platform.ComposeView") \
-                .child("android.view.View") \
-                .child("android.view.View") \
-                .child("android.view.View")[7] \
-                .children()[i].get_text() == agent_name:
-                poco("androidx.compose.ui.platform.ComposeView") \
-                    .child("android.view.View") \
-                    .child("android.view.View") \
-                    .child("android.view.View")[7] \
-                    .children()[i + 2].click()
+            # agents = poco("androidx.compose.ui.platform.ComposeView") \
+            #     .child("android.view.View") \
+            #     .child("android.view.View") \
+            #     .child("android.view.View")[7] \
+            #     .children()
+            if agents[i].get_text() == agent_name:
+                agents[i + 2].click()
 
                 #             touch(Template(r"tpl1749637230158.png", record_pos=(0.448, 0.182), resolution=(1200, 1920)))
                 # 删除新增的代办
