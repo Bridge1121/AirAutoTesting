@@ -526,24 +526,30 @@ def test_agent_focus_on():
 @pytest.mark.testcase
 @allure.description("删除所有待办")
 @allure.title("删除所有待办")
-def test_del_all_agents():
+def test_zdel_all_agents():
     poco("待办").click()
     poco(text="列表视图").click()
-    agents = poco("androidx.compose.ui.platform.ComposeView")\
-    .child("android.view.View")\
-    .child("android.view.View")\
-    .child("android.view.View")[7]\
-    .children()
-#     .child("android.widget.TextView")
-    
-    if len(agents)>0:
-        for i in range(len(agents)):
-            if agents[i].get_name() == "android.widget.TextView":
-                agents[i+2].click()
-                #删除新增的代办
-                poco(text="删除").click()
-                poco(text="确认").click()
-                sleep(1)
+    while exists(Template(r"tpl1751012774976.png", record_pos=(0.448, -0.073), resolution=(1200, 1920))):
+        touch(Template(r"tpl1751012774976.png", record_pos=(0.448, -0.073), resolution=(1200, 1920)))
+        poco(text="删除").click()
+        poco(text="确认").click()
+        sleep(1)
+
+    #     agents = poco("androidx.compose.ui.platform.ComposeView")\
+    #     .child("android.view.View")\
+    #     .child("android.view.View")\
+    #     .child("android.view.View")[7]\
+    #     .children()
+    # #     .child("android.widget.TextView")
+
+    #     if len(agents)>0:
+    #         for i in range(len(agents)):
+    #             if agents[i].get_name() == "android.widget.TextView":
+    #                 agents[i+2].click()
+    #                 #删除新增的代办
+    #                 poco(text="删除").click()
+    #                 poco(text="确认").click()
+    #                 sleep(1)
     poco(text="日历视图").click()
     poco("首页").click()
     
