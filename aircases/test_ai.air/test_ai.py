@@ -83,7 +83,7 @@ def test_ai_answer_copy():
     sleep(1)
     #新建笔记
     poco(text="新建笔记").click()
-    sleep(1)
+    sleep(4)
     #输入笔记内容
     poco("更多设置").click()
     poco(text="插入文字").click()
