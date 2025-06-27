@@ -45,7 +45,6 @@ def extract_day(date_str):
 def choose_n_days_date(n):
     # 1. 当前日期
     today = datetime.today()
-
     # 2. 加 n 天后目标日期
     target_date = today + timedelta(days=n)
     target_year = target_date.year
@@ -66,8 +65,8 @@ def choose_n_days_date(n):
         .child("android.widget.TextView")[0].click()
     sleep(2)
     # 4. 获取当前选中的日期
-    date_list = poco("android.widget.FrameLayout") \
-        .offspring("android.view.ViewGroup") \
+
+    date_list = poco("android:id/content") \
         .child("android.view.View") \
         .child("android.view.View") \
         .child("android.view.View")[0] \
@@ -99,23 +98,33 @@ def choose_n_days_date(n):
         # 不在本月
         print(f"目标日期不在本月，请翻页至 {target_year} 年 {target_month} 月，然后点击 {target_day} 日")
         # 跳转到下个月
-        poco("android.widget.FrameLayout") \
-            .offspring("android.view.ViewGroup") \
-            .child("android.view.View") \
-            .child("android.view.View") \
-            .child("android.view.View")[0] \
-            .child("android.view.View") \
-            .child("android.view.View")[2] \
-            .child("android.widget.Button").click()
+        sleep(1)
+        poco("转到下个月").click()
+        sleep(1)
+        #         poco("android.widget.FrameLayout")\
+        #         .offspring("android.view.ViewGroup")\
+        #         .child("android.view.View")\
+        #         .child("android.view.View")\
+        #         .child("android.view.View")[0]\
+        #         .child("android.view.View")\
+        #         .child("android.view.View")[2]\
+        #         .child("android.widget.Button").click()
         # 选择对应日期
-        poco("android.widget.FrameLayout") \
-            .offspring("android.view.ViewGroup") \
+        poco("android:id/content") \
             .child("android.view.View") \
             .child("android.view.View") \
             .child("android.view.View")[0] \
             .child("android.view.View") \
             .child("android.view.View")[3] \
             .child("android.widget.TextView")[target_day].click()
+    #         poco("android.widget.FrameLayout")\
+    #         .offspring("android.view.ViewGroup")\
+    #         .child("android.view.View")\
+    #         .child("android.view.View")\
+    #         .child("android.view.View")[0]\
+    #         .child("android.view.View")\
+    #         .child("android.view.View")[3]\
+    #         .child("android.widget.TextView")[target_day].click()
 
     # 6. 确认选择
     poco(text="确定").click()
@@ -129,17 +138,23 @@ def find_del_agent(agent_name):
         .child("android.view.View") \
         .child("android.view.View")[7] \
         .children()
-    for i in range(len(agents)):
-        if poco("androidx.compose.ui.platform.ComposeView") \
-        .child("android.view.View") \
-        .child("android.view.View") \
-        .child("android.view.View")[7] \
-        .children()[i].get_text() == agent_name:
-            agents[i + 2].click()
-            #             touch(Template(r"tpl1749637230158.png", record_pos=(0.448, 0.182), resolution=(1200, 1920)))
-            # 删除新增的代办
-            poco(text="删除").click()
-            poco(text="确认").click()
+    if agents and len(agents) > 0:
+        for i in range(len(agents)):
+            if poco("androidx.compose.ui.platform.ComposeView") \
+                .child("android.view.View") \
+                .child("android.view.View") \
+                .child("android.view.View")[7] \
+                .children()[i].get_text() == agent_name:
+                poco("androidx.compose.ui.platform.ComposeView") \
+                    .child("android.view.View") \
+                    .child("android.view.View") \
+                    .child("android.view.View")[7] \
+                    .children()[i + 2].click()
+
+                #             touch(Template(r"tpl1749637230158.png", record_pos=(0.448, 0.182), resolution=(1200, 1920)))
+                # 删除新增的代办
+                poco(text="删除").click()
+                poco(text="确认").click()
 
 
 # 点击并拖动ai图标到文本

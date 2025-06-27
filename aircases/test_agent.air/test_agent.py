@@ -273,10 +273,12 @@ def test_add_agent_less_than_24():
     text(agent_name,enter=False)
     poco("date").click()
     poco(text="时间段").click()
+    sleep(4)
     poco(text="17:00").click()
     #上滑时间轴
 #     swipe((807,1492),(750,1492))
-    swipe_press_ai((807,1492),(807,1292))
+#     swipe_press_ai((807,1492),(807,1292))
+    sleep(2)
     #点击确认
     poco("android:id/content")\
     .child("android.view.View")\
@@ -314,9 +316,11 @@ def test_add_agent_less_than_10_days():
     #换成列表视图
     poco(text="列表视图").click()
     #按照创建时间排序
+    poco("排序").wait_for_appearance(timeout=TIME_OUT)
     poco("排序").click()
     poco(text="按创建时间").click()
     #按照紧迫程度排序
+    poco("排序").wait_for_appearance(timeout=TIME_OUT)
     poco("排序").click()
     poco(text="按紧迫程度").click()
     #删除新增的代办
@@ -332,8 +336,8 @@ def test_add_agent_less_than_10_days():
 @allure.title("按紧迫程度排序-待办-还有十天以上，再按创建时间排序")
 @allure.description("按紧迫程度排序-待办-还有十天以上，再按创建时间排序")
 def test_add_agent_more_than_10_days():
-#     if is_login()==True:
-#         login()
+    if is_login()==True:
+        login()
     poco("待办").click()
     poco(text="请在下方书写待办或点击此处新建待办").click()
     agent_name = "这是10天以后要完成的代办"
@@ -345,9 +349,13 @@ def test_add_agent_more_than_10_days():
     #换成列表视图
     poco(text="列表视图").click()
     #按照创建时间排序
+    sleep(2)
+    poco("排序").wait_for_appearance(timeout=TIME_OUT)
     poco("排序").click()
     poco(text="按创建时间").click()
     #按照紧迫程度排序
+    sleep(2)
+    poco("排序").wait_for_appearance(timeout=TIME_OUT)
     poco("排序").click()
     poco(text="按紧迫程度").click()
     #删除新增的代办
@@ -362,6 +370,8 @@ def test_add_agent_more_than_10_days():
 @allure.title("创建笔记输入文本，增加代办")
 @allure.description("创建笔记输入文本，增加代办")
 def test_note_add_agent():
+    if is_login()==True:
+        login()
     #点击笔记
     poco("笔记").click()
     sleep(1)
@@ -475,6 +485,7 @@ def test_add_agent_no_time_and_edit():
     poco(text="确认").click()
     poco(text="确认").click()
     #删除新增的代办
+    sleep(2)
     find_del_agent(agent_name)
     #切换回来
     poco(text="日历视图").click()

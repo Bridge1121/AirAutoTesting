@@ -102,8 +102,8 @@ def test_file_search():
 @allure.description("输入对应笔记标题搜索后进入详情页")
 @allure.title("输入对应笔记标题搜索后进入详情页")
 def test_note_search_and_open(title="测试"):
-    # if is_login()==True:
-    #     login()
+    if is_login()==True:
+        login()
     #点击笔记
     poco("笔记").click()
     #点击搜索

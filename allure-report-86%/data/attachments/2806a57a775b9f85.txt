@@ -1,0 +1,6 @@
+DEBUG    airtest.core.android.adb:adb.py:187 C:\Users\wenxiu.tian_sx\Downloads\platform-tools-latest-windows\platform-tools\adb.exe -P 5037 -s AINOTEA224042300042 shell am broadcast -a ADB_INPUT_TEXT --es msg 我要添加一个超长文本的代办我要添加一个超长文本的代办我要添加一个超长文本的代办我要添加一个超长文本的代办我要添加一个超长文本的代办我要添加一个超长文本的代办我要添加一个超长文本的代办我要添加一个超长文本的代办我要添加一个超长文本的代办我要添加一个超长文本的代办我要添加一个超长文本的代办我要添加一个超长文本的代办我要添加一个超长文本的代办我要添加一个超长文本的代办我要添加一个超长文本的代办
+INFO     airtest.core.api:cv.py:59 Try finding: Template(C:\Users\wenxiu.tian_sx\PycharmProjects\AirAutoTesting\utils\tpl1749637230158.png)
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.multiscale_template_matching:multiscale_template_matching.py:186 [MSTemplatePre] threshold=0.7, result={'result': (1138, 1180), 'rectangle': ((1126.6, 1160.4), (1126.6, 1200.4), (1149.6, 1200.4), (1149.6, 1160.4)), 'confidence': 0.993854284286499}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.02 s.
+DEBUG    airtest.core.api:cv.py:155 match result: {'result': (1138, 1180), 'rectangle': ((1126.6, 1160.4), (1126.6, 1200.4), (1149.6, 1200.4), (1149.6, 1160.4)), 'confidence': 0.993854284286499, 'time': 0.018015146255493164}
