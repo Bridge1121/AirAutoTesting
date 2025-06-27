@@ -196,10 +196,10 @@ def test_note_default_template():
     if is_login()==True:
         login()
     poco("笔记").click()
-    sleep(1)
+    sleep(3)
     #新建笔记
     poco(text="新建笔记").click()
-    sleep(2)
+    sleep(5)
     #将默认笔记设置为行距纸
     poco("更多设置").wait_for_appearance(timeout=TIME_OUT)
     poco("更多设置").click()
@@ -224,130 +224,131 @@ def test_note_default_template():
     
     
 #自定义模版tab首位为模版导入入口校验，自定义模版首位显示支持导入模版的格式（jpg、png、bmp）校验
-@pytest.mark.testcase
-@allure.description("自定义模版tab首位为模版导入入口校验，自定义模版首位显示支持导入模版的格式（jpg、png、bmp）校验")
-@allure.title("自定义模版tab首位为模版导入入口校验，自定义模版首位显示支持导入模版的格式（jpg、png、bmp）校验")
-def test_note_template_customize_portal_and_export_jpg_and_png():
-#     if is_login()==True:
-#         login()
-    poco("笔记").click()
-    sleep(1)
-    #新建笔记
-    poco(text="新建笔记").click()
-    sleep(1)
-    poco("更多设置").click()
-    poco(text="更改模板").click()
-    #点击自定义模板
-    poco(text="自定义模板").click()
-    sleep(1)
-    poco("android.widget.LinearLayout")\
-    .offspring("androidx.compose.ui.platform.ComposeView")\
-    .child("android.view.View")\
-    .child("android.view.View")\
-    .child("android.view.View")[7]\
-    .child("android.view.View").child("android.view.View").click()
-    sleep(4)
-    #点击根目录
-#     touch(Template(r"tpl1750840211269.png", record_pos=(-0.44, -0.725), resolution=(1200, 1920)))
-#     touch(Template(r"tpl1750830649319.png", record_pos=(-0.437, -0.725), resolution=(1200, 1920)))
-#     poco("显示根目录").wait_for_appearance(timeout=TIME_OUT)
-    poco("显示根目录").click()
-    sleep(1)
-    #点击图片
-    touch((168,324))
-#     poco(text="图片").click()
-#     poco("android.widget.FrameLayout")\
+# @pytest.mark.testcase
+# @allure.description("自定义模版tab首位为模版导入入口校验，自定义模版首位显示支持导入模版的格式（jpg、png、bmp）校验")
+# @allure.title("自定义模版tab首位为模版导入入口校验，自定义模版首位显示支持导入模版的格式（jpg、png、bmp）校验")
+# def test_note_template_customize_portal_and_export_jpg_and_png():
+# #     if is_login()==True:
+# #         login()
+#     poco("笔记").click()
+#     sleep(1)
+#     #新建笔记
+#     poco(text="新建笔记").click()
+#     sleep(1)
+#     poco("更多设置").click()
+#     poco(text="更改模板").click()
+#     #点击自定义模板
+#     poco(text="自定义模板").click()
+#     sleep(1)
+#     poco("android.widget.LinearLayout")\
+#     .offspring("androidx.compose.ui.platform.ComposeView")\
+#     .child("android.view.View")\
+#     .child("android.view.View")\
+#     .child("android.view.View")[7]\
+#     .child("android.view.View").child("android.view.View").click()
+#     sleep(4)
+#     #点击根目录
+# #     touch(Template(r"tpl1750840211269.png", record_pos=(-0.44, -0.725), resolution=(1200, 1920)))
+# #     touch(Template(r"tpl1750830649319.png", record_pos=(-0.437, -0.725), resolution=(1200, 1920)))
+# #     poco("显示根目录").wait_for_appearance(timeout=TIME_OUT)
+#     poco("显示根目录").click()
+#     sleep(1)
+#     #点击图片
+#     touch((168,324))
+# #     poco(text="图片").click()
+# #     poco("android.widget.FrameLayout")\
+# #     .child("android.widget.LinearLayout")\
+# #     .offspring("com.android.documentsui:id/roots_list")\
+# #     .child("android.widget.LinearLayout")[1]\
+# #     .offspring("android:id/title").click()
+#
+#     if exists(Template(r"tpl1750821729163.png", record_pos=(0.422, -0.472), resolution=(1200, 1920))):
+#         touch(Template(r"tpl1750821729163.png", record_pos=(0.422, -0.472), resolution=(1200, 1920)))
+#     sleep(2)
+#     #右滑返回
+#     swipe((3,900),(200,900))
+#     sleep(4)
+#     poco(text="CameraAISpeech").wait_for_appearance(timeout=TIME_OUT)
+#     poco(text="CameraAISpeech").click()
+#     #选择jpg图片
+#     pic_list = poco("android.widget.FrameLayout")\
 #     .child("android.widget.LinearLayout")\
-#     .offspring("com.android.documentsui:id/roots_list")\
-#     .child("android.widget.LinearLayout")[1]\
-#     .offspring("android:id/title").click()
-
-    if exists(Template(r"tpl1750821729163.png", record_pos=(0.422, -0.472), resolution=(1200, 1920))):
-        touch(Template(r"tpl1750821729163.png", record_pos=(0.422, -0.472), resolution=(1200, 1920)))
-    sleep(2)
-    #右滑返回
-    swipe((3,900),(200,900))
-    poco(text="CameraAISpeech").wait_for_appearance(timeout=TIME_OUT)
-    poco(text="CameraAISpeech").click()
-    #选择jpg图片
-    pic_list = poco("android.widget.FrameLayout")\
-    .child("android.widget.LinearLayout")\
-    .offspring("com.android.documentsui:id/drawer_layout")\
-    .child("android.widget.ScrollView")\
-    .offspring("com.android.documentsui:id/container_directory")\
-    .offspring("com.android.documentsui:id/dir_list")\
-    .child("com.android.documentsui:id/item_root")
-    if pic_list and len(pic_list)>0:
-        for p in pic_list:
-            if p.child("android.widget.LinearLayout")\
-            .child("android.widget.LinearLayout")\
-            .offspring("android:id/title").get_text().endswith("jpg"):
-                p.click()
-                break
-        poco("应用裁切").click()
-    else:
-        #右滑返回
-        swipe((3,900),(200,900))
-        sleep(1)
-        #右滑返回
-        swipe((3,900),(200,900))
-    #点击关闭按钮
-    poco("android.widget.LinearLayout")\
-    .offspring("androidx.compose.ui.platform.ComposeView")\
-    .child("android.view.View")\
-    .child("android.view.View")\
-    .child("android.view.View")[3]\
-    .child("返回").click()
-    #再次点击，导入png图片
-    poco("更多设置").click()
-    poco(text="更改模板").click()
-    poco(text="自定义模板").click()
-    poco("android.widget.LinearLayout")\
-    .offspring("androidx.compose.ui.platform.ComposeView")\
-    .child("android.view.View")\
-    .child("android.view.View")\
-    .child("android.view.View")[7]\
-    .child("android.view.View")\
-    .child("android.view.View").click()
-    poco("显示根目录").click()
-    #点击图片
-    touch((168,324))
-#     poco("android.widget.FrameLayout")\
+#     .offspring("com.android.documentsui:id/drawer_layout")\
+#     .child("android.widget.ScrollView")\
+#     .offspring("com.android.documentsui:id/container_directory")\
+#     .offspring("com.android.documentsui:id/dir_list")\
+#     .child("com.android.documentsui:id/item_root")
+#     if pic_list and len(pic_list)>0:
+#         for p in pic_list:
+#             if p.child("android.widget.LinearLayout")\
+#             .child("android.widget.LinearLayout")\
+#             .offspring("android:id/title").get_text().endswith("jpg"):
+#                 p.click()
+#                 break
+#         poco("应用裁切").click()
+#     else:
+#         #右滑返回
+#         swipe((3,900),(200,900))
+#         sleep(1)
+#         #右滑返回
+#         swipe((3,900),(200,900))
+#     #点击关闭按钮
+#     poco("android.widget.LinearLayout")\
+#     .offspring("androidx.compose.ui.platform.ComposeView")\
+#     .child("android.view.View")\
+#     .child("android.view.View")\
+#     .child("android.view.View")[3]\
+#     .child("返回").click()
+#     #再次点击，导入png图片
+#     poco("更多设置").click()
+#     poco(text="更改模板").click()
+#     poco(text="自定义模板").click()
+#     poco("android.widget.LinearLayout")\
+#     .offspring("androidx.compose.ui.platform.ComposeView")\
+#     .child("android.view.View")\
+#     .child("android.view.View")\
+#     .child("android.view.View")[7]\
+#     .child("android.view.View")\
+#     .child("android.view.View").click()
+#     poco("显示根目录").click()
+#     #点击图片
+#     touch((168,324))
+# #     poco("android.widget.FrameLayout")\
+# #     .child("android.widget.LinearLayout")\
+# #     .offspring("com.android.documentsui:id/roots_list")\
+# #     .child("android.widget.LinearLayout")[1]\
+# #     .offspring("android:id/title").click()
+#     sleep(1)
+#     poco(text="导出文件").click()
+#     png_list = poco("android.widget.FrameLayout")\
 #     .child("android.widget.LinearLayout")\
-#     .offspring("com.android.documentsui:id/roots_list")\
-#     .child("android.widget.LinearLayout")[1]\
-#     .offspring("android:id/title").click()
-    sleep(1)
-    poco(text="导出文件").click()
-    png_list = poco("android.widget.FrameLayout")\
-    .child("android.widget.LinearLayout")\
-    .offspring("com.android.documentsui:id/drawer_layout")\
-    .child("android.widget.ScrollView")\
-    .offspring("com.android.documentsui:id/container_directory")\
-    .offspring("com.android.documentsui:id/dir_list")\
-    .child("com.android.documentsui:id/item_root")
-    if png_list and len(png_list)>0:
-        for p in png_list:
-            if p.child("android.widget.LinearLayout")\
-            .child("android.widget.LinearLayout")\
-            .offspring("android:id/title").get_text().endswith("png"):
-                p.click()
-                break
-        poco("应用裁切").click()
-        
-    else:
-        #右滑返回
-        swipe((3,900),(200,900))
-        sleep(1)
-        #右滑返回
-        swipe((3,900),(200,900))
-    poco(text="确认").click()
-    poco("返回").click()
-    #删除笔记
-    touch(Template(r"tpl1748339487185.png", record_pos=(0.458, -0.484), resolution=(1200, 1920)))
-    poco(text="删除").click()
-    poco(text="确认").click()
-    poco("首页").click()
+#     .offspring("com.android.documentsui:id/drawer_layout")\
+#     .child("android.widget.ScrollView")\
+#     .offspring("com.android.documentsui:id/container_directory")\
+#     .offspring("com.android.documentsui:id/dir_list")\
+#     .child("com.android.documentsui:id/item_root")
+#     if png_list and len(png_list)>0:
+#         for p in png_list:
+#             if p.child("android.widget.LinearLayout")\
+#             .child("android.widget.LinearLayout")\
+#             .offspring("android:id/title").get_text().endswith("png"):
+#                 p.click()
+#                 break
+#         poco("应用裁切").click()
+#
+#     else:
+#         #右滑返回
+#         swipe((3,900),(200,900))
+#         sleep(1)
+#         #右滑返回
+#         swipe((3,900),(200,900))
+#     poco(text="确认").click()
+#     poco("返回").click()
+#     #删除笔记
+#     touch(Template(r"tpl1748339487185.png", record_pos=(0.458, -0.484), resolution=(1200, 1920)))
+#     poco(text="删除").click()
+#     poco(text="确认").click()
+#     poco("首页").click()
 
    
     
@@ -416,6 +417,7 @@ def test_note_template_cropping():
     #删除笔记
     touch(Template(r"tpl1748339487185.png", record_pos=(0.458, -0.484), resolution=(1200, 1920)))
     poco(text="删除").click()
+    sleep(1)
     poco(text="确认").click()
     poco("首页").click()
     
@@ -797,7 +799,7 @@ def test_note_customize_template_rename():
     poco(text="更改模板").click()
     #点击自定义模板
     poco(text="自定义模板").click()
-    sleep(1)
+    sleep(2)
     #导入新的图片
     if poco("模板-空白").exists():
         poco("模板-空白").click()

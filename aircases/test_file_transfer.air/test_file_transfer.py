@@ -343,6 +343,7 @@ def test_note_export():
     poco(text="分享笔记").click()
     poco(text="导出文件").wait_for_appearance(timeout=100)
     poco(text="导出文件").click()
+    sleep(2)
     poco(text="保存到本地").click()
     poco("android.widget.FrameLayout")\
     .offspring("android.view.ViewGroup")\

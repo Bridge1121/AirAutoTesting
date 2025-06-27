@@ -1,0 +1,5 @@
+INFO     airtest.core.api:cv.py:59 Try finding: Template(C:\Users\wenxiu.tian_sx\PycharmProjects\AirAutoTesting\aircases\test_aalogin_data_auth.air\tpl1748339487185.png)
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.multiscale_template_matching:multiscale_template_matching.py:186 [MSTemplatePre] threshold=0.7, result={'result': (1152, 371), 'rectangle': ((1140.6, 341.20000000000005), (1140.6, 402.20000000000005), (1163.6, 402.20000000000005), (1163.6, 341.20000000000005)), 'confidence': 0.9914202690124512}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.05 s.
+DEBUG    airtest.core.api:cv.py:155 match result: {'result': (1152, 371), 'rectangle': ((1140.6, 341.20000000000005), (1140.6, 402.20000000000005), (1163.6, 402.20000000000005), (1163.6, 341.20000000000005)), 'confidence': 0.9914202690124512, 'time': 0.048583030700683594}

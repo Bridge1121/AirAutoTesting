@@ -115,6 +115,7 @@ def test_my_file_list_empty_docx_open():
     #点击保存
     poco("cn.wps.moffice_eng:id/image_save").click()
     poco("cn.wps.moffice_eng:id/btn_save").click()
+    sleep(2)
     #关闭文件
     poco("cn.wps.moffice_eng:id/writer_maintoolbar_backBtn").click()
     #返回到最近文件页面

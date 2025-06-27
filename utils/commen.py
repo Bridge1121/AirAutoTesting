@@ -130,7 +130,11 @@ def find_del_agent(agent_name):
         .child("android.view.View")[7] \
         .children()
     for i in range(len(agents)):
-        if agents[i].get_text() == agent_name:
+        if poco("androidx.compose.ui.platform.ComposeView") \
+        .child("android.view.View") \
+        .child("android.view.View") \
+        .child("android.view.View")[7] \
+        .children()[i].get_text() == agent_name:
             agents[i + 2].click()
             #             touch(Template(r"tpl1749637230158.png", record_pos=(0.448, 0.182), resolution=(1200, 1920)))
             # 删除新增的代办
@@ -245,6 +249,7 @@ def create_new_notes():
     poco("笔记").click()
     # 点击新建笔记
     poco(text="新建笔记").click()
+    sleep(2)
     # 输入笔记内容
     poco("更多设置").click()
     poco(text="插入文字").click()
