@@ -157,7 +157,7 @@ def test_ai_history_file_open():
     poco("返回").click()
     # 点击历史记录删除记录
     poco(text="历史记录").click()
-    sleep(1)
+    sleep(4)
     # 点击会话
     poco("android.widget.LinearLayout") \
         .offspring("androidx.compose.ui.platform.ComposeView") \
