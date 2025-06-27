@@ -138,6 +138,7 @@ def find_del_agent(agent_name):
         .child("android.view.View") \
         .child("android.view.View")[7] \
         .children()
+    sleep(2)
     if agents and len(agents) > 0:
         for i in range(len(agents)):
             if poco("androidx.compose.ui.platform.ComposeView") \
