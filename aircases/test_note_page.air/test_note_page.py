@@ -55,6 +55,8 @@ def test_note_page_order():
 @allure.description("清空页面 - 确定,内容清除后，返回列表再进入，不显示已清除的内容")
 @allure.title("清空页面 - 确定,内容清除后，返回列表再进入，不显示已清除的内容")
 def test_note_clear():
+    if is_login()==True:
+        login()
     #点击笔记
     poco("笔记").click()
     sleep(1)
@@ -98,6 +100,8 @@ def test_note_clear():
 @allure.description("TODO: 填写描述")
 @allure.title("TODO: 填写标题")
 def test_note_page_del():
+    if is_login()==True:
+        login()
     #点击笔记
     poco("笔记").click()
     sleep(1)
@@ -131,9 +135,11 @@ def test_note_page_del():
 
 # 更多功能中复制本页,页面排序中，更多功能里的复制当前页
 @pytest.mark.testcase
-@allure.description("TODO: 填写描述")
-@allure.title("TODO: 填写标题")
+@allure.description("更多功能中复制本页,页面排序中，更多功能里的复制当前页")
+@allure.title("更多功能中复制本页,页面排序中，更多功能里的复制当前页")
 def test_note_page_copy():
+    if is_login()==True:
+        login()
     #点击笔记
     poco("笔记").click()
     sleep(1)
@@ -168,9 +174,11 @@ def test_note_page_copy():
 
 # 默认字号是标准,切换字号为“大”,切换字号为“超大”
 @pytest.mark.testcase
-@allure.description("TODO: 填写描述")
-@allure.title("TODO: 填写标题")
+@allure.description("默认字号是标准,切换字号为“大”,切换字号为“超大”")
+@allure.title("默认字号是标准,切换字号为“大”,切换字号为“超大”")
 def test_font_size_change():
+    if is_login()==True:
+        login()
     poco("应用").click()
     poco("设置图标").click()
     poco(text="显示与亮度").click()
@@ -199,9 +207,11 @@ def test_font_size_change():
 
 # 开启录音转写，语种为普通话，查看词库
 @pytest.mark.testcase
-@allure.description("TODO: 填写描述")
-@allure.title("TODO: 填写标题")
+@allure.description("开启录音转写，语种为普通话，查看词库")
+@allure.title("开启录音转写，语种为普通话，查看词库")
 def test_note_recording_lexicon():
+    if is_login()==True:
+        login()
     #点击笔记
     poco("笔记").click()
     sleep(1)
@@ -302,9 +312,11 @@ def test_note_recording_lexicon():
     
 # 笔记首页更换笔记模板
 @pytest.mark.testcase
-@allure.description("TODO: 填写描述")
-@allure.title("TODO: 填写标题")
+@allure.description("笔记首页更换笔记模板")
+@allure.title("笔记首页更换笔记模板")
 def test_note_template_change():
+    if is_login()==True:
+        login()
     #点击笔记
     poco("笔记").click()
     sleep(1)

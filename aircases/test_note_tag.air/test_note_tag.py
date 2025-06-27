@@ -246,6 +246,8 @@ def test_note_with_tag_edit_group_add_tag(group_name="测试修改分组一"):
 @allure.description("笔记列表页笔记标签显示为蓝色字体验证，标签列表取消标签后，笔记列表不再显示已取消的标签验证")
 @allure.title("笔记列表页笔记标签显示为蓝色字体验证，标签列表取消标签后，笔记列表不再显示已取消的标签验证")
 def test_note_tag_ui_cancel():
+    if is_login()==True:
+        login()
     #点击笔记
     poco("笔记").click()
     sleep(1)
@@ -307,6 +309,8 @@ def test_note_tag_ui_cancel():
 @allure.description("笔记标签数量为10个限制超出后toast提示验证")
 @allure.title("笔记标签数量为10个限制超出后toast提示验证")
 def test_note_tag_num():
+    if is_login()==True:
+        login()
     #点击笔记
     poco("笔记").click()
     sleep(1)
@@ -350,6 +354,8 @@ def test_note_tag_num():
 @allure.description("二次确认弹窗点击确认后，关联的笔记不再显示该标签验证")
 @allure.title("二次确认弹窗点击确认后，关联的笔记不再显示该标签验证")
 def test_note_ass_tag_del():
+    if is_login()==True:
+        login()
     #点击笔记
     poco("笔记").click()
     sleep(1)
@@ -402,6 +408,8 @@ def test_note_ass_tag_del():
 @allure.description("标签页增加筛选结果可筛选出标签对应的笔记验证,所有标签（标签列表）支持长按显示悬浮菜单“重命名”“删除”按钮验证")
 @allure.title("标签页增加筛选结果可筛选出标签对应的笔记验证,所有标签（标签列表）支持长按显示悬浮菜单“重命名”“删除”按钮验证")
 def test_note_tag_sift():
+    if is_login()==True:
+        login()
     #点击笔记
     poco("笔记").click()
     sleep(1)

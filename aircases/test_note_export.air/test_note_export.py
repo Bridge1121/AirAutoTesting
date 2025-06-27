@@ -20,6 +20,8 @@ pytestmark = [allure.feature("笔记导入文件模块用例"), allure.epic("办
 @allure.description("保存到本地，导出完成弹窗选项立即打开验证")
 @allure.title("保存到本地，导出完成弹窗选项立即打开验证")
 def test_note_export():
+    if is_login()==True:
+        login()
     #点击笔记
     poco("笔记").click()
     sleep(1)
@@ -48,6 +50,8 @@ def test_note_export():
 @allure.description("更多分享方式获取可根据当前办公本已下载app进行选择验证")
 @allure.title("更多分享方式获取可根据当前办公本已下载app进行选择验证")
 def test_note_share_method():
+    if is_login()==True:
+        login()
     #点击笔记
     poco("笔记").click()
     sleep(1)

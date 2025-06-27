@@ -125,6 +125,8 @@ def test_ai_answer_copy():
 @allure.description("ai回答点击摘录到手写区，并进行编辑")
 @allure.title("ai回答点击摘录到手写区，并进行编辑")
 def test_ai_answer_excerpt_to_handwriting_area_edit():
+    if is_login()==True:
+        login()
     #点击笔记
     poco("笔记").click()
     sleep(1)
@@ -168,6 +170,8 @@ def test_ai_answer_excerpt_to_handwriting_area_edit():
 @allure.description("点击赞图标按钮，弹出反馈信息弹窗,在反馈弹窗中勾选选项、文本框输入内容")
 @allure.title("点击赞图标按钮，弹出反馈信息弹窗,在反馈弹窗中勾选选项、文本框输入内容")
 def test_ai_answer_support():
+    if is_login()==True:
+        login()
     #点击笔记
     poco("笔记").click()
     sleep(1)
@@ -213,6 +217,8 @@ def test_ai_answer_support():
 @allure.description("点击踩图标按钮，弹出反馈信息弹窗,在反馈弹窗中勾选选项、文本框输入内容")
 @allure.title("点击踩图标按钮，弹出反馈信息弹窗,在反馈弹窗中勾选选项、文本框输入内容")
 def test_ai_answer_oppose():
+    if is_login()==True:
+        login()
     #点击笔记
     poco("笔记").click()
     sleep(1)
@@ -255,6 +261,8 @@ def test_ai_answer_oppose():
 @allure.description("点击重新提取按钮,点击举报按钮，弹出举报弹窗,在举报弹窗中勾选选项、文本框输入内容")
 @allure.title("点击重新提取按钮,点击举报按钮，弹出举报弹窗,在举报弹窗中勾选选项、文本框输入内容")
 def test_ai_answer_rextract_and_report():
+    if is_login()==True:
+        login()
     #点击笔记
     poco("笔记").click()
     sleep(1)
@@ -300,6 +308,8 @@ def test_ai_answer_rextract_and_report():
 @allure.title("ai回答输入框包括键盘输入，语音输入,点击输入框中语音图标热区，切换到语音输入")
 @allure.description("ai回答输入框包括键盘输入，语音输入,点击输入框中语音图标热区，切换到语音输入")
 def test_ai_answer_input_ui():
+    if is_login()==True:
+        login()
     #点击笔记
     poco("笔记").click()
     sleep(1)

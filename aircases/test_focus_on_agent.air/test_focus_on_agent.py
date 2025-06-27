@@ -65,6 +65,8 @@ def test():
 @allure.description("在重点标记列表中修改待办内容，会同步到全部待办列表中")
 @allure.title("在重点标记列表中修改待办内容，会同步到全部待办列表中")
 def test_focus_on_agent_edit_sync():
+    if is_login()==True:
+        login()
     poco("待办").click()
     #新建一条重点关注的代办
     poco(text="请在下方书写待办或点击此处新建待办").click()
@@ -103,6 +105,8 @@ def test_focus_on_agent_edit_sync():
 @allure.description("修改重点关注的待办日期，月份，年份，")
 @allure.title("修改重点关注的待办日期，月份，年份，")
 def test_focus_on_agent_edit_date():
+    if is_login()==True:
+        login()
     poco("待办").click()
     #新建一条重点关注的代办
     poco(text="请在下方书写待办或点击此处新建待办").click()
@@ -156,6 +160,8 @@ def test_focus_on_agent_edit_date():
 @allure.description("重点关注列表,完成的未设日期的待办显示,完成的已设日期的待办显示,已完成的待办再点击左侧勾选")
 @allure.title("重点关注列表,完成的未设日期的待办显示,完成的已设日期的待办显示,已完成的待办再点击左侧勾选")
 def test_focus_on_finish_agent():
+    if is_login()==True:
+        login()
     #新建有日期的代办，点击完成，2s内再次点击
     poco("待办").click()
      #新建一条重点关注的代办

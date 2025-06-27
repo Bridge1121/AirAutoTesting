@@ -118,6 +118,8 @@ def test_ai_history_view_no_internet():
 @allure.description("点击历史会话的文件在云端时下载后点击直接打开，文件上传后预览")
 @allure.title("点击历史会话的文件在云端时下载后点击直接打开，文件上传后预览")
 def test_ai_history_file_open():
+    if is_login()==True:
+        login()
     poco("AI助手").click()
     poco("文件输入").click()
     poco(text="文档").click()
@@ -189,6 +191,8 @@ def test_ai_history_file_open():
 @allure.description("在首页AI进行的对话能够在AI助手页历史会话页面查看")
 @allure.title("在首页AI进行的对话能够在AI助手页历史会话页面查看")
 def test_index_ai_history():
+    if is_login()==True:
+        login()
     if poco(text="在此输入您的想法~").exists():
         poco(text="在此输入您的想法~").click()
     else:
@@ -217,6 +221,8 @@ def test_index_ai_history():
 @allure.description("语音输入模式下点击上传文件时会跳转到AI助手页")
 @allure.title("语音输入模式下点击上传文件时会跳转到AI助手页")
 def test_index_ai_upload_file():
+    if is_login()==True:
+        login()
     if poco(text="在此输入您的想法~").exists():
         # 点击语音模式
         poco("androidx.compose.ui.platform.ComposeView") \
@@ -233,6 +239,8 @@ def test_index_ai_upload_file():
 @allure.description("在笔记页AI进行的对话不能在AI助手页历史会话页面查看")
 @allure.title("在笔记页AI进行的对话不能在AI助手页历史会话页面查看")
 def test_note_ai_history():
+    if is_login()==True:
+        login()
     # 点击笔记
     poco("笔记").click()
     sleep(1)

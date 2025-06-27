@@ -446,6 +446,8 @@ def test():
 @allure.title("待办列表新增待办，选择日期，时间选无，并且进行编辑")
 @allure.description("待办列表新增待办，选择日期，时间选无，并且进行编辑")
 def test_add_agent_no_time_and_edit():
+    if is_login()==True:
+        login()
     poco("待办").click()
     poco(text="请在下方书写待办或点击此处新建待办").click()
     agent_name="这是一条没有时间的代办"
@@ -497,6 +499,8 @@ def test_add_agent_no_time_and_edit():
 @allure.description("在待处理列表设置代办重点关注，会同步到重点标记列表中")
 @allure.title("待处理列表设置代办重点关注，会同步到重点标记列表中")
 def test_agent_focus_on():
+    if is_login()==True:
+        login()
     poco("待办").click()
     poco(text="请在下方书写待办或点击此处新建待办").click()
     agent_name = "这是需要重点关注的代办"
@@ -527,6 +531,8 @@ def test_agent_focus_on():
 @allure.description("删除所有待办")
 @allure.title("删除所有待办")
 def test_zdel_all_agents():
+    if is_login()==True:
+        login()
     poco("待办").click()
     poco(text="列表视图").click()
     while exists(Template(r"tpl1751012774976.png", record_pos=(0.448, -0.073), resolution=(1200, 1920))):
@@ -559,6 +565,8 @@ def test_zdel_all_agents():
 @allure.description("完成未设日期的待办显示，完成已设日期的待办显示")
 @allure.title("完成未设日期的待办显示，完成已设日期的待办显示")
 def test_finish_agent():
+    if is_login()==True:
+        login()
     #创建一条有日期的代办，并点击完成
     poco("待办").click()
     poco(text="请在下方书写待办或点击此处新建待办").click()
@@ -615,6 +623,8 @@ def test_finish_agent():
 @allure.description("重点关注列表有数据，一行最多显示26个字,编辑待办信息后排序不变")
 @allure.title("重点关注列表有数据，一行最多显示26个字,编辑待办信息后排序不变")
 def test_long_text_agent_focus_on():
+    if is_login()==True:
+        login()
     poco("待办").click()
     poco(text="请在下方书写待办或点击此处新建待办").click()
     agent_name = "这是一条完成的代办这是一条完成的代办这是一条完成的代办这是一条完成的代办"
@@ -704,7 +714,7 @@ if __name__=="__main__":
     test_note_add_agent()
     test_add_agent_no_time_and_edit()
     test_agent_focus_on()
-    test_del_all_agents()
+    # test_del_all_agents()
     test_finish_agent()
     test_long_text_agent_focus_on()
     test_add_long_text_agent()

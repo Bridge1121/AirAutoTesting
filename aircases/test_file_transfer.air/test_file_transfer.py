@@ -117,8 +117,8 @@ def test_wifi_wechat_file_transfer():
 @allure.description("确认删除未下载文件未勾选同时删除本地文件，长按删除已下载的文件")
 @allure.title("确认删除未下载文件未勾选同时删除本地文件，长按删除已下载的文件")
 def test_wifi_wechat_long_click_del():
-#     if is_login()==True:
-#         login()
+    if is_login()==True:
+        login()
     poco("文件").click()
     #点击微信传输
     poco(text="微信传输").click()
