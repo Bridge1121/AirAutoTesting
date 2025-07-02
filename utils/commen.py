@@ -243,6 +243,8 @@ def del_file():
 
 # 判断当前是否登录
 def is_login():
+    if poco("com.aispeech.tablet:id/dialog_custom_content").exists():
+        poco("com.aispeech.tablet:id/dialog_custom_no").click()
     # 点击应用
     poco("应用").click()
     # 点击设置
@@ -280,9 +282,10 @@ def create_new_notes():
 
 # 退出登录
 def logout():
+    if poco("com.aispeech.tablet:id/dialog_custom_content").exists():
+        poco("com.aispeech.tablet:id/dialog_custom_no").click()
     # 点击应用
     poco("应用").click()
-
     # 点击设置
     poco("设置图标").click()
     # 点击登陆头像
@@ -312,9 +315,10 @@ def logout():
 
 # 登录账号
 def login(phoneNumber="18662682224", code="123456"):
+    if poco("com.aispeech.tablet:id/dialog_custom_content").exists():
+        poco("com.aispeech.tablet:id/dialog_custom_no").click()
     # 点击应用
     poco("应用").click()
-
     # 点击设置
     poco("设置图标").click()
     # 点击登陆头像

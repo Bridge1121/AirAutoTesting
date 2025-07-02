@@ -1,0 +1,155 @@
+INFO     airtest.core.api:cv.py:59 Try finding: Template(C:\Users\wenxiu.tian_sx\PycharmProjects\AirAutoTesting\aircases\test_agent.air\tpl1751012774976.png)
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.multiscale_template_matching:multiscale_template_matching.py:186 [MSTemplatePre] threshold=0.7, result={'result': (1138, 872), 'rectangle': ((1126.6, 853.4), (1126.6, 891.4), (1149.6, 891.4), (1149.6, 853.4)), 'confidence': 1.0}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.02 s.
+DEBUG    airtest.core.api:cv.py:155 match result: {'result': (1138, 872), 'rectangle': ((1126.6, 853.4), (1126.6, 891.4), (1149.6, 891.4), (1149.6, 853.4)), 'confidence': 1.0, 'time': 0.019042253494262695}
+INFO     airtest.core.api:cv.py:59 Try finding: Template(C:\Users\wenxiu.tian_sx\PycharmProjects\AirAutoTesting\aircases\test_agent.air\tpl1751012774976.png)
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.multiscale_template_matching:multiscale_template_matching.py:186 [MSTemplatePre] threshold=0.7, result={'result': (1138, 872), 'rectangle': ((1126.6, 853.4), (1126.6, 891.4), (1149.6, 891.4), (1149.6, 853.4)), 'confidence': 1.0}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.02 s.
+DEBUG    airtest.core.api:cv.py:155 match result: {'result': (1138, 872), 'rectangle': ((1126.6, 853.4), (1126.6, 891.4), (1149.6, 891.4), (1149.6, 853.4)), 'confidence': 1.0, 'time': 0.018012046813964844}
+INFO     airtest.core.api:cv.py:59 Try finding: Template(C:\Users\wenxiu.tian_sx\PycharmProjects\AirAutoTesting\aircases\test_agent.air\tpl1751012774976.png)
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.multiscale_template_matching:multiscale_template_matching.py:186 [MSTemplatePre] threshold=0.7, result={'result': (1138, 872), 'rectangle': ((1126.6, 853.4), (1126.6, 891.4), (1149.6, 891.4), (1149.6, 853.4)), 'confidence': 1.0}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.02 s.
+DEBUG    airtest.core.api:cv.py:155 match result: {'result': (1138, 872), 'rectangle': ((1126.6, 853.4), (1126.6, 891.4), (1149.6, 891.4), (1149.6, 853.4)), 'confidence': 1.0, 'time': 0.017997264862060547}
+INFO     airtest.core.api:cv.py:59 Try finding: Template(C:\Users\wenxiu.tian_sx\PycharmProjects\AirAutoTesting\aircases\test_agent.air\tpl1751012774976.png)
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.multiscale_template_matching:multiscale_template_matching.py:186 [MSTemplatePre] threshold=0.7, result={'result': (1138, 872), 'rectangle': ((1126.6, 853.4), (1126.6, 891.4), (1149.6, 891.4), (1149.6, 853.4)), 'confidence': 1.0}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.02 s.
+DEBUG    airtest.core.api:cv.py:155 match result: {'result': (1138, 872), 'rectangle': ((1126.6, 853.4), (1126.6, 891.4), (1149.6, 891.4), (1149.6, 853.4)), 'confidence': 1.0, 'time': 0.018916845321655273}
+INFO     airtest.core.api:cv.py:59 Try finding: Template(C:\Users\wenxiu.tian_sx\PycharmProjects\AirAutoTesting\aircases\test_agent.air\tpl1751012774976.png)
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.multiscale_template_matching:multiscale_template_matching.py:186 [MSTemplatePre] threshold=0.7, result={'result': (1138, 872), 'rectangle': ((1126.6, 853.4), (1126.6, 891.4), (1149.6, 891.4), (1149.6, 853.4)), 'confidence': 1.0}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.02 s.
+DEBUG    airtest.core.api:cv.py:155 match result: {'result': (1138, 872), 'rectangle': ((1126.6, 853.4), (1126.6, 891.4), (1149.6, 891.4), (1149.6, 853.4)), 'confidence': 1.0, 'time': 0.019002199172973633}
+INFO     airtest.core.api:cv.py:59 Try finding: Template(C:\Users\wenxiu.tian_sx\PycharmProjects\AirAutoTesting\aircases\test_agent.air\tpl1751012774976.png)
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.multiscale_template_matching:multiscale_template_matching.py:186 [MSTemplatePre] threshold=0.7, result={'result': (1138, 872), 'rectangle': ((1126.6, 853.4), (1126.6, 891.4), (1149.6, 891.4), (1149.6, 853.4)), 'confidence': 1.0}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.02 s.
+DEBUG    airtest.core.api:cv.py:155 match result: {'result': (1138, 872), 'rectangle': ((1126.6, 853.4), (1126.6, 891.4), (1149.6, 891.4), (1149.6, 853.4)), 'confidence': 1.0, 'time': 0.018000364303588867}
+INFO     airtest.core.api:cv.py:59 Try finding: Template(C:\Users\wenxiu.tian_sx\PycharmProjects\AirAutoTesting\aircases\test_agent.air\tpl1751012774976.png)
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.multiscale_template_matching:multiscale_template_matching.py:186 [MSTemplatePre] threshold=0.7, result={'result': (1138, 872), 'rectangle': ((1126.6, 853.4), (1126.6, 891.4), (1149.6, 891.4), (1149.6, 853.4)), 'confidence': 1.0}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.02 s.
+DEBUG    airtest.core.api:cv.py:155 match result: {'result': (1138, 872), 'rectangle': ((1126.6, 853.4), (1126.6, 891.4), (1149.6, 891.4), (1149.6, 853.4)), 'confidence': 1.0, 'time': 0.01948237419128418}
+INFO     airtest.core.api:cv.py:59 Try finding: Template(C:\Users\wenxiu.tian_sx\PycharmProjects\AirAutoTesting\aircases\test_agent.air\tpl1751012774976.png)
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.multiscale_template_matching:multiscale_template_matching.py:186 [MSTemplatePre] threshold=0.7, result={'result': (1138, 872), 'rectangle': ((1126.6, 853.4), (1126.6, 891.4), (1149.6, 891.4), (1149.6, 853.4)), 'confidence': 1.0}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.02 s.
+DEBUG    airtest.core.api:cv.py:155 match result: {'result': (1138, 872), 'rectangle': ((1126.6, 853.4), (1126.6, 891.4), (1149.6, 891.4), (1149.6, 853.4)), 'confidence': 1.0, 'time': 0.01753091812133789}
+INFO     airtest.core.api:cv.py:59 Try finding: Template(C:\Users\wenxiu.tian_sx\PycharmProjects\AirAutoTesting\aircases\test_agent.air\tpl1751012774976.png)
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.multiscale_template_matching:multiscale_template_matching.py:186 [MSTemplatePre] threshold=0.7, result={'result': (1138, 872), 'rectangle': ((1126.6, 853.4), (1126.6, 891.4), (1149.6, 891.4), (1149.6, 853.4)), 'confidence': 1.0}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.02 s.
+DEBUG    airtest.core.api:cv.py:155 match result: {'result': (1138, 872), 'rectangle': ((1126.6, 853.4), (1126.6, 891.4), (1149.6, 891.4), (1149.6, 853.4)), 'confidence': 1.0, 'time': 0.02300572395324707}
+INFO     airtest.core.api:cv.py:59 Try finding: Template(C:\Users\wenxiu.tian_sx\PycharmProjects\AirAutoTesting\aircases\test_agent.air\tpl1751012774976.png)
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.multiscale_template_matching:multiscale_template_matching.py:186 [MSTemplatePre] threshold=0.7, result={'result': (1138, 872), 'rectangle': ((1126.6, 853.4), (1126.6, 891.4), (1149.6, 891.4), (1149.6, 853.4)), 'confidence': 1.0}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.02 s.
+DEBUG    airtest.core.api:cv.py:155 match result: {'result': (1138, 872), 'rectangle': ((1126.6, 853.4), (1126.6, 891.4), (1149.6, 891.4), (1149.6, 853.4)), 'confidence': 1.0, 'time': 0.023705482482910156}
+INFO     airtest.core.api:cv.py:59 Try finding: Template(C:\Users\wenxiu.tian_sx\PycharmProjects\AirAutoTesting\aircases\test_agent.air\tpl1751012774976.png)
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.multiscale_template_matching:multiscale_template_matching.py:186 [MSTemplatePre] threshold=0.7, result={'result': (1138, 872), 'rectangle': ((1126.6, 853.4), (1126.6, 891.4), (1149.6, 891.4), (1149.6, 853.4)), 'confidence': 1.0}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.02 s.
+DEBUG    airtest.core.api:cv.py:155 match result: {'result': (1138, 872), 'rectangle': ((1126.6, 853.4), (1126.6, 891.4), (1149.6, 891.4), (1149.6, 853.4)), 'confidence': 1.0, 'time': 0.024805545806884766}
+INFO     airtest.core.api:cv.py:59 Try finding: Template(C:\Users\wenxiu.tian_sx\PycharmProjects\AirAutoTesting\aircases\test_agent.air\tpl1751012774976.png)
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.multiscale_template_matching:multiscale_template_matching.py:186 [MSTemplatePre] threshold=0.7, result={'result': (1138, 872), 'rectangle': ((1126.6, 853.4), (1126.6, 891.4), (1149.6, 891.4), (1149.6, 853.4)), 'confidence': 1.0}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.02 s.
+DEBUG    airtest.core.api:cv.py:155 match result: {'result': (1138, 872), 'rectangle': ((1126.6, 853.4), (1126.6, 891.4), (1149.6, 891.4), (1149.6, 853.4)), 'confidence': 1.0, 'time': 0.02037334442138672}
+INFO     airtest.core.api:cv.py:59 Try finding: Template(C:\Users\wenxiu.tian_sx\PycharmProjects\AirAutoTesting\aircases\test_agent.air\tpl1751012774976.png)
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.multiscale_template_matching:multiscale_template_matching.py:186 [MSTemplatePre] threshold=0.7, result={'result': (1138, 872), 'rectangle': ((1126.6, 853.4), (1126.6, 891.4), (1149.6, 891.4), (1149.6, 853.4)), 'confidence': 1.0}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.03 s.
+DEBUG    airtest.core.api:cv.py:155 match result: {'result': (1138, 872), 'rectangle': ((1126.6, 853.4), (1126.6, 891.4), (1149.6, 891.4), (1149.6, 853.4)), 'confidence': 1.0, 'time': 0.025454044342041016}
+INFO     airtest.core.api:cv.py:59 Try finding: Template(C:\Users\wenxiu.tian_sx\PycharmProjects\AirAutoTesting\aircases\test_agent.air\tpl1751012774976.png)
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.multiscale_template_matching:multiscale_template_matching.py:186 [MSTemplatePre] threshold=0.7, result={'result': (1138, 872), 'rectangle': ((1126.6, 853.4), (1126.6, 891.4), (1149.6, 891.4), (1149.6, 853.4)), 'confidence': 1.0}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.03 s.
+DEBUG    airtest.core.api:cv.py:155 match result: {'result': (1138, 872), 'rectangle': ((1126.6, 853.4), (1126.6, 891.4), (1149.6, 891.4), (1149.6, 853.4)), 'confidence': 1.0, 'time': 0.03493928909301758}
+INFO     airtest.core.api:cv.py:59 Try finding: Template(C:\Users\wenxiu.tian_sx\PycharmProjects\AirAutoTesting\aircases\test_agent.air\tpl1751012774976.png)
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.multiscale_template_matching:multiscale_template_matching.py:186 [MSTemplatePre] threshold=0.7, result={'result': (1138, 872), 'rectangle': ((1126.6, 853.4), (1126.6, 891.4), (1149.6, 891.4), (1149.6, 853.4)), 'confidence': 1.0}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.02 s.
+DEBUG    airtest.core.api:cv.py:155 match result: {'result': (1138, 872), 'rectangle': ((1126.6, 853.4), (1126.6, 891.4), (1149.6, 891.4), (1149.6, 853.4)), 'confidence': 1.0, 'time': 0.01707911491394043}
+INFO     airtest.core.api:cv.py:59 Try finding: Template(C:\Users\wenxiu.tian_sx\PycharmProjects\AirAutoTesting\aircases\test_agent.air\tpl1751012774976.png)
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.multiscale_template_matching:multiscale_template_matching.py:186 [MSTemplatePre] threshold=0.7, result={'result': (1138, 872), 'rectangle': ((1126.6, 853.4), (1126.6, 891.4), (1149.6, 891.4), (1149.6, 853.4)), 'confidence': 1.0}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.02 s.
+DEBUG    airtest.core.api:cv.py:155 match result: {'result': (1138, 872), 'rectangle': ((1126.6, 853.4), (1126.6, 891.4), (1149.6, 891.4), (1149.6, 853.4)), 'confidence': 1.0, 'time': 0.021087169647216797}
+INFO     airtest.core.api:cv.py:59 Try finding: Template(C:\Users\wenxiu.tian_sx\PycharmProjects\AirAutoTesting\aircases\test_agent.air\tpl1751012774976.png)
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.multiscale_template_matching:multiscale_template_matching.py:186 [MSTemplatePre] threshold=0.7, result={'result': (1138, 872), 'rectangle': ((1126.6, 853.4), (1126.6, 891.4), (1149.6, 891.4), (1149.6, 853.4)), 'confidence': 1.0}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.02 s.
+DEBUG    airtest.core.api:cv.py:155 match result: {'result': (1138, 872), 'rectangle': ((1126.6, 853.4), (1126.6, 891.4), (1149.6, 891.4), (1149.6, 853.4)), 'confidence': 1.0, 'time': 0.018674373626708984}
+INFO     airtest.core.api:cv.py:59 Try finding: Template(C:\Users\wenxiu.tian_sx\PycharmProjects\AirAutoTesting\aircases\test_agent.air\tpl1751012774976.png)
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.multiscale_template_matching:multiscale_template_matching.py:186 [MSTemplatePre] threshold=0.7, result={'result': (1138, 872), 'rectangle': ((1126.6, 853.4), (1126.6, 891.4), (1149.6, 891.4), (1149.6, 853.4)), 'confidence': 1.0}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.02 s.
+DEBUG    airtest.core.api:cv.py:155 match result: {'result': (1138, 872), 'rectangle': ((1126.6, 853.4), (1126.6, 891.4), (1149.6, 891.4), (1149.6, 853.4)), 'confidence': 1.0, 'time': 0.018508434295654297}
+INFO     airtest.core.api:cv.py:59 Try finding: Template(C:\Users\wenxiu.tian_sx\PycharmProjects\AirAutoTesting\aircases\test_agent.air\tpl1751012774976.png)
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.multiscale_template_matching:multiscale_template_matching.py:186 [MSTemplatePre] threshold=0.7, result={'result': (1138, 872), 'rectangle': ((1126.6, 853.4), (1126.6, 891.4), (1149.6, 891.4), (1149.6, 853.4)), 'confidence': 1.0}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.02 s.
+DEBUG    airtest.core.api:cv.py:155 match result: {'result': (1138, 872), 'rectangle': ((1126.6, 853.4), (1126.6, 891.4), (1149.6, 891.4), (1149.6, 853.4)), 'confidence': 1.0, 'time': 0.018964290618896484}
+INFO     airtest.core.api:cv.py:59 Try finding: Template(C:\Users\wenxiu.tian_sx\PycharmProjects\AirAutoTesting\aircases\test_agent.air\tpl1751012774976.png)
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.multiscale_template_matching:multiscale_template_matching.py:186 [MSTemplatePre] threshold=0.7, result={'result': (1138, 872), 'rectangle': ((1126.6, 853.4), (1126.6, 891.4), (1149.6, 891.4), (1149.6, 853.4)), 'confidence': 1.0}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.02 s.
+DEBUG    airtest.core.api:cv.py:155 match result: {'result': (1138, 872), 'rectangle': ((1126.6, 853.4), (1126.6, 891.4), (1149.6, 891.4), (1149.6, 853.4)), 'confidence': 1.0, 'time': 0.018100976943969727}
+INFO     airtest.core.api:cv.py:59 Try finding: Template(C:\Users\wenxiu.tian_sx\PycharmProjects\AirAutoTesting\aircases\test_agent.air\tpl1751012774976.png)
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.multiscale_template_matching:multiscale_template_matching.py:186 [MSTemplatePre] threshold=0.7, result={'result': (1138, 872), 'rectangle': ((1126.6, 853.4), (1126.6, 891.4), (1149.6, 891.4), (1149.6, 853.4)), 'confidence': 1.0}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.02 s.
+DEBUG    airtest.core.api:cv.py:155 match result: {'result': (1138, 872), 'rectangle': ((1126.6, 853.4), (1126.6, 891.4), (1149.6, 891.4), (1149.6, 853.4)), 'confidence': 1.0, 'time': 0.018761396408081055}
+INFO     airtest.core.api:cv.py:59 Try finding: Template(C:\Users\wenxiu.tian_sx\PycharmProjects\AirAutoTesting\aircases\test_agent.air\tpl1751012774976.png)
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.multiscale_template_matching:multiscale_template_matching.py:186 [MSTemplatePre] threshold=0.7, result={'result': (1138, 872), 'rectangle': ((1126.6, 853.4), (1126.6, 891.4), (1149.6, 891.4), (1149.6, 853.4)), 'confidence': 1.0}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.02 s.
+DEBUG    airtest.core.api:cv.py:155 match result: {'result': (1138, 872), 'rectangle': ((1126.6, 853.4), (1126.6, 891.4), (1149.6, 891.4), (1149.6, 853.4)), 'confidence': 1.0, 'time': 0.017652511596679688}
+INFO     airtest.core.api:cv.py:59 Try finding: Template(C:\Users\wenxiu.tian_sx\PycharmProjects\AirAutoTesting\aircases\test_agent.air\tpl1751012774976.png)
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.multiscale_template_matching:multiscale_template_matching.py:186 [MSTemplatePre] threshold=0.7, result={'result': (995, 735), 'rectangle': ((987.5999999999999, 722.4), (987.5999999999999, 748.4), (1003.5999999999999, 748.4), (1003.5999999999999, 722.4)), 'confidence': 0.011029846966266632}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.02 s.
+DEBUG    airtest.core.api:cv.py:189 try match with TemplateMatching
+DEBUG    airtest.aircv.template_matching:template_matching.py:84 [Template] threshold=0.7, result={'result': (1102, 28), 'rectangle': ((1091, 9), (1091, 47), (1114, 47), (1114, 9)), 'confidence': 0.5858319997787476}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.06 s.
+DEBUG    airtest.core.api:cv.py:189 try match with SIFTMatching
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.36 s.
+DEBUG    airtest.core.api:cv.py:189 try match with BRISKMatching
+DEBUG    airtest.core.api:cv.py:196 'Not enough feature points in input images !'
+DEBUG    airtest.core.api:cv.py:155 match result: None
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.multiscale_template_matching:multiscale_template_matching.py:186 [MSTemplatePre] threshold=0.7, result={'result': (995, 735), 'rectangle': ((987.5999999999999, 722.4), (987.5999999999999, 748.4), (1003.5999999999999, 748.4), (1003.5999999999999, 722.4)), 'confidence': 0.011029846966266632}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.02 s.
+DEBUG    airtest.core.api:cv.py:189 try match with TemplateMatching
+DEBUG    airtest.aircv.template_matching:template_matching.py:84 [Template] threshold=0.7, result={'result': (1102, 28), 'rectangle': ((1091, 9), (1091, 47), (1114, 47), (1114, 9)), 'confidence': 0.5858319997787476}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.05 s.
+DEBUG    airtest.core.api:cv.py:189 try match with SIFTMatching
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.36 s.
+DEBUG    airtest.core.api:cv.py:189 try match with BRISKMatching
+DEBUG    airtest.core.api:cv.py:196 'Not enough feature points in input images !'
+DEBUG    airtest.core.api:cv.py:155 match result: None
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.multiscale_template_matching:multiscale_template_matching.py:186 [MSTemplatePre] threshold=0.7, result={'result': (995, 735), 'rectangle': ((987.5999999999999, 722.4), (987.5999999999999, 748.4), (1003.5999999999999, 748.4), (1003.5999999999999, 722.4)), 'confidence': 0.011029846966266632}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.02 s.
+DEBUG    airtest.core.api:cv.py:189 try match with TemplateMatching
+DEBUG    airtest.aircv.template_matching:template_matching.py:84 [Template] threshold=0.7, result={'result': (1102, 28), 'rectangle': ((1091, 9), (1091, 47), (1114, 47), (1114, 9)), 'confidence': 0.5858319997787476}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.06 s.
+DEBUG    airtest.core.api:cv.py:189 try match with SIFTMatching
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.35 s.
+DEBUG    airtest.core.api:cv.py:189 try match with BRISKMatching
+DEBUG    airtest.core.api:cv.py:196 'Not enough feature points in input images !'
+DEBUG    airtest.core.api:cv.py:155 match result: None
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.multiscale_template_matching:multiscale_template_matching.py:186 [MSTemplatePre] threshold=0.7, result={'result': (995, 735), 'rectangle': ((987.5999999999999, 722.4), (987.5999999999999, 748.4), (1003.5999999999999, 748.4), (1003.5999999999999, 722.4)), 'confidence': 0.011029846966266632}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.02 s.
+DEBUG    airtest.core.api:cv.py:189 try match with TemplateMatching
+DEBUG    airtest.aircv.template_matching:template_matching.py:84 [Template] threshold=0.7, result={'result': (1102, 28), 'rectangle': ((1091, 9), (1091, 47), (1114, 47), (1114, 9)), 'confidence': 0.5858319997787476}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.05 s.
+DEBUG    airtest.core.api:cv.py:189 try match with SIFTMatching
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.34 s.
+DEBUG    airtest.core.api:cv.py:189 try match with BRISKMatching
+DEBUG    airtest.core.api:cv.py:196 'Not enough feature points in input images !'
+DEBUG    airtest.core.api:cv.py:155 match result: None

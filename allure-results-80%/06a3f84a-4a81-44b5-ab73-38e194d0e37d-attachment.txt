@@ -1,0 +1,11 @@
+INFO     airtest.core.api:cv.py:59 Try finding: Template(C:\Users\wenxiu.tian_sx\PycharmProjects\AirAutoTesting\aircases\test_notes_split_screen.air\tpl1748243386961.png)
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.multiscale_template_matching:multiscale_template_matching.py:186 [MSTemplatePre] threshold=0.7, result={'result': (67, 1837), 'rectangle': ((37, 1806.1999999999998), (37, 1868.1999999999998), (98, 1868.1999999999998), (98, 1806.1999999999998)), 'confidence': 0.9998782277107239}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.01 s.
+DEBUG    airtest.core.api:cv.py:155 match result: {'result': (67, 1837), 'rectangle': ((37, 1806.1999999999998), (37, 1868.1999999999998), (98, 1868.1999999999998), (98, 1806.1999999999998)), 'confidence': 0.9998782277107239, 'time': 0.007277250289916992}
+DEBUG    airtest.core.android.adb:adb.py:187 C:\Users\wenxiu.tian_sx\Downloads\platform-tools-latest-windows\platform-tools\adb.exe -P 5037 -s AINOTEA224042300042 shell am force-stop cn.wps.moffice_eng
+INFO     airtest.core.api:cv.py:59 Try finding: Template(C:\Users\wenxiu.tian_sx\PycharmProjects\AirAutoTesting\aircases\test_aalogin_data_auth.air\tpl1748339487185.png)
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.multiscale_template_matching:multiscale_template_matching.py:186 [MSTemplatePre] threshold=0.7, result={'result': (1152, 371), 'rectangle': ((1140.6, 341.20000000000005), (1140.6, 402.20000000000005), (1163.6, 402.20000000000005), (1163.6, 341.20000000000005)), 'confidence': 0.9914202690124512}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.03 s.
+DEBUG    airtest.core.api:cv.py:155 match result: {'result': (1152, 371), 'rectangle': ((1140.6, 341.20000000000005), (1140.6, 402.20000000000005), (1163.6, 402.20000000000005), (1163.6, 341.20000000000005)), 'confidence': 0.9914202690124512, 'time': 0.031998634338378906}

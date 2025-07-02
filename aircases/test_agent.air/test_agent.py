@@ -194,8 +194,8 @@ def test_add_agent_and_notice():
 @allure.description("断网情况下，创建待办，创建完成后重新联网")
 def test_add_agent_no_internet():
     #断开网络
-    #下拉菜单,断开网络
-    swipe((1036,0),(886,432))
+    # 下拉菜单,断开网络
+    swipe((1036, 0), (886, 432))
     poco("com.aispeech.ccui.systemui:id/cellGrid")\
     .child("android.widget.LinearLayout")[0]\
     .child("com.aispeech.ccui.systemui:id/iv_cell_icon").click()

@@ -16,6 +16,15 @@ auto_setup(__file__, logdir=True, project_root=os.path.dirname(__file__))
 
 pytestmark = [allure.feature("用户数据权限模块用例"), allure.epic("办公本v2.4.0")]
     
+#删除文件
+def del_file():
+    sleep(2)
+    if poco("更多设置").exists():
+        poco("更多设置").click()
+        poco(text="删除").click()
+        poco(text="确认").click()
+
+
 
 #已登录账号创建的笔记，退出登录后，创建的笔记不会显示在笔记列表中
 @pytest.mark.testcase
@@ -76,7 +85,7 @@ def test_guest_notes_merge_into_account_after_login():
 @allure.description("已登录账号，导入到我的文档中的文件，退出登录后，仍然显示在我的文档中")
 @allure.title("已登录账号，导入到我的文档中的文件，退出登录后，仍然显示在我的文档中")
 def test_export_file_logout():
-    if is_login==True:
+    if is_login()==True:
         login()
      #点击笔记
     poco("笔记").click()

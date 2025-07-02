@@ -1,0 +1,16 @@
+INFO     airtest.core.api:cv.py:59 Try finding: Template(C:\Users\wenxiu.tian_sx\PycharmProjects\AirAutoTesting\aircases\test_note_template.air\tpl1750821729163.png)
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.multiscale_template_matching:multiscale_template_matching.py:186 [MSTemplatePre] threshold=0.7, result={'result': (999, 361), 'rectangle': ((977.4000000000001, 337.6), (977.4000000000001, 384.6), (1021.4000000000001, 384.6), (1021.4000000000001, 337.6)), 'confidence': 0.5329573154449463}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.02 s.
+DEBUG    airtest.core.api:cv.py:189 try match with TemplateMatching
+DEBUG    airtest.aircv.template_matching:template_matching.py:84 [Template] threshold=0.7, result={'result': (1107, 547), 'rectangle': ((1086, 524), (1086, 570), (1129, 570), (1129, 524)), 'confidence': 0.9988344311714172}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.05 s.
+DEBUG    airtest.core.api:cv.py:155 match result: {'result': (1107, 547), 'rectangle': ((1086, 524), (1086, 570), (1129, 570), (1129, 524)), 'confidence': 0.9988344311714172, 'time': 0.050002336502075195}
+INFO     airtest.core.api:cv.py:59 Try finding: Template(C:\Users\wenxiu.tian_sx\PycharmProjects\AirAutoTesting\aircases\test_note_template.air\tpl1750821729163.png)
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.multiscale_template_matching:multiscale_template_matching.py:186 [MSTemplatePre] threshold=0.7, result={'result': (999, 361), 'rectangle': ((977.4000000000001, 337.6), (977.4000000000001, 384.6), (1021.4000000000001, 384.6), (1021.4000000000001, 337.6)), 'confidence': 0.5329573154449463}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.02 s.
+DEBUG    airtest.core.api:cv.py:189 try match with TemplateMatching
+DEBUG    airtest.aircv.template_matching:template_matching.py:84 [Template] threshold=0.7, result={'result': (1107, 547), 'rectangle': ((1086, 524), (1086, 570), (1129, 570), (1129, 524)), 'confidence': 0.9988344311714172}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.05 s.
+DEBUG    airtest.core.api:cv.py:155 match result: {'result': (1107, 547), 'rectangle': ((1086, 524), (1086, 570), (1129, 570), (1129, 524)), 'confidence': 0.9988344311714172, 'time': 0.046003103256225586}

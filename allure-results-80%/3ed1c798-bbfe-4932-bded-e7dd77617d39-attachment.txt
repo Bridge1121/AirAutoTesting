@@ -1,0 +1,1 @@
+DEBUG    airtest.core.android.adb:adb.py:187 C:\Users\wenxiu.tian_sx\Downloads\platform-tools-latest-windows\platform-tools\adb.exe -P 5037 -s AINOTEA224042300042 shell am broadcast -a ADB_INPUT_TEXT --es msg 这是需要重点关注的代办

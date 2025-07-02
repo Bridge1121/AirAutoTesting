@@ -1,0 +1,11 @@
+DEBUG    airtest.core.android.adb:adb.py:187 C:\Users\wenxiu.tian_sx\Downloads\platform-tools-latest-windows\platform-tools\adb.exe -P 5037 -s AINOTEA224042300042 shell am broadcast -a ADB_INPUT_TEXT --es msg 测试移动分组
+DEBUG    airtest.core.android.adb:adb.py:187 C:\Users\wenxiu.tian_sx\Downloads\platform-tools-latest-windows\platform-tools\adb.exe -P 5037 -s AINOTEA224042300042 shell am broadcast -a ADB_INPUT_TEXT --es msg 列表新建文件\_0
+DEBUG    airtest.core.android.adb:adb.py:187 C:\Users\wenxiu.tian_sx\Downloads\platform-tools-latest-windows\platform-tools\adb.exe -P 5037 -s AINOTEA224042300042 shell am broadcast -a ADB_INPUT_TEXT --es msg 列表新建文件\_1
+DEBUG    airtest.core.android.adb:adb.py:187 C:\Users\wenxiu.tian_sx\Downloads\platform-tools-latest-windows\platform-tools\adb.exe -P 5037 -s AINOTEA224042300042 shell am start -n com.netease.open.pocoservice/.TestActivity
+DEBUG    airtest.core.android.adb:adb.py:187 C:\Users\wenxiu.tian_sx\Downloads\platform-tools-latest-windows\platform-tools\adb.exe -P 5037 -s AINOTEA224042300042 shell am instrument -w -e debug false -e class com.netease.open.pocoservice.InstrumentedTestAsLauncher com.netease.open.pocoservice/androidx.test.runner.AndroidJUnitRunner
+DEBUG    airtest.core.android.adb:adb.py:187 C:\Users\wenxiu.tian_sx\Downloads\platform-tools-latest-windows\platform-tools\adb.exe -P 5037 -s AINOTEA224042300042 shell am broadcast -a ADB_INPUT_TEXT --es msg 默认文件夹笔记
+INFO     airtest.core.api:cv.py:59 Try finding: Template(C:\Users\wenxiu.tian_sx\PycharmProjects\AirAutoTesting\aircases\test_list_style.air\tpl1748253848403.png)
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.multiscale_template_matching:multiscale_template_matching.py:186 [MSTemplatePre] threshold=0.7, result={'result': (1154, 374), 'rectangle': ((1139.2, 346.6), (1139.2, 401.6), (1170.2, 401.6), (1170.2, 346.6)), 'confidence': 0.99150151014328}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.07 s.
+DEBUG    airtest.core.api:cv.py:155 match result: {'result': (1154, 374), 'rectangle': ((1139.2, 346.6), (1139.2, 401.6), (1170.2, 401.6), (1170.2, 346.6)), 'confidence': 0.99150151014328, 'time': 0.06806349754333496}

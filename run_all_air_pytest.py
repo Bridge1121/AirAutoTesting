@@ -28,7 +28,7 @@ TASK_NAME = "办公本UI自动化测试"
 TEAM_NAME = "测试小组"
 PROJECT_NAME = "办公本自动化测试项目"
 DEVICE_MODEL = "办公本Pro"
-APK_VERSION = "V2.4.0.25062701"
+APK_VERSION = "V2.5.0.25070204"
 
 def send_to_dingtalk(webhook_url, message):
     headers = {'Content-Type': 'application/json'}
@@ -79,7 +79,7 @@ def run_all_scripts():
     #测试环境信息和参数信息
     write_environment_properties({
         "project": "Bangongben Auto Test",
-        "apk_version": "V2.4.0.25062601",
+        "apk_version": APK_VERSION,
         "device_model": "Bangongben Pro",
         "tester": "twx",
     })
@@ -98,7 +98,7 @@ def run_all_scripts():
     print("✅ 正在执行测试用例...")
     # 执行 pytest，生成 Allure 中间结果
 
-    subprocess.run(["pytest", "aircases", "--alluredir=allure-results"], encoding="utf-8")
+    subprocess.run(["pytest", "a3testcases", "--alluredir=allure-results"], encoding="utf-8")
 
     # 生成 HTML 报告
     # subprocess.run(["allure", "generate", "./allure-results", "-o", "./allure-report", "--clean"])

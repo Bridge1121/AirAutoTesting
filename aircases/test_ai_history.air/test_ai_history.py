@@ -66,7 +66,7 @@ def test_ai_history_view():
     poco("返回").click()
     # 点击历史记录删除记录
     poco(text="历史记录").click()
-    sleep(1)
+    sleep(3)
     poco("android.widget.LinearLayout") \
         .offspring("androidx.compose.ui.platform.ComposeView") \
         .child("android.view.View").child("android.view.View") \
@@ -205,7 +205,7 @@ def test_index_ai_history():
     text(ques, enter=False)
     poco("分享").wait_for_appearance(timeout=10)
     poco("分享").click()
-    sleep(2)
+    sleep(4)
     poco("返回").click()
     # 查看ai历史
     poco("AI助手").click()
