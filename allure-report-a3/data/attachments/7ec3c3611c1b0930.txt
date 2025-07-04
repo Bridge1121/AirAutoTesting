@@ -1,0 +1,8 @@
+INFO     airtest.core.api:cv.py:59 Try finding: Template(C:\Users\wenxiu.tian_sx\PycharmProjects\AirAutoTesting\a3testcases\test_zA3_recording_functions\tpl1751531691118.png)
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.multiscale_template_matching:multiscale_template_matching.py:186 [MSTemplatePre] threshold=0.7, result={'result': (1378, 1378), 'rectangle': ((1356.8000000000002, 1351.6), (1356.8000000000002, 1404.6), (1400.8000000000002, 1404.6), (1400.8000000000002, 1351.6)), 'confidence': 0.5459129214286804}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.00 s.
+DEBUG    airtest.core.api:cv.py:189 try match with TemplateMatching
+DEBUG    airtest.aircv.template_matching:template_matching.py:84 [Template] threshold=0.7, result={'result': (1553, 1989), 'rectangle': ((1531, 1963), (1531, 2016), (1575, 2016), (1575, 1963)), 'confidence': 0.8620042204856873}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.08 s.
+DEBUG    airtest.core.api:cv.py:155 match result: {'result': (1553, 1989), 'rectangle': ((1531, 1963), (1531, 2016), (1575, 2016), (1575, 1963)), 'confidence': 0.8620042204856873, 'time': 0.08345150947570801}

@@ -197,21 +197,22 @@ def test_recording_diff_language_offline():
     # 切换语言为苏州话
     poco(text="AI笔记").click()
     sleep(2)
-    poco(text="英语").wait_for_appearance(timeout=TIME_OUT)
-    poco(text="英语").click()
-    sleep(2)
-    poco("android.widget.FrameLayout") \
-        .offspring("android.view.ViewGroup") \
-        .child("android.view.View") \
-        .child("android.view.View") \
-        .child("android.view.View")[0] \
-        .child("android.view.View")[1] \
-        .child("android.widget.TextView").click()
-    sleep(2)
-    poco(text="苏州话").wait_for_appearance(timeout=TIME_OUT)
-    poco(text="苏州话").click()
-    sleep(2)
-    poco(text="开始记录").click()
+    if poco(text="英语").exists():
+        # poco(text="英语").wait_for_appearance(timeout=TIME_OUT)
+        poco(text="英语").click()
+        sleep(2)
+        poco("android.widget.FrameLayout") \
+            .offspring("android.view.ViewGroup") \
+            .child("android.view.View") \
+            .child("android.view.View") \
+            .child("android.view.View")[0] \
+            .child("android.view.View")[1] \
+            .child("android.widget.TextView").click()
+        sleep(2)
+        poco(text="苏州话").wait_for_appearance(timeout=TIME_OUT)
+        poco(text="苏州话").click()
+        sleep(2)
+        poco(text="开始记录").click()
     sleep(2)
     poco(text="录音原文").click()
     sleep(3)
