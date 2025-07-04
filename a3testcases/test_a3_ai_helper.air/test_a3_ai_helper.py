@@ -27,16 +27,10 @@ def test_ai_helper_show():
     poco("AI助手图标").click()
     #打开全屏
     sleep(2)
-    poco("androidx.compose.ui.platform.ComposeView")\
-    .child("android.view.View")\
-    .child("android.view.View")[4]\
-    .child("返回").click()
+    poco("选择语音播报声音").click()
     sleep(1)
     #关闭ai助手
-    poco("androidx.compose.ui.platform.ComposeView")\
-    .child("android.view.View")\
-    .child("android.view.View")[4]\
-    .child("返回").click()
+    poco("返回").click()
     sleep(1)
     #下拉系统通知栏
     swipe((1036,0),(886,432))
@@ -60,7 +54,6 @@ def test_ai_helper_show():
     poco("首页").wait_for_appearance(timeout=TIME_OUT)
     poco("首页").click()
     
-    
 #音色默认是超自然女声思凝
 @pytest.mark.testcase
 @allure.description("音色默认是超自然女声思凝")
@@ -73,10 +66,7 @@ def test_ai_voice_default():
     poco("AI助手图标").click()
     #点击设置
     sleep(2)
-    poco("androidx.compose.ui.platform.ComposeView")\
-    .child("android.view.View")\
-    .child("android.view.View")[3]\
-    .child("返回").click()
+    poco("设置").click()
     sleep(1)
     #点击语音播报音色设置
     poco(text="选择语音播报声音").click()
@@ -100,35 +90,32 @@ def test_ai_voice_default():
 @allure.description("TTS功能默认开启,TTS开关开启时，问答时，实时播报,语音播报中途关闭TTS")
 @allure.title("TTS功能默认开启,TTS开关开启时，问答时，实时播报,语音播报中途关闭TTS")
 def test_ai_tts_default_open_ques_and_close():
-    if is_login()==True:#未登录
+    if is_login() == True:  # 未登录
         login()
     poco("应用").click()
     sleep(1)
     poco("AI助手图标").click()
     sleep(1)
-    #问答
+    # 问答
     if poco(text="按住说话").exists():
-        #点击键盘
+        # 点击键盘
         poco("键盘输入").click()
     sleep(1)
     words = "李白生平"
-    text(words,enter=False)
+    text(words, enter=False)
     sleep(1)
     poco("分享").click()
     sleep(2)
-    #关闭语音播报
-    touch(Template(r"tpl1751350677196.png", record_pos=(0.314, 0.215), resolution=(1600, 2560)))
+    # 关闭语音播报
+    poco("语音播报已开启").click()
     sleep(3)
-    #开启语音播报
-    touch(Template(r"tpl1751350715759.png", record_pos=(0.313, 0.214), resolution=(1600, 2560)))
+    # 开启语音播报
+    poco("语音播报已开启").click()
     sleep(1)
-    #关闭ai助手
+    # 关闭ai助手
     touch(Template(r"tpl1751348232173.png", record_pos=(0.463, -0.732), resolution=(1600, 2560)))
     sleep(1)
     poco("首页").click()
-
-    
-
 
 
 #搜索常用关键词
@@ -136,85 +123,81 @@ def test_ai_tts_default_open_ques_and_close():
 @allure.description("搜索常用关键词")
 @allure.title("搜索常用关键词")
 def test_ai_search_commen_words():
-    if is_login()==True:#未登录
+    if is_login() == True:  # 未登录
         login()
     poco("应用").click()
     sleep(1)
     poco("AI助手图标").click()
     sleep(1)
     if poco(text="按住说话").exists():
-        #点击键盘
+        # 点击键盘
         poco("键盘输入").click()
     sleep(1)
     words = "李白生平"
-    text(words,enter=False)
+    text(words, enter=False)
     sleep(1)
     poco("分享").click()
     sleep(5)
-    #关闭ai助手
+    # 关闭ai助手
     touch(Template(r"tpl1751348232173.png", record_pos=(0.463, -0.732), resolution=(1600, 2560)))
     sleep(1)
     poco("首页").click()
-    
-    
-    
-    
+
+
 #成功添加待办事项
 @pytest.mark.testcase
 @allure.description("成功添加待办事项")
 @allure.title("成功添加待办事项")
 def test_ai_add_agent():
-    if is_login()==True:#未登录
+    if is_login() == True:  # 未登录
         login()
     poco("应用").click()
     sleep(1)
     poco("AI助手图标").click()
     sleep(1)
     if poco(text="按住说话").exists():
-        #点击键盘
+        # 点击键盘
         poco("键盘输入").click()
     sleep(1)
     words = "提醒我明天上午去开会"
-    text(words,enter=False)
+    text(words, enter=False)
     sleep(1)
     poco("分享").click()
-    #todo 点击时间
-    #关闭，返回首页
+    # todo 点击时间
+    # 关闭，返回首页
     sleep(1)
     touch(Template(r"tpl1751348232173.png", record_pos=(0.463, -0.732), resolution=(1600, 2560)))
     sleep(1)
     poco("首页").click()
-    
-    
-    
+
+
 #AI笔记问答，获取有便签相关信息的话，可将信息自动添加到便签
 @pytest.mark.testcase
 @allure.description("AI笔记问答，获取有便签相关信息的话，可将信息自动添加到便签")
 @allure.title("AI笔记问答，获取有便签相关信息的话，可将信息自动添加到便签")
 def test_ai_mood_ques_add_note():
-    if is_login()==True:#未登录
+    if is_login() == True:  # 未登录
         login()
     poco("应用").click()
     sleep(1)
     poco("AI助手图标").click()
     sleep(1)
     if poco(text="按住说话").exists():
-        #点击键盘
+        # 点击键盘
         poco("键盘输入").click()
     sleep(1)
     words = "帮我写个便签可以吗"
-    text(words,enter=False)
+    text(words, enter=False)
     sleep(1)
     poco("分享").click()
-    #todo 生成便签
-    #关闭，返回首页
+    # todo 生成便签
+    # 关闭，返回首页
     sleep(1)
     touch(Template(r"tpl1751348232173.png", record_pos=(0.463, -0.732), resolution=(1600, 2560)))
     sleep(1)
     poco("首页").click()
-    
-    
-    
+
+
 #10s倒计时结束后，停止录音并发送
 # def test_ai_voice_time_limit():
 #     if is_login()==True:#未登录

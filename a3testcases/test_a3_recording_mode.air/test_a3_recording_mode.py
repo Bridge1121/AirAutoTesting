@@ -25,9 +25,15 @@ def test_recording_default_open():
         login()
     #新建笔记
     poco("笔记").click()
-    sleep(1)
+    sleep(2)
     poco(text="新建笔记").click()
     sleep(1)
+    poco("androidx.compose.ui.platform.ComposeView")\
+    .child("android.view.View")\
+    .child("android.view.View")\
+    .child("android.view.View")[6]\
+    .child("手写笔").wait_for_appearance(timeout=TIME_OUT)
+
     poco("androidx.compose.ui.platform.ComposeView")\
     .child("android.view.View")\
     .child("android.view.View")\
@@ -64,96 +70,95 @@ def test_recording_default_open():
 @allure.description("无网络时启动离线录音,切换在线模式,切换离线模式，中英混合语言转写时，切换成")
 @allure.title("无网络时启动离线录音,切换在线模式,切换离线模式，中英混合语言转写时，切换成")
 def test_recording_no_Internet_change():
-    if is_login()==True:#未登录
+    if is_login() == True:  # 未登录
         login()
-    #断开网络
+    # 断开网络
     # 下拉菜单,断开网络
     swipe((1036, 0), (886, 432))
-    poco("com.aispeech.ccui.systemui:id/cellGrid")\
-    .child("android.widget.LinearLayout")[0]\
-    .child("com.aispeech.ccui.systemui:id/iv_cell_icon").click()
-    touch((1000,1600))
-    #新建笔记
+    poco("com.aispeech.ccui.systemui:id/cellGrid") \
+        .child("android.widget.LinearLayout")[0] \
+        .child("com.aispeech.ccui.systemui:id/iv_cell_icon").click()
+    touch((1000, 1600))
+    # 新建笔记
     poco("笔记").click()
-    sleep(1)
+    sleep(2)
     poco(text="新建笔记").click()
     sleep(1)
-    poco("androidx.compose.ui.platform.ComposeView")\
-    .child("android.view.View")\
-    .child("android.view.View")\
-    .child("android.view.View")[6]\
-    .child("手写笔").click()
+    poco("androidx.compose.ui.platform.ComposeView") \
+        .child("android.view.View") \
+        .child("android.view.View") \
+        .child("android.view.View")[6] \
+        .child("手写笔").click()
     sleep(5)
-    #切换离线录音
-    #点击录音原文
+    # 切换离线录音
+    # 点击录音原文
     poco(text="录音原文").click()
     sleep(1)
     poco(text="转离线").click()
     sleep(2)
     if poco(text="转换为离线模式录音？").exists():
-        #点击确认
+        # 点击确认
         poco(text="确定").click()
         sleep(2)
-        #切换回实时模式
+        # 切换回实时模式
         poco(text="转在线").click()
     sleep(1)
     poco("返回").click()
-    #删除笔记
+    # 删除笔记
     poco("更多设置").click()
     sleep(1)
     poco(text="删除").click()
     sleep(1)
     poco(text="确认").click()
     poco("首页").click()
-    #恢复网络
+    # 恢复网络
     # 恢复网络
     swipe((1036, 0), (886, 432))
     poco("com.aispeech.ccui.systemui:id/cellGrid") \
-    .child("android.widget.LinearLayout")[0] \
-    .child("com.aispeech.ccui.systemui:id/iv_cell_icon") \
-    .long_click(duration=2)
+        .child("android.widget.LinearLayout")[0] \
+        .child("com.aispeech.ccui.systemui:id/iv_cell_icon") \
+        .long_click(duration=2)
     sleep(5)
     poco("com.zlt.zltsettings:id/sw_airplane").click()
     sleep(2)
     poco(text="已连接").wait_for_appearance(timeout=TIME_OUT)
     poco("android.widget.FrameLayout") \
-    .child("android.widget.LinearLayout") \
-    .offspring("android:id/content") \
-    .offspring("com.zlt.zltsettings:id/ll_back") \
-    .child("android.widget.ImageView").click()
-    
-    
-    
+        .child("android.widget.LinearLayout") \
+        .offspring("android:id/content") \
+        .offspring("com.zlt.zltsettings:id/ll_back") \
+        .child("android.widget.ImageView").click()
+
+
 #普通话语言转写时切换成离线模式，英文转写时切换成离线模式，中英混合语言转写时，切换成离线，非普通话、英文、中英混合 转写时切换成离线模式
 @pytest.mark.testcase
 @allure.description("普通话语言转写时切换成离线模式，英文转写时切换成离线模式，中英混合语言转写时，切换成离线，非普通话、英文、中英混合 转写时切换成离线模式")
 @allure.title("普通话语言转写时切换成离线模式，英文转写时切换成离线模式，中英混合语言转写时，切换成离线，非普通话、英文、中英混合 转写时切换成离线模式")
 def test_recording_diff_language_offline():
-    if is_login()==True:#未登录
+    if is_login() == True:  # 未登录
         login()
     poco("笔记").click()
-    sleep(1)
+    sleep(2)
     poco(text="新建笔记").click()
     sleep(1)
-    poco("androidx.compose.ui.platform.ComposeView")\
-    .child("android.view.View")\
-    .child("android.view.View")\
-    .child("android.view.View")[6]\
-    .child("手写笔").click()
+    poco("androidx.compose.ui.platform.ComposeView") \
+        .child("android.view.View") \
+        .child("android.view.View") \
+        .child("android.view.View")[6] \
+        .child("手写笔").click()
     sleep(5)
-    #切换离线录音
-    #点击录音原文
+    # 切换离线录音
+    # 点击录音原文
     poco(text="录音原文").click()
     sleep(1)
     poco(text="转离线").click()
     sleep(2)
     if poco(text="转换为离线模式录音？").exists():
-        #点击确认
+        # 点击确认
         poco(text="确定").click()
         sleep(2)
-        #切换回实时模式
+        # 切换回实时模式
         poco(text="转在线").click()
-    #切换语言为英语
+    # 切换语言为英语
     poco(text="AI笔记").click()
     sleep(1)
     poco(text="普通话").click()
@@ -169,23 +174,23 @@ def test_recording_diff_language_offline():
     poco(text="转离线").click()
     sleep(2)
     if poco(text="转换为离线模式录音？").exists():
-        #点击确认
+        # 点击确认
         poco(text="确定").click()
         sleep(2)
-        #切换回实时模式
+        # 切换回实时模式
         poco(text="转在线").click()
-    #切换语言为苏州话
+    # 切换语言为苏州话
     poco(text="AI笔记").click()
     sleep(1)
     poco(text="英语").click()
     sleep(1)
-    poco("android.widget.FrameLayout")\
-    .offspring("android.view.ViewGroup")\
-    .child("android.view.View")\
-    .child("android.view.View")\
-    .child("android.view.View")[0]\
-    .child("android.view.View")[1]\
-    .child("android.widget.TextView").click()
+    poco("android.widget.FrameLayout") \
+        .offspring("android.view.ViewGroup") \
+        .child("android.view.View") \
+        .child("android.view.View") \
+        .child("android.view.View")[0] \
+        .child("android.view.View")[1] \
+        .child("android.widget.TextView").click()
     sleep(1)
     poco(text="苏州话").click()
     sleep(1)
@@ -196,12 +201,12 @@ def test_recording_diff_language_offline():
     poco(text="转离线").click()
     sleep(2)
     if poco(text="转换为离线模式录音？").exists():
-        #点击确认
+        # 点击确认
         poco(text="确定").click()
         sleep(2)
-        #切换回实时模式
+        # 切换回实时模式
         poco(text="转在线").click()
-    #切换回普通话
+    # 切换回普通话
     poco(text="苏州话").click()
     sleep(1)
     poco(text="苏州话").click()
@@ -211,16 +216,15 @@ def test_recording_diff_language_offline():
     poco(text="开始记录").click()
     sleep(1)
     poco("返回").click()
-    #删除笔记
+    # 删除笔记
     poco("更多设置").click()
     sleep(1)
     poco(text="删除").click()
     sleep(1)
     poco(text="确认").click()
     poco("首页").click()
-    
-    
-    
+
+
 #离线会后总结
 # def test_meeting_summary_offline(default_note="离线会后总结"):
 #     if is_login()==True:#未登录
@@ -259,7 +263,7 @@ def test_recording_diff_language_offline():
 def test_ai_note_default_model():
     if is_login()==True:#未登录
         login()
-    sleep(1)
+    sleep(2)
     poco(text="新建笔记").click()
     sleep(1)
     poco("androidx.compose.ui.platform.ComposeView")\
@@ -269,8 +273,11 @@ def test_ai_note_default_model():
     .child("手写笔").click()
     sleep(5)
     poco("返回").click()
-    sleep(2)
+    sleep(3)
     #删除笔记
+    #直接返回到首页了？？？
+    poco("笔记").click()
+    sleep(1)
     poco("更多设置").wait_for_appearance(timeout=TIME_OUT)
     poco("更多设置").click()
     sleep(1)
@@ -278,13 +285,7 @@ def test_ai_note_default_model():
     sleep(1)
     poco(text="确认").click()
     poco("首页").click()
-    
-    
-    
-    
-    
 
-    
 if __name__=="__main__":
 #     test_recording_default_open()
 #     test_recording_no_Internet_change()

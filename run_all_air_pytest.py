@@ -28,7 +28,7 @@ TASK_NAME = "办公本UI自动化测试"
 TEAM_NAME = "测试小组"
 PROJECT_NAME = "办公本自动化测试项目"
 DEVICE_MODEL = "办公本Pro"
-APK_VERSION = "V2.5.0.25070204"
+APK_VERSION = "V2.5.0.25070403"
 
 def send_to_dingtalk(webhook_url, message):
     headers = {'Content-Type': 'application/json'}
