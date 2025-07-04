@@ -201,7 +201,7 @@ def test_logout_encode_memo_login(phoneNumber="18662682224",code="123456",passwo
     .child("android.widget.TextView").click()
     sleep(4)
     touch(Template(r"tpl1751425889677.png", record_pos=(-0.204, -0.369), resolution=(1600, 2560)))
-    sleep(1)
+    sleep(3)
     poco(text="加密便签").click()
     sleep(1)
     #点击解密
@@ -270,17 +270,18 @@ def test_memo_dir_del():
     sleep(1)
     #点击回收站，彻底删除
     poco("show recycle").click()
-    sleep(1)
-    poco("编辑").click()
-    sleep(1)
-    poco("androidx.compose.ui.platform.ComposeView")\
-    .child("android.view.View")\
-    .child("android.view.View")\
-    .child("android.view.View")[0].click()
-    sleep(1)
-    poco(text="彻底删除").click()
-    sleep(1)
-    poco(text="确认").click()
+    sleep(2)
+    if poco("编辑").exists():
+        poco("编辑").click()
+        sleep(2)
+        poco("androidx.compose.ui.platform.ComposeView")\
+        .child("android.view.View")\
+        .child("android.view.View")\
+        .child("android.view.View")[0].click()
+        sleep(2)
+        poco(text="彻底删除").click()
+        sleep(1)
+        poco(text="确认").click()
     sleep(1)
     poco("<").click()
     sleep(1)

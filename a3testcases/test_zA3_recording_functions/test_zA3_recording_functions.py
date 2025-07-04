@@ -27,8 +27,19 @@ def test_offline_summary_after_the_meeting():
     poco(text="新建笔记").click()
     poco("androidx.compose.ui.platform.ComposeView").child("android.view.View").child("android.view.View").child("android.view.View")[6].child("android.widget.Button").click()
     poco(text="录音原文").click()
-    poco(text="转离线").click()
-    poco(text="确定").click()
+    sleep(2)
+    sleep(3)
+    if poco(text="转离线").exists():
+        poco(text="转离线").click()
+        sleep(2)
+        if poco(text="转换为离线模式录音？").exists():
+            # 点击确认
+            poco(text="确定").click()
+            sleep(2)
+            # 切换回实时模式
+    poco(text="转在线").click()
+    # poco(text="转离线").click()
+    # poco(text="确定").click()
     poco(text="结束").click()
     sleep(10)
     poco(text="会后总结").click()
@@ -61,7 +72,8 @@ def test_online_summary_after_the_meeting(default_group="默认笔记", default_
     sleep(2)
     poco(text="会后总结").click()
     sleep(2)
-    poco(text="智能模型").click()
+    if poco(text="智能模型").exists():
+        poco(text="智能模型").click()
     poco("返回").click()
     sleep(2)
     #     poco("更多设置").wait_for_appearance(timeout=TIME_OUT)
@@ -90,21 +102,22 @@ def test_diff_internet_summary_after_the_meeting(default_group="默认笔记", d
     poco(text="会后总结").click()
     sleep(2)
     # 切换AI模型
-    poco(text="智能模型").click()
-    sleep(1)
-    poco(text="Deepseek-R1").click()
-    sleep(1)
-    poco(text="确定").click()
-    sleep(10)
-    # 断开网络
-    swipe((1036, 0), (886, 432))
-    (poco("com.aispeech.ccui.systemui:id/cellGrid").child("android.widget.LinearLayout")[0].child(
-        "com.aispeech.ccui.systemui:id/iv_cell_icon")).click()
-    sleep(1)
-    touch((523, 2208))
-    # 再次切换AI模型
-    poco(text="Deepseek-R1").click()
-    sleep(1)
+    if poco(text="智能模型").exists():
+        poco(text="智能模型").click()
+        sleep(1)
+        poco(text="Deepseek-R1").click()
+        sleep(1)
+        poco(text="确定").click()
+        sleep(10)
+        # 断开网络
+        swipe((1036, 0), (886, 432))
+        (poco("com.aispeech.ccui.systemui:id/cellGrid").child("android.widget.LinearLayout")[0].child(
+            "com.aispeech.ccui.systemui:id/iv_cell_icon")).click()
+        sleep(1)
+        touch((523, 2208))
+        # 再次切换AI模型
+        poco(text="Deepseek-R1").click()
+        sleep(1)
 
     #     poco("更多设置").wait_for_appearance(timeout=TIME_OUT)
     #     poco("更多设置").click()
@@ -112,22 +125,22 @@ def test_diff_internet_summary_after_the_meeting(default_group="默认笔记", d
     #     poco(text="删除").click()
     #     sleep(1)
     #     poco(text="确认").click()
-    sleep(1)
+        sleep(1)
 
-    # 恢复网络
-    swipe((1036, 0), (886, 432))
-    poco("com.aispeech.ccui.systemui:id/cellGrid") \
-        .child("android.widget.LinearLayout")[0] \
-        .child("com.aispeech.ccui.systemui:id/iv_cell_icon") \
-        .click()
-    sleep(5)
-    touch((523, 2208))
-    # 切换回智能模型
-    poco(text="Deepseek-R1").click()
-    sleep(1)
-    poco(text="智能模型").click()
-    sleep(1)
-    poco(text="确定").click()
+        # 恢复网络
+        swipe((1036, 0), (886, 432))
+        poco("com.aispeech.ccui.systemui:id/cellGrid") \
+            .child("android.widget.LinearLayout")[0] \
+            .child("com.aispeech.ccui.systemui:id/iv_cell_icon") \
+            .click()
+        sleep(5)
+        touch((523, 2208))
+        # 切换回智能模型
+        poco(text="Deepseek-R1").click()
+        sleep(1)
+        poco(text="智能模型").click()
+        sleep(1)
+        poco(text="确定").click()
 
     #     poco("com.zlt.zltsettings:id/sw_airplane").click()
     #     sleep(2)

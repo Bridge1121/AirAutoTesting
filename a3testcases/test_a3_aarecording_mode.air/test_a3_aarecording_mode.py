@@ -44,13 +44,16 @@ def test_recording_default_open():
     #点击录音原文
     poco(text="录音原文").click()
     sleep(1)
-    poco(text="转离线").click()
-    sleep(2)
-    if poco(text="转换为离线模式录音？").exists():
-        #点击确认
-        poco(text="确定").click()
+    if poco(text="转离线").exists():
+        poco(text="转离线").click()
         sleep(2)
-        #切换回实时模式
+        if poco(text="转换为离线模式录音？").exists():
+            #点击确认
+            poco(text="确定").click()
+            sleep(2)
+            #切换回实时模式
+    sleep(2)
+    if poco(text="转在线").exists():
         poco(text="转在线").click()
     sleep(1)
     poco("返回").click()
@@ -93,14 +96,17 @@ def test_recording_no_Internet_change():
     # 切换离线录音
     # 点击录音原文
     poco(text="录音原文").click()
-    sleep(1)
-    poco(text="转离线").click()
     sleep(2)
-    if poco(text="转换为离线模式录音？").exists():
-        # 点击确认
-        poco(text="确定").click()
+    if poco(text="转离线").exists():
+        poco(text="转离线").click()
         sleep(2)
-        # 切换回实时模式
+        if poco(text="转换为离线模式录音？").exists():
+            #点击确认
+            poco(text="确定").click()
+            sleep(2)
+    #切换回实时模式
+    sleep(2)
+    if poco(text="转在线").exists():
         poco(text="转在线").click()
     sleep(1)
     poco("返回").click()
@@ -118,7 +124,7 @@ def test_recording_no_Internet_change():
         .child("android.widget.LinearLayout")[0] \
         .child("com.aispeech.ccui.systemui:id/iv_cell_icon") \
         .long_click(duration=2)
-    sleep(5)
+    sleep(6)
     poco("com.zlt.zltsettings:id/sw_airplane").click()
     sleep(2)
     poco(text="已连接").wait_for_appearance(timeout=TIME_OUT)
@@ -149,41 +155,51 @@ def test_recording_diff_language_offline():
     # 切换离线录音
     # 点击录音原文
     poco(text="录音原文").click()
-    sleep(1)
-    poco(text="转离线").click()
-    sleep(2)
-    if poco(text="转换为离线模式录音？").exists():
-        # 点击确认
-        poco(text="确定").click()
+    sleep(3)
+    if poco(text="转离线").exists():
+        poco(text="转离线").click()
         sleep(2)
-        # 切换回实时模式
+        if poco(text="转换为离线模式录音？").exists():
+            #点击确认
+            poco(text="确定").click()
+            sleep(2)
+            #切换回实时模式
+    sleep(1)
+    if poco(text="转在线").exists():
         poco(text="转在线").click()
     # 切换语言为英语
     poco(text="AI笔记").click()
-    sleep(1)
-    poco(text="普通话").click()
-    sleep(1)
-    poco(text="普通话").click()
-    sleep(1)
-    poco(text="英语").click()
-    sleep(1)
-    poco(text="开始记录").click()
+    sleep(2)
+    if poco(text="普通话").exists():
+        poco(text="普通话").click()
+        sleep(2)
+        poco(text="普通话").wait_for_appearance(timeout=TIME_OUT)
+        poco(text="普通话").click()
+        sleep(2)
+        poco(text="英语").wait_for_appearance(timeout=TIME_OUT)
+        poco(text="英语").click()
+        sleep(2)
+        poco(text="开始记录").click()
     sleep(1)
     poco(text="录音原文").click()
-    sleep(1)
-    poco(text="转离线").click()
-    sleep(2)
-    if poco(text="转换为离线模式录音？").exists():
-        # 点击确认
-        poco(text="确定").click()
+    sleep(3)
+    if poco(text="转离线").exists():
+        poco(text="转离线").click()
         sleep(2)
-        # 切换回实时模式
+        if poco(text="转换为离线模式录音？").exists():
+            #点击确认
+            poco(text="确定").click()
+            sleep(2)
+            #切换回实时模式
+    sleep(1)
+    if poco(text="转在线").exists():
         poco(text="转在线").click()
     # 切换语言为苏州话
     poco(text="AI笔记").click()
-    sleep(1)
+    sleep(2)
+    poco(text="英语").wait_for_appearance(timeout=TIME_OUT)
     poco(text="英语").click()
-    sleep(1)
+    sleep(2)
     poco("android.widget.FrameLayout") \
         .offspring("android.view.ViewGroup") \
         .child("android.view.View") \
@@ -191,30 +207,38 @@ def test_recording_diff_language_offline():
         .child("android.view.View")[0] \
         .child("android.view.View")[1] \
         .child("android.widget.TextView").click()
-    sleep(1)
-    poco(text="苏州话").click()
-    sleep(1)
-    poco(text="开始记录").click()
-    sleep(1)
-    poco(text="录音原文").click()
-    sleep(1)
-    poco(text="转离线").click()
     sleep(2)
-    if poco(text="转换为离线模式录音？").exists():
-        # 点击确认
-        poco(text="确定").click()
+    poco(text="苏州话").wait_for_appearance(timeout=TIME_OUT)
+    poco(text="苏州话").click()
+    sleep(2)
+    poco(text="开始记录").click()
+    sleep(2)
+    poco(text="录音原文").click()
+    sleep(3)
+    if poco(text="转离线").exists():
+        poco(text="转离线").click()
         sleep(2)
-        # 切换回实时模式
+        if poco(text="转换为离线模式录音？").exists():
+            #点击确认
+            poco(text="确定").click()
+            sleep(2)
+            #切换回实时模式
+    sleep(1)
+    if poco(text="转在线").exists():
         poco(text="转在线").click()
     # 切换回普通话
-    poco(text="苏州话").click()
-    sleep(1)
-    poco(text="苏州话").click()
-    sleep(1)
-    poco(text="普通话").click()
-    sleep(1)
-    poco(text="开始记录").click()
-    sleep(1)
+    if poco(text="苏州话").exists():
+        poco(text="苏州话").click()
+        sleep(2)
+        # poco(text="苏州话").wait_for_appearance(timeout=TIME_OUT)
+        poco(text="苏州话").click()
+        sleep(2)
+        if poco(text="普通话").exists():
+            # poco(text="普通话").wait_for_appearance(timeout=TIME_OUT)
+            poco(text="普通话").click()
+        sleep(2)
+        poco(text="开始记录").click()
+    sleep(2)
     poco("返回").click()
     # 删除笔记
     poco("更多设置").click()

@@ -27,6 +27,8 @@ def try_back_to_home(max_try=5, interval=1):
         print(f"⚠️ 第 {i + 1} 次尝试返回")
         keyevent("BACK")  # 返回上一层
         sleep(interval)
+    if poco("<").exists():
+        poco("<").click()
     #否则直接返回主页
     keyevent("HOME")
 
