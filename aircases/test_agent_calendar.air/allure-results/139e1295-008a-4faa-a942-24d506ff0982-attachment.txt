@@ -1,0 +1,14 @@
+INFO     airtest.core.api:cv.py:59 Try finding: Template(C:\用例\testcases\AirAutoTesting-master\airtests\test_agent_calendar.air\tpl1750296442447.png)
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.multiscale_template_matching:multiscale_template_matching.py:186 [MSTemplatePre] threshold=0.7, result={'result': (683, 623), 'rectangle': ((676.0, 602.0), (676.0, 644.0), (691.0, 644.0), (691.0, 602.0)), 'confidence': 0.7546983957290649}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.00 s.
+DEBUG    airtest.core.api:cv.py:155 match result: {'result': (683, 623), 'rectangle': ((676.0, 602.0), (676.0, 644.0), (691.0, 644.0), (691.0, 602.0)), 'confidence': 0.7546983957290649, 'time': 0.0018734931945800781}
+DEBUG    airtest.core.android.adb:adb.py:187 D:\AirtestIDE\airtest\core\android\static\adb\windows\adb.exe -P 5037 -s AINOTEA224042300046 shell am broadcast -a ADB_INPUT_TEXT --es msg 今天下午六点准时下班
+INFO     airtest.core.api:cv.py:59 Try finding: Template(C:\用例\testcases\AirAutoTesting-master\airtests\test_agent_calendar.air\tpl1750239890001.png)
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.multiscale_template_matching:multiscale_template_matching.py:186 [MSTemplatePre] threshold=0.7, result={'result': (1127, 983), 'rectangle': ((1120.8000000000002, 970.8), (1120.8000000000002, 995.8), (1134.8000000000002, 995.8), (1134.8000000000002, 970.8)), 'confidence': 0.0}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.02 s.
+DEBUG    airtest.core.api:cv.py:189 try match with TemplateMatching
+DEBUG    airtest.aircv.template_matching:template_matching.py:84 [Template] threshold=0.7, result={'result': (1139, 1715), 'rectangle': ((1129, 1697), (1129, 1733), (1150, 1733), (1150, 1697)), 'confidence': 0.9916224479675293}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.04 s.
+DEBUG    airtest.core.api:cv.py:155 match result: {'result': (1139, 1715), 'rectangle': ((1129, 1697), (1129, 1733), (1150, 1733), (1150, 1697)), 'confidence': 0.9916224479675293, 'time': 0.03588581085205078}

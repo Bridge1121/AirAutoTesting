@@ -1,0 +1,2 @@
+DEBUG    airtest.core.android.adb:adb.py:187 D:\AirtestIDE\airtest\core\android\static\adb\windows\adb.exe -P 5037 -s AINOTEA224042300046 shell am broadcast -a ADB_INPUT_TEXT --es msg aaaaaaaaaaaa
+DEBUG    airtest.core.android.adb:adb.py:187 D:\AirtestIDE\airtest\core\android\static\adb\windows\adb.exe -P 5037 -s AINOTEA224042300046 shell am broadcast -a ADB_INPUT_TEXT --es msg aaaaaaaaaaaaa

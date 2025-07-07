@@ -1,0 +1,4 @@
+DEBUG    airtest.core.android.adb:adb.py:187 D:\AirtestIDE\airtest\core\android\static\adb\windows\adb.exe -P 5037 -s AINOTEA224042300046 shell am broadcast -a ADB_INPUT_TEXT --es msg 18662682224
+DEBUG    airtest.core.android.adb:adb.py:187 D:\AirtestIDE\airtest\core\android\static\adb\windows\adb.exe -P 5037 -s AINOTEA224042300046 shell am broadcast -a ADB_INPUT_TEXT --es msg 123456
+DEBUG    airtest.core.android.adb:adb.py:187 D:\AirtestIDE\airtest\core\android\static\adb\windows\adb.exe -P 5037 -s AINOTEA224042300046 shell am start -n com.netease.open.pocoservice/.TestActivity
+DEBUG    airtest.core.android.adb:adb.py:187 D:\AirtestIDE\airtest\core\android\static\adb\windows\adb.exe -P 5037 -s AINOTEA224042300046 shell am instrument -w -e debug false -e class com.netease.open.pocoservice.InstrumentedTestAsLauncher com.netease.open.pocoservice/androidx.test.runner.AndroidJUnitRunner

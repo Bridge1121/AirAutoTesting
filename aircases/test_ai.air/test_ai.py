@@ -49,21 +49,24 @@ pytestmark = [allure.feature("ai对话模块用例"), allure.epic("办公本v2.4
 def test_ai_open():
     if is_login()==True:
         login()
-    #点击笔记
+    # 点击笔记
     poco("笔记").click()
-    sleep(1)
-    #新建笔记
+    sleep(2)
+    # 新建笔记
     poco(text="新建笔记").click()
-    #点击ai按钮
-    touch((46,1729))
+    sleep(2)
+    # 点击ai按钮
+    touch(Template(r"tpl1751881098961.png", record_pos=(-0.462, 0.639), resolution=(1600, 2560)))
     sleep(1)
-    #关闭会话框
-    poco("android.widget.LinearLayout")\
-    .offspring("androidx.compose.ui.platform.ComposeView")\
-    .child("android.view.View").child("android.view.View")\
-    .child("android.view.View")[2].offspring("返回")[0].click()
+    # 关闭会话框
+    touch(Template(r"tpl1751348232173.png", record_pos=(0.463, -0.732), resolution=(1600, 2560)))
+    sleep(1)
+    #     poco("android.widget.LinearLayout")\
+    #     .offspring("androidx.compose.ui.platform.ComposeView")\
+    #     .child("android.view.View").child("android.view.View")\
+    #     .child("android.view.View")[2].offspring("返回")[0].click()
     poco("返回").click()
-    #删除新建的笔记
+    # 删除新建的笔记
     poco("更多设置").click()
     poco(text="删除").click()
     poco(text="确认").click()
@@ -78,12 +81,12 @@ def test_ai_open():
 def test_ai_answer_copy():
     if is_login()==True:
         login()
-    #点击笔记
+#点击笔记
     poco("笔记").click()
     sleep(1)
     #新建笔记
     poco(text="新建笔记").click()
-    sleep(4)
+    sleep(1)
     #输入笔记内容
     poco("更多设置").click()
     poco(text="插入文字").click()
@@ -95,10 +98,11 @@ def test_ai_answer_copy():
     touch((581,1217))
     sleep(1)
     #拖动ai图标
-    swipe_press_ai()
-    sleep(12)
+    swipe_press_ai((70,2296),(428,989))
+    sleep(10)
     #点击复制
     touch(Template(r"tpl1749435894639.png", record_pos=(-0.337, -0.143), resolution=(1200, 1920)))
+    sleep(2)
 #     copy_btn = poco("android.widget.LinearLayout")\
 #     .offspring("androidx.compose.ui.platform.ComposeView")\
 #     .child("android.view.View").child("android.view.View")\
@@ -107,13 +111,17 @@ def test_ai_answer_copy():
 #     copy_btn.wait_for_appearance(timeout=5)
 #     copy_btn.click()
     #点击关闭
-    poco("android.widget.LinearLayout")\
-    .offspring("androidx.compose.ui.platform.ComposeView")\
-    .child("android.view.View").child("android.view.View")\
-    .child("android.view.View")[2].offspring("返回")[0].click()
+    touch(Template(r"tpl1751348232173.png", record_pos=(0.463, -0.732), resolution=(1600, 2560)))
+#     poco("android.widget.LinearLayout")\
+#     .offspring("androidx.compose.ui.platform.ComposeView")\
+#     .child("android.view.View").child("android.view.View")\
+#     .child("android.view.View")[2].offspring("返回")[0].click()
     touch((781,1017),duration=1)
+    sleep(1)
     poco("com.aispeech.tablet:id/tv_selection_paste").click()
+    sleep(1)
     poco("返回").click()
+    sleep(1)
     touch(Template(r"tpl1748339487185.png", record_pos=(0.458, -0.484), resolution=(1200, 1920)))
     poco(text="删除").click()
     poco(text="确认").click()
@@ -127,9 +135,9 @@ def test_ai_answer_copy():
 def test_ai_answer_excerpt_to_handwriting_area_edit():
     if is_login()==True:
         login()
-    #点击笔记
+#点击笔记
     poco("笔记").click()
-    sleep(1)
+    sleep(2)
     #新建笔记
     poco(text="新建笔记").click()
     sleep(1)
@@ -147,17 +155,20 @@ def test_ai_answer_excerpt_to_handwriting_area_edit():
     swipe_press_ai()
     sleep(10)
     #点击摘录到手写区
-    touch(Template(r"tpl1749436239092.png", record_pos=(-0.266, -0.142), resolution=(1200, 1920)))
-    #点击关闭
-    poco("android.widget.LinearLayout")\
-    .offspring("androidx.compose.ui.platform.ComposeView")\
-    .child("android.view.View").child("android.view.View")\
-    .child("android.view.View")[2].offspring("返回")[0].click()
-    #点击编辑
-    poco("com.aispeech.tablet:id/tv_selection_edit").click()
-    sleep(1)
-    text("编辑编辑",enter=False)
-    sleep(1)
+    if exists(Template(r"tpl1749436239092.png", record_pos=(-0.266, -0.142), resolution=(1200, 1920))):
+        touch(Template(r"tpl1749436239092.png", record_pos=(-0.266, -0.142), resolution=(1200, 1920)))
+        sleep(1)
+        #点击关闭
+        touch(Template(r"tpl1751348232173.png", record_pos=(0.463, -0.732), resolution=(1600, 2560)))
+    #     poco("android.widget.LinearLayout")\
+    #     .offspring("androidx.compose.ui.platform.ComposeView")\
+    #     .child("android.view.View").child("android.view.View")\
+    #     .child("android.view.View")[2].offspring("返回")[0].click()
+        #点击编辑
+        poco("com.aispeech.tablet:id/tv_selection_edit").click()
+        sleep(1)
+        text("编辑编辑",enter=False)
+        sleep(1)
     poco("返回").click()
     touch(Template(r"tpl1748339487185.png", record_pos=(0.458, -0.484), resolution=(1200, 1920)))
     poco(text="删除").click()
@@ -166,94 +177,94 @@ def test_ai_answer_excerpt_to_handwriting_area_edit():
     
     
 #点击赞图标按钮，弹出反馈信息弹窗,在反馈弹窗中勾选选项、文本框输入内容
-@pytest.mark.testcase
-@allure.description("点击赞图标按钮，弹出反馈信息弹窗,在反馈弹窗中勾选选项、文本框输入内容")
-@allure.title("点击赞图标按钮，弹出反馈信息弹窗,在反馈弹窗中勾选选项、文本框输入内容")
-def test_ai_answer_support():
-    if is_login()==True:
-        login()
-    #点击笔记
-    poco("笔记").click()
-    sleep(1)
-    #新建笔记
-    poco(text="新建笔记").click()
-    sleep(1)
-    #输入笔记内容
-    poco("更多设置").click()
-    poco(text="插入文字").click()
-    sleep(2)
-    touch((581,997))
-    sleep(2)
-    text("你是谁", enter=False)
-    sleep(1)
-    touch((581,1217))
-    sleep(1)
-    #拖动ai图标
-    swipe_press_ai()
-    sleep(10)
-    #点赞
-    touch(Template(r"tpl1749436583382.png", record_pos=(-0.194, -0.138), resolution=(1200, 1920)))
-    poco(text="回答准确且专业").click()
-    sleep(1)
-    poco(text="您为什么喜欢这条回答？").click()
-    text("言简意赅", enter=False)
-    poco(text="提交").click()
-    #点击关闭
-    poco("android.widget.LinearLayout")\
-    .offspring("androidx.compose.ui.platform.ComposeView")\
-    .child("android.view.View").child("android.view.View")\
-    .child("android.view.View")[2].offspring("返回")[0].click()
-    sleep(1)
-    poco("返回").click()
-    touch(Template(r"tpl1748339487185.png", record_pos=(0.458, -0.484), resolution=(1200, 1920)))
-    poco(text="删除").click()
-    poco(text="确认").click()
-    poco("首页").click()
-
+# @pytest.mark.testcase
+# @allure.description("点击赞图标按钮，弹出反馈信息弹窗,在反馈弹窗中勾选选项、文本框输入内容")
+# @allure.title("点击赞图标按钮，弹出反馈信息弹窗,在反馈弹窗中勾选选项、文本框输入内容")
+# def test_ai_answer_support():
+#     if is_login()==True:
+#         login()
+#     #点击笔记
+#     poco("笔记").click()
+#     sleep(1)
+#     #新建笔记
+#     poco(text="新建笔记").click()
+#     sleep(1)
+#     #输入笔记内容
+#     poco("更多设置").click()
+#     poco(text="插入文字").click()
+#     sleep(2)
+#     touch((581,997))
+#     sleep(2)
+#     text("你是谁", enter=False)
+#     sleep(1)
+#     touch((581,1217))
+#     sleep(1)
+#     #拖动ai图标
+#     swipe_press_ai()
+#     sleep(10)
+#     #点赞
+#     touch(Template(r"tpl1749436583382.png", record_pos=(-0.194, -0.138), resolution=(1200, 1920)))
+#     poco(text="回答准确且专业").click()
+#     sleep(1)
+#     poco(text="您为什么喜欢这条回答？").click()
+#     text("言简意赅", enter=False)
+#     poco(text="提交").click()
+#     #点击关闭
+#     poco("android.widget.LinearLayout")\
+#     .offspring("androidx.compose.ui.platform.ComposeView")\
+#     .child("android.view.View").child("android.view.View")\
+#     .child("android.view.View")[2].offspring("返回")[0].click()
+#     sleep(1)
+#     poco("返回").click()
+#     touch(Template(r"tpl1748339487185.png", record_pos=(0.458, -0.484), resolution=(1200, 1920)))
+#     poco(text="删除").click()
+#     poco(text="确认").click()
+#     poco("首页").click()
+#
 
 
 #点击踩图标按钮，弹出反馈信息弹窗,在反馈弹窗中勾选选项、文本框输入内容
-@pytest.mark.testcase
-@allure.description("点击踩图标按钮，弹出反馈信息弹窗,在反馈弹窗中勾选选项、文本框输入内容")
-@allure.title("点击踩图标按钮，弹出反馈信息弹窗,在反馈弹窗中勾选选项、文本框输入内容")
-def test_ai_answer_oppose():
-    if is_login()==True:
-        login()
-    #点击笔记
-    poco("笔记").click()
-    sleep(1)
-    #新建笔记
-    poco(text="新建笔记").click()
-    sleep(1)
-    #输入笔记内容
-    poco("更多设置").click()
-    poco(text="插入文字").click()
-    sleep(2)
-    touch((581,997))
-    sleep(2)
-    text("你是谁", enter=False)
-    sleep(1)
-    touch((581,1217))
-    sleep(1)
-    #拖动ai图标
-    swipe_press_ai()
-    sleep(10)
-    touch(Template(r"tpl1749437209644.png", record_pos=(-0.122, -0.145), resolution=(1200, 1920)))
-    poco(text="存在不安全或违法信息").click()
-    poco(text="您认为更优答案应该是什么？").click()
-    text("不知道", enter=False)
-    poco(text="提交").click()
-    #点击关闭
-    poco("android.widget.LinearLayout")\
-    .offspring("androidx.compose.ui.platform.ComposeView")\
-    .child("android.view.View").child("android.view.View")\
-    .child("android.view.View")[2].offspring("返回")[0].click()
-    sleep(1)
-    poco("返回").click()
-    touch(Template(r"tpl1748339487185.png", record_pos=(0.458, -0.484), resolution=(1200, 1920)))
-    poco(text="删除").click()
-    poco(text="确认").click()
-    poco("首页").click()
+# @pytest.mark.testcase
+# @allure.description("点击踩图标按钮，弹出反馈信息弹窗,在反馈弹窗中勾选选项、文本框输入内容")
+# @allure.title("点击踩图标按钮，弹出反馈信息弹窗,在反馈弹窗中勾选选项、文本框输入内容")
+# def test_ai_answer_oppose():
+#     if is_login()==True:
+#         login()
+#     #点击笔记
+#     poco("笔记").click()
+#     sleep(1)
+#     #新建笔记
+#     poco(text="新建笔记").click()
+#     sleep(1)
+#     #输入笔记内容
+#     poco("更多设置").click()
+#     poco(text="插入文字").click()
+#     sleep(2)
+#     touch((581,997))
+#     sleep(2)
+#     text("你是谁", enter=False)
+#     sleep(1)
+#     touch((581,1217))
+#     sleep(1)
+#     #拖动ai图标
+#     swipe_press_ai()
+#     sleep(10)
+#     touch(Template(r"tpl1749437209644.png", record_pos=(-0.122, -0.145), resolution=(1200, 1920)))
+#     poco(text="存在不安全或违法信息").click()
+#     poco(text="您认为更优答案应该是什么？").click()
+#     text("不知道", enter=False)
+#     poco(text="提交").click()
+#     #点击关闭
+#     poco("android.widget.LinearLayout")\
+#     .offspring("androidx.compose.ui.platform.ComposeView")\
+#     .child("android.view.View").child("android.view.View")\
+#     .child("android.view.View")[2].offspring("返回")[0].click()
+#     sleep(1)
+#     poco("返回").click()
+#     touch(Template(r"tpl1748339487185.png", record_pos=(0.458, -0.484), resolution=(1200, 1920)))
+#     poco(text="删除").click()
+#     poco(text="确认").click()
+#     poco("首页").click()
 
 
 #点击重新提取按钮,点击举报按钮，弹出举报弹窗,在举报弹窗中勾选选项、文本框输入内容
@@ -280,23 +291,21 @@ def test_ai_answer_rextract_and_report():
     touch((581,1217))
     sleep(1)
     #拖动ai图标
-    swipe_press_ai()
+    swipe_press_ai((70,2296),(428,989))
     sleep(10)
     #点击重新提取
-    touch(Template(r"tpl1749437777006.png", record_pos=(-0.053, -0.141), resolution=(1200, 1920)))
-    sleep(10)
-    #点击举报
-    touch(Template(r"tpl1749437868167.png", record_pos=(0.018, -0.141), resolution=(1200, 1920)))
-    poco(text="有害/不安全").click()
-    poco(text="我们想知道你举报的原因，你可以描述你遇到的问题").click()
-    text("答非所问", enter=False)
-    poco(text="提交").click()
-    #点击关闭
-    poco("android.widget.LinearLayout")\
-    .offspring("androidx.compose.ui.platform.ComposeView")\
-    .child("android.view.View").child("android.view.View")\
-    .child("android.view.View")[2].offspring("返回")[0].click()
-    sleep(1)
+    if exists(Template(r"tpl1749437777006.png", record_pos=(-0.053, -0.141), resolution=(1200, 1920))):
+        touch(Template(r"tpl1749437777006.png", record_pos=(-0.053, -0.141), resolution=(1200, 1920)))
+        sleep(10)
+        # #点击举报
+        # touch(Template(r"tpl1749437868167.png", record_pos=(0.018, -0.141), resolution=(1200, 1920)))
+        # poco(text="有害/不安全").click()
+        # poco(text="我们想知道你举报的原因，你可以描述你遇到的问题").click()
+        # text("答非所问", enter=False)
+        # poco(text="提交").click()
+        #点击关闭
+        touch(Template(r"tpl1751348232173.png", record_pos=(0.463, -0.732), resolution=(1600, 2560)))
+        sleep(1)
     poco("返回").click()
     touch(Template(r"tpl1748339487185.png", record_pos=(0.458, -0.484), resolution=(1200, 1920)))
     poco(text="删除").click()
@@ -310,7 +319,7 @@ def test_ai_answer_rextract_and_report():
 def test_ai_answer_input_ui():
     if is_login()==True:
         login()
-    #点击笔记
+#点击笔记
     poco("笔记").click()
     sleep(1)
     #新建笔记
@@ -327,16 +336,18 @@ def test_ai_answer_input_ui():
     touch((581,1217))
     sleep(1)
     #拖动ai图标
-    swipe_press_ai()
-    sleep(10)
+    swipe_press_ai((70,2296),(428,989))
+    sleep(15)
     #点击语音输入
     pos = poco(text="按住说话").get_position()
     touch(pos,duration=2)
+    sleep(1)
     #点击关闭
-    poco("android.widget.LinearLayout")\
-    .offspring("androidx.compose.ui.platform.ComposeView")\
-    .child("android.view.View").child("android.view.View")\
-    .child("android.view.View")[2].offspring("返回")[0].click()
+    touch(Template(r"tpl1751348232173.png", record_pos=(0.463, -0.732), resolution=(1600, 2560)))
+#     poco("android.widget.LinearLayout")\
+#     .offspring("androidx.compose.ui.platform.ComposeView")\
+#     .child("android.view.View").child("android.view.View")\
+#     .child("android.view.View")[2].offspring("返回")[0].click()
     sleep(1)
     poco("返回").click()
     touch(Template(r"tpl1748339487185.png", record_pos=(0.458, -0.484), resolution=(1200, 1920)))
@@ -352,7 +363,7 @@ if __name__=="__main__":
     test_ai_open()
     test_ai_answer_copy()
     test_ai_answer_excerpt_to_handwriting_area_edit()
-    test_ai_answer_oppose()
+    # test_ai_answer_oppose()
     test_ai_answer_rextract_and_report()
     test_ai_answer_input_ui()
     

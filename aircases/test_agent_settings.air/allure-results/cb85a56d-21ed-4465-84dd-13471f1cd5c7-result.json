@@ -1,0 +1,1 @@
+{"name": "新建分组文本输入框字符类型无限制校验", "status": "passed", "description": "新建分组文本输入框字符类型无限制校验", "start": 1751006303248, "stop": 1751006324431, "uuid": "6335546b-3be7-4e68-a061-8eb7af1ad7b9", "testCaseId": "373d2b636a3634d8e46fe7de027d5757", "fullName": "airtests.test_agent_settings.air.test_agent_settings#test_check_new_group_character_type_agent"}

@@ -1,0 +1,1 @@
+{"name": "当天有多条待办内容时,由月切换为周查看日历视图待办页面显示", "status": "passed", "description": "当天有多条待办内容时,由月切换为周查看日历视图待办页面显示", "start": 1751276106200, "stop": 1751276139355, "uuid": "f3ddec74-9ac0-42ef-b0eb-3aab4905204a", "testCaseId": "483b3ae236e23c515e7fbf24a93482fa", "fullName": "airtests.test_agent_calendar.air.test_agent_calendar#test_today_monthly_to_weekly_agent_many_text"}

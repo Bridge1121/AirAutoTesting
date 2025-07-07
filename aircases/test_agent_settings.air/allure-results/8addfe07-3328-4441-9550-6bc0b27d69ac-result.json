@@ -1,0 +1,1 @@
+{"name": "待办页新增“设置项”校验 ", "status": "passed", "description": "待办页新增“设置项”校验 ", "start": 1751251948023, "stop": 1751251952257, "uuid": "b7ca702d-5b71-4219-9f12-f171ae71cc27", "testCaseId": "2d794d01ab87de68a9e9e2350a255844", "fullName": "airtests.test_agent_settings.air.test_agent_settings#test_check_settings_agent"}

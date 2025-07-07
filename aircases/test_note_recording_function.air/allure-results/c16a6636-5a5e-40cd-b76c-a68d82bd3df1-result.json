@@ -1,0 +1,1 @@
+{"name": "会后支持筛选说话人", "status": "passed", "description": "会后支持筛选说话人", "start": 1751009571919, "stop": 1751009634950, "uuid": "72c52836-183e-45e8-9065-cefe9ce6faf5", "testCaseId": "143b75cc0e741fb4981125482b7f3f1f", "fullName": "airtests.test_note_recording_function.air.test_note_recording_function#test_note_recording_filter_speakers"}

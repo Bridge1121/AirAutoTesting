@@ -1,0 +1,21 @@
+DEBUG    airtest.core.android.adb:adb.py:187 D:\AirtestIDE\airtest\core\android\static\adb\windows\adb.exe -P 5037 -s AINOTEA224042300046 shell am broadcast -a ADB_INPUT_TEXT --es msg 这里有一条代办
+DEBUG    airtest.core.android.adb:adb.py:187 D:\AirtestIDE\airtest\core\android\static\adb\windows\adb.exe -P 5037 -s AINOTEA224042300046 shell am broadcast -a ADB_INPUT_TEXT --es msg 这里有一条代办
+DEBUG    airtest.core.android.adb:adb.py:187 D:\AirtestIDE\airtest\core\android\static\adb\windows\adb.exe -P 5037 -s AINOTEA224042300046 shell am start -n com.netease.open.pocoservice/.TestActivity
+DEBUG    airtest.core.android.adb:adb.py:187 D:\AirtestIDE\airtest\core\android\static\adb\windows\adb.exe -P 5037 -s AINOTEA224042300046 shell am instrument -w -e debug false -e class com.netease.open.pocoservice.InstrumentedTestAsLauncher com.netease.open.pocoservice/androidx.test.runner.AndroidJUnitRunner
+DEBUG    airtest.core.android.adb:adb.py:187 D:\AirtestIDE\airtest\core\android\static\adb\windows\adb.exe -P 5037 -s AINOTEA224042300046 shell am broadcast -a ADB_INPUT_TEXT --es msg 这里有一条代办
+INFO     airtest.core.api:cv.py:59 Try finding: Template(C:\用例\testcases\AirAutoTesting-master\airtests\test_agent_calendar.air\tpl1750300034472.png)
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.multiscale_template_matching:multiscale_template_matching.py:186 [MSTemplatePre] threshold=0.7, result={'result': (1175, 638), 'rectangle': ((1153.2, 626.0), (1153.2, 650.0), (1197.2, 650.0), (1197.2, 626.0)), 'confidence': 0.622877299785614}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.02 s.
+DEBUG    airtest.core.api:cv.py:189 try match with TemplateMatching
+DEBUG    airtest.aircv.template_matching:template_matching.py:84 [Template] threshold=0.7, result={'result': (398, 448), 'rectangle': ((380, 438), (380, 458), (417, 458), (417, 438)), 'confidence': 0.9955183863639832}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.03 s.
+DEBUG    airtest.core.api:cv.py:155 match result: {'result': (398, 448), 'rectangle': ((380, 438), (380, 458), (417, 458), (417, 438)), 'confidence': 0.9955183863639832, 'time': 0.03488564491271973}
+INFO     airtest.core.api:cv.py:59 Try finding: Template(C:\用例\testcases\AirAutoTesting-master\airtests\test_agent_calendar.air\tpl1750239890001.png)
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.multiscale_template_matching:multiscale_template_matching.py:186 [MSTemplatePre] threshold=0.7, result={'result': (1127, 983), 'rectangle': ((1120.8000000000002, 970.8), (1120.8000000000002, 995.8), (1134.8000000000002, 995.8), (1134.8000000000002, 970.8)), 'confidence': 0.0}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.03 s.
+DEBUG    airtest.core.api:cv.py:189 try match with TemplateMatching
+DEBUG    airtest.aircv.template_matching:template_matching.py:84 [Template] threshold=0.7, result={'result': (293, 1214), 'rectangle': ((283, 1196), (283, 1232), (304, 1232), (304, 1196)), 'confidence': 0.703628420829773}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.04 s.
+DEBUG    airtest.core.api:cv.py:155 match result: {'result': (293, 1214), 'rectangle': ((283, 1196), (283, 1232), (304, 1232), (304, 1196)), 'confidence': 0.703628420829773, 'time': 0.03795576095581055}

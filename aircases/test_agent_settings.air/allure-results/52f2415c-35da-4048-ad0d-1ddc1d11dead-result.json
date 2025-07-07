@@ -1,0 +1,1 @@
+{"name": "新建分组文本输入框操作校验", "status": "passed", "description": "新建分组文本输入框操作校验", "start": 1751007856656, "stop": 1751007861140, "uuid": "01fdde9e-08f0-455f-91da-570a32db29d7", "testCaseId": "25f96526e28bee18b511ebc8552e47c6", "fullName": "airtests.test_agent_settings.air.test_agent_settings#test_new_group_input_agent"}

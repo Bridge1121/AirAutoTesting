@@ -1,0 +1,12 @@
+DEBUG    airtest.core.android.adb:adb.py:187 D:\AirtestIDE\airtest\core\android\static\adb\windows\adb.exe -P 5037 -s AINOTEA224042300046 shell am broadcast -a ADB_INPUT_TEXT --es msg 这里有一个新建文本
+DEBUG    airtest.core.android.adb:adb.py:187 D:\AirtestIDE\airtest\core\android\static\adb\windows\adb.exe -P 5037 -s AINOTEA224042300046 shell am broadcast -a ADB_INPUT_TEXT --es msg 加入
+INFO     airtest.core.api:cv.py:59 Try finding: Template(C:\用例\testcases\AirAutoTesting-master\airtests\test_agent_settings.air\tpl1750413359903.png)
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.multiscale_template_matching:multiscale_template_matching.py:186 [MSTemplatePre] threshold=0.7, result={'result': (1108, 1631), 'rectangle': ((1082.6, 1608.8000000000002), (1082.6, 1654.8000000000002), (1134.6, 1654.8000000000002), (1134.6, 1608.8000000000002)), 'confidence': 1.0}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.02 s.
+DEBUG    airtest.core.api:cv.py:155 match result: {'result': (1108, 1631), 'rectangle': ((1082.6, 1608.8000000000002), (1082.6, 1654.8000000000002), (1134.6, 1654.8000000000002), (1134.6, 1608.8000000000002)), 'confidence': 1.0, 'time': 0.02291107177734375}
+INFO     airtest.core.api:cv.py:59 Try finding: Template(C:\用例\testcases\AirAutoTesting-master\airtests\test_agent_settings.air\tpl1750414889486.png)
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.multiscale_template_matching:multiscale_template_matching.py:186 [MSTemplatePre] threshold=0.7, result={'result': (778, 1766), 'rectangle': ((765.6, 1753.4), (765.6, 1779.4), (791.6, 1779.4), (791.6, 1753.4)), 'confidence': 0.999998927116394}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.00 s.
+DEBUG    airtest.core.api:cv.py:155 match result: {'result': (778, 1766), 'rectangle': ((765.6, 1753.4), (765.6, 1779.4), (791.6, 1779.4), (791.6, 1753.4)), 'confidence': 0.999998927116394, 'time': 0.0019989013671875}

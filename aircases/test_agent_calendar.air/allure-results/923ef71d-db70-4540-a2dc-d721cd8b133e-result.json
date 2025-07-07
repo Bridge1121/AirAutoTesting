@@ -1,0 +1,1 @@
+{"name": "查看待办周日历视图，默认为本周当天的年月日星期农历", "status": "passed", "description": "查看待办周日历视图，默认为本周当天的年月日星期农历", "start": 1751014961793, "stop": 1751014966987, "uuid": "5e18797b-3ca5-4e74-8715-2b46b9fdc0a6", "testCaseId": "43d99487351b0bfc9d224b0702ab9460", "fullName": "airtests.test_agent_calendar.air.test_agent_calendar#test_view_weekly_calendar_agent"}

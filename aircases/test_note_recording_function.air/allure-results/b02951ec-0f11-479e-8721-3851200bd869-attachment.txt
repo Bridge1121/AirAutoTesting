@@ -1,0 +1,5 @@
+INFO     airtest.core.api:cv.py:59 Try finding: Template(C:\用例\testcases\AirAutoTesting-master\airtests\test_note_recording_function.air\tpl1750831015961.png)
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.multiscale_template_matching:multiscale_template_matching.py:186 [MSTemplatePre] threshold=0.7, result={'result': (520, 754), 'rectangle': ((489.6, 733.6), (489.6, 775.6), (551.6, 775.6), (551.6, 733.6)), 'confidence': 0.9999217987060547}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.00 s.
+DEBUG    airtest.core.api:cv.py:155 match result: {'result': (520, 754), 'rectangle': ((489.6, 733.6), (489.6, 775.6), (551.6, 775.6), (551.6, 733.6)), 'confidence': 0.9999217987060547, 'time': 0.0019507408142089844}

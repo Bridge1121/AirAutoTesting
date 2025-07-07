@@ -1,0 +1,1 @@
+{"name": "待办信息加入待办后在周日历视图上查看", "status": "passed", "description": "待办信息加入待办后在周日历视图上查看", "start": 1751250506640, "stop": 1751250509705, "uuid": "545ddf42-cfc9-4141-a543-6e3454e8a340", "testCaseId": "8694b5ec2c0ec42f76cdc358b013a64c", "fullName": "airtests.test_agent_calendar.air.test_agent_calendar#test_weekly_agent_new_text_on_agent"}

@@ -153,7 +153,9 @@ def find_del_agent(agent_name):
 
                 #             touch(Template(r"tpl1749637230158.png", record_pos=(0.448, 0.182), resolution=(1200, 1920)))
                 # 删除新增的代办
+                poco(text="删除").wait_for_appearance(TIME_OUT)
                 poco(text="删除").click()
+                sleep(1)
                 poco(text="确认").click()
 
 

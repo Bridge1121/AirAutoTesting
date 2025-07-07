@@ -1,0 +1,1 @@
+{"name": "无网络时开启录音", "status": "passed", "description": "无网络时开启录音", "start": 1751253348518, "stop": 1751253382672, "uuid": "660926ed-6ec4-482d-9139-b91fe5349c33", "testCaseId": "21219353970d248ccbbe0968f9e6d36e", "fullName": "airtests.test_note_recording_function.air.test_note_recording_function#test_note_recording_no_internet"}

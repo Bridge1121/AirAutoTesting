@@ -1,0 +1,1 @@
+{"name": "文本输入框长按支持全选、粘贴、复制、剪切，点击换行等操作验证", "status": "passed", "description": "文本输入框长按支持全选、粘贴、复制、剪切，点击换行等操作验证", "start": 1751251661635, "stop": 1751251682650, "uuid": "2fc7a344-e4a0-4462-9704-ff8c64363764", "testCaseId": "45658c2bf8b13573fdc7a2e200f44ba4", "fullName": "airtests.test_agent_settings.air.test_agent_settings#test_check_new_group_input_operate_agent"}

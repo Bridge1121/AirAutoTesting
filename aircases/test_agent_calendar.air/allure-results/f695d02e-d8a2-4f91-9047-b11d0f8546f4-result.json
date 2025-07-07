@@ -1,0 +1,1 @@
+{"name": "点击年月处左右切换键切换日期", "status": "passed", "description": "点击年月处左右切换键切换日期", "start": 1751014159857, "stop": 1751014163937, "uuid": "fd9ead6c-e861-4ea6-9be7-907d31a6b0e4", "testCaseId": "f7d5fa4444e0bf43eebb9914e3dc4b4f", "fullName": "airtests.test_agent_calendar.air.test_agent_calendar#test_switch_monthly_calendar_agent"}

@@ -1,0 +1,1 @@
+{"name": "分组管理页显示“默认分组”校验", "status": "passed", "description": "分组管理页显示“默认分组”校验", "start": 1751006488892, "stop": 1751006495521, "uuid": "6ab6ee3a-5afe-4284-81d6-a2baaeaa6e77", "testCaseId": "0b178f3ffdf259ef9cd942829f803598", "fullName": "airtests.test_agent_settings.air.test_agent_settings#test_check_group_management_default_agent"}

@@ -1,0 +1,1 @@
+DEBUG    airtest.aircv.utils:utils.py:21 find_all_results() run time is 0.04 s.

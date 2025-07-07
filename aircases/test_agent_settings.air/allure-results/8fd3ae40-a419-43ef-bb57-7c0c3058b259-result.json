@@ -1,0 +1,1 @@
+{"name": "分组管理页返回按钮点击响应正常校验", "status": "passed", "description": "分组管理页返回按钮点击响应正常校验", "start": 1751006438600, "stop": 1751006444346, "uuid": "b074dbd7-23f8-4ff7-9b75-027c506d8bf8", "testCaseId": "75b08c3ac7205558a4949b3564e848b0", "fullName": "airtests.test_agent_settings.air.test_agent_settings#test_check_group_management_return_agent"}

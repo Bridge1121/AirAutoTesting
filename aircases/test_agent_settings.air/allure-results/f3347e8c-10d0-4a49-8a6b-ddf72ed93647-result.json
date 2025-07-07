@@ -1,0 +1,1 @@
+{"name": "新建待办分组文本输入框位数上限校验", "status": "passed", "description": "新建待办分组文本输入框位数上限校验", "start": 1751251962646, "stop": 1751251983205, "uuid": "d6a42734-a3c1-4ce1-b6e1-7f4459b44e47", "testCaseId": "c3250b0083248d18642207d6cec7c02f", "fullName": "airtests.test_agent_settings.air.test_agent_settings#test_check_new_group_character_limit_agent"}
