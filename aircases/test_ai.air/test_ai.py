@@ -152,7 +152,7 @@ def test_ai_answer_excerpt_to_handwriting_area_edit():
     touch((581,1217))
     sleep(1)
     #拖动ai图标
-    swipe_press_ai()
+    swipe_press_ai((70,2296),(428,989))
     sleep(10)
     #点击摘录到手写区
     if exists(Template(r"tpl1749436239092.png", record_pos=(-0.266, -0.142), resolution=(1200, 1920))):
@@ -169,6 +169,10 @@ def test_ai_answer_excerpt_to_handwriting_area_edit():
         sleep(1)
         text("编辑编辑",enter=False)
         sleep(1)
+    else:
+        # 点击关闭
+        touch(Template(r"tpl1751348232173.png", record_pos=(0.463, -0.732), resolution=(1600, 2560)))
+    sleep(1)
     poco("返回").click()
     touch(Template(r"tpl1748339487185.png", record_pos=(0.458, -0.484), resolution=(1200, 1920)))
     poco(text="删除").click()
@@ -303,9 +307,9 @@ def test_ai_answer_rextract_and_report():
         # poco(text="我们想知道你举报的原因，你可以描述你遇到的问题").click()
         # text("答非所问", enter=False)
         # poco(text="提交").click()
-        #点击关闭
-        touch(Template(r"tpl1751348232173.png", record_pos=(0.463, -0.732), resolution=(1600, 2560)))
-        sleep(1)
+    #点击关闭
+    touch(Template(r"tpl1751348232173.png", record_pos=(0.463, -0.732), resolution=(1600, 2560)))
+    sleep(1)
     poco("返回").click()
     touch(Template(r"tpl1748339487185.png", record_pos=(0.458, -0.484), resolution=(1200, 1920)))
     poco(text="删除").click()
@@ -317,8 +321,8 @@ def test_ai_answer_rextract_and_report():
 @allure.title("ai回答输入框包括键盘输入，语音输入,点击输入框中语音图标热区，切换到语音输入")
 @allure.description("ai回答输入框包括键盘输入，语音输入,点击输入框中语音图标热区，切换到语音输入")
 def test_ai_answer_input_ui():
-    if is_login()==True:
-        login()
+    # if is_login()==True:
+    #     login()
 #点击笔记
     poco("笔记").click()
     sleep(1)
