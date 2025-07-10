@@ -1,0 +1,1 @@
+使用airtest+pytest+allure实现的安卓移动设备的自动化测试
